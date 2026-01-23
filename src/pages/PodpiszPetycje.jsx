@@ -63,6 +63,8 @@ export default function PodpiszPetycje() {
   const [generatedImage, setGeneratedImage] = useState(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
+  const [customReason, setCustomReason] = useState("");
+  const [showCustomInput, setShowCustomInput] = useState(false);
   const [signatureCount, setSignatureCount] = useState(12847);
   const imageRef = useRef(null);
 
@@ -398,11 +400,11 @@ export default function PodpiszPetycje() {
                             <h4 className="font-semibold text-official-navy text-sm mb-3">
                               Popieram AboTax, bo...
                             </h4>
-                            <div className="space-y-2 max-h-[280px] overflow-y-auto pr-1">
+                            <div className="space-y-2 max-h-[240px] overflow-y-auto pr-1">
                               {SUPPORT_REASONS.map((reason) => (
                                 <button
                                   key={reason.id}
-                                  onClick={() => generateImage(reason)}
+                                  onClick={() => { setShowCustomInput(false); generateImage(reason); }}
                                   disabled={isGenerating}
                                   className="w-full text-left p-3 rounded-lg border border-official-navy/10 hover:border-abotax-primary hover:bg-abotax-primary/5 transition-all text-sm flex items-center gap-2"
                                 >
@@ -411,6 +413,46 @@ export default function PodpiszPetycje() {
                                 </button>
                               ))}
                             </div>
+
+                            {/* Custom text option */}
+                            <div className="mt-3">
+                              {!showCustomInput ? (
+                                <button
+                                  onClick={() => setShowCustomInput(true)}
+                                  className="w-full text-left p-3 rounded-lg border-2 border-dashed border-official-navy/20 hover:border-abotax-primary hover:bg-abotax-primary/5 transition-all text-sm flex items-center gap-2"
+                                >
+                                  <span>✍️</span>
+                                  <span className="text-official-navy/70">Wpisz własny powód...</span>
+                                </button>
+                              ) : (
+                                <div className="space-y-2">
+                                  <div className="flex gap-2">
+                                    <Input
+                                      value={customReason}
+                                      onChange={(e) => setCustomReason(e.target.value)}
+                                      placeholder="Bo..."
+                                      maxLength={60}
+                                      className="border-official-navy/20 text-sm"
+                                      autoFocus
+                                    />
+                                    <Button
+                                      size="sm"
+                                      onClick={() => {
+                                        if (customReason.trim()) {
+                                          generateImage({ id: "custom", text: customReason.trim(), emoji: "✍️" });
+                                        }
+                                      }}
+                                      disabled={!customReason.trim() || isGenerating}
+                                      className="bg-abotax-primary hover:bg-abotax-primary/90 text-white px-4"
+                                    >
+                                      OK
+                                    </Button>
+                                  </div>
+                                  <p className="text-xs text-official-navy/50">{customReason.length}/60 znaków</p>
+                                </div>
+                              )}
+                            </div>
+
                             {isGenerating && (
                               <div className="flex items-center justify-center gap-2 mt-4 text-sm text-official-navy/60">
                                 <motion.div
@@ -472,16 +514,16 @@ export default function PodpiszPetycje() {
                               </Button>
                             </div>
 
-                            {/* ePUAP micro-CTA */}
+                            {/* e-Doręczenia micro-CTA */}
                             <div className="border-t border-official-navy/10 pt-3 mt-3">
                               <a
-                                href="https://epuap.gov.pl"
+                                href="https://edoreczenia.gov.pl"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 text-xs text-official-navy/70 hover:text-official-navy transition-colors"
                               >
                                 <Landmark className="w-3 h-3" />
-                                <span>Złóż też oficjalną petycję przez <strong>ePUAP</strong></span>
+                                <span>Złóż oficjalną petycję przez <strong>e-Doręczenia</strong> do Fundacji Destruktura</span>
                                 <ExternalLink className="w-3 h-3 ml-auto" />
                               </a>
                             </div>
@@ -511,13 +553,13 @@ export default function PodpiszPetycje() {
                 Oficjalny kanał
               </Badge>
               <h2 className="text-3xl font-serif font-bold text-official-navy mb-4">
-                Petycja przez ePUAP
+                Petycja przez e-Doręczenia
               </h2>
               <p className="text-official-navy/70 mb-6 leading-relaxed">
                 Oprócz wyrażenia poparcia na naszej stronie, możesz złożyć oficjalną petycję
-                przez platformę ePUAP. Petycja jest kierowana na skrzynkę{" "}
-                <strong>Fundacji Destruktura</strong>, która zbiera podpisy i składa
-                je oficjalnie do Sejmu RP.
+                przez platformę e-Doręczenia. Petycja trafia na skrzynkę{" "}
+                <strong>Fundacji Destruktura</strong> (adres: <code className="text-xs bg-official-navy/5 px-1 py-0.5 rounded">AE:PL-18803-44688-HHJBV-13</code>),
+                która zbiera podpisy i składa je oficjalnie do Sejmu RP.
               </p>
 
               <div className="space-y-4 mb-8">
@@ -526,8 +568,8 @@ export default function PodpiszPetycje() {
                     <span className="text-sm font-bold text-official-navy">1</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-official-navy">Zaloguj się przez Profil Zaufany</h4>
-                    <p className="text-sm text-official-navy/60">Użyj bankowości lub mObywatela</p>
+                    <h4 className="font-semibold text-official-navy">Zaloguj się na edoreczenia.gov.pl</h4>
+                    <p className="text-sm text-official-navy/60">Użyj Profilu Zaufanego (bank lub mObywatel)</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -535,8 +577,8 @@ export default function PodpiszPetycje() {
                     <span className="text-sm font-bold text-official-navy">2</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-official-navy">Wypełnij formularz petycji</h4>
-                    <p className="text-sm text-official-navy/60">Dane są wstępnie uzupełnione</p>
+                    <h4 className="font-semibold text-official-navy">Wyślij wiadomość na adres Fundacji</h4>
+                    <p className="text-sm text-official-navy/60">Adres: AE:PL-18803-44688-HHJBV-13</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -544,20 +586,20 @@ export default function PodpiszPetycje() {
                     <span className="text-sm font-bold text-official-navy">3</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-official-navy">Podpisz i wyślij</h4>
-                    <p className="text-sm text-official-navy/60">Petycja trafia do Fundacji Destruktura, a stamtąd do Sejmu</p>
+                    <h4 className="font-semibold text-official-navy">Napisz: "Popieram petycję AboTax"</h4>
+                    <p className="text-sm text-official-navy/60">Fundacja Destruktura zbiera i składa do Sejmu</p>
                   </div>
                 </div>
               </div>
 
               <a
-                href="https://epuap.gov.pl"
+                href="https://edoreczenia.gov.pl"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <Button size="lg" className="bg-official-navy hover:bg-official-navy/90 text-white">
                   <ExternalLink className="w-5 h-5 mr-2" />
-                  Przejdź do ePUAP
+                  Przejdź do e-Doręczeń
                 </Button>
               </a>
             </motion.div>
@@ -574,15 +616,15 @@ export default function PodpiszPetycje() {
                     <Landmark className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-official-navy">ePUAP.gov.pl</h3>
-                    <p className="text-sm text-official-navy/60">Petycja przez Fundację Destruktura</p>
+                    <h3 className="font-bold text-official-navy">e-Doręczenia</h3>
+                    <p className="text-sm text-official-navy/60">Fundacja Destruktura</p>
                   </div>
                 </div>
 
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-sm">
                     <CheckCircle2 className="w-4 h-4 text-abotax-primary" />
-                    <span className="text-official-navy/70">Oficjalny kanał rządowy</span>
+                    <span className="text-official-navy/70">Oficjalny kanał rządowy (e-Doręczenia)</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm">
                     <CheckCircle2 className="w-4 h-4 text-abotax-primary" />
@@ -590,16 +632,21 @@ export default function PodpiszPetycje() {
                   </div>
                   <div className="flex items-center gap-3 text-sm">
                     <CheckCircle2 className="w-4 h-4 text-abotax-primary" />
-                    <span className="text-official-navy/70">Fundacja Destruktura składa do Sejmu</span>
+                    <span className="text-official-navy/70">Fundacja Destruktura składa petycję do Sejmu</span>
                   </div>
                 </div>
 
-                <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-xl">
+                <div className="mt-6 p-3 bg-official-navy/5 border border-official-navy/10 rounded-xl">
+                  <p className="text-xs text-official-navy/60 mb-1">Adres e-Doręczeń:</p>
+                  <p className="text-sm font-mono font-semibold text-official-navy">AE:PL-18803-44688-HHJBV-13</p>
+                </div>
+
+                <div className="mt-4 p-4 bg-amber-50 border border-amber-200 rounded-xl">
                   <div className="flex gap-3">
                     <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0" />
                     <p className="text-sm text-amber-800">
-                      Petycja przez ePUAP wymaga posiadania Profilu Zaufanego.
-                      Jeśli go nie masz, możesz go założyć przez bankowość elektroniczną.
+                      Wymaga Profilu Zaufanego i aktywnej skrzynki e-Doręczeń.
+                      Możesz je założyć przez bankowość elektroniczną lub mObywatela.
                     </p>
                   </div>
                 </div>

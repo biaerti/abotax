@@ -1,0 +1,48 @@
+PROMPT DO FIGMA AI: Instagram Story "Popieram AboTax"
+=====================================================
+
+Format: 1080x1920px (Instagram Story)
+
+Styl:
+- Oficjalny, rządowy look - jak materiały z gov.pl
+- Minimalistyczny, profesjonalny ale przystępny
+- Gradient tła: od granatu (#1a365d) do tealu (#1A5F5A), kierunek 135deg
+- Typografia: serif dla nagłówków (np. Source Serif Pro), sans-serif dla body
+- Kolory akcentów: złoty (#c9a227), biały
+
+Elementy (od góry):
+1. GÓRA: Logo/ikona wagi (symbol równowagi) w okręgu z białym obramowaniem, obok tekst:
+   - Mały: "Inicjatywa obywatelska" (biały, 70% opacity)
+   - Wyraźny: "AboTax" (złoty #c9a227, bold)
+
+2. NAGŁÓWEK (duży, serif, bold, biały):
+   "Popieram
+   Fundusz Rekompensaty" (druga linia złota #c9a227)
+
+3. ŚRODEK - Ramka z powodem:
+   - Tło: rgba(255,255,255,0.1) z backdrop blur
+   - Border: rgba(255,255,255,0.2), border-radius 16px
+   - Padding: 24px
+   - Tekst wewnątrz (biały, 20px, medium weight, wycentrowany):
+     "[Tu wpisz dlaczego popierasz]"
+
+   Warianty tekstu do wygenerowania:
+   - "Bo wierzę w kompromisy"
+   - "Bo dzieci w domach dziecka zasługują na więcej"
+   - "Bo chcę końca wojny kulturowej"
+   - "Bo nie należę do żadnego obozu"
+   - "Bo mam dość stygmatyzowania"
+   - "Bo to da się rozwiązać"
+   - (pusta wersja z placeholderem)
+
+4. DÓŁ:
+   - Hasło: "Życie za życie — rekompensata, nie kara" (biały, 90% opacity, mały)
+   - Ikonka serca (złota) obok hasła
+   - Pill/chip: ikonka IG + "@abotax.pl" (białe na tle rgba(255,255,255,0.1), rounded-full)
+   - Na samym dole: "abotax.pl • #AboTax" (biały, 60% opacity, 12px)
+
+Dodatkowe wskazówki:
+- NIE używaj zdjęć stockowych - sam gradient + typografia + ikony
+- Delikatne dekoracje: może subtelny wzór geometryczny w tle (linie, siatka) z opacity 5%
+- Zachowaj safe zones IG Story (nie umieszczaj kluczowych elementów na skrajnych 10% góra/dół)
+- Wygeneruj min. 4 warianty z różnymi powodami

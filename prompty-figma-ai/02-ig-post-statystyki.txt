@@ -1,0 +1,41 @@
+PROMPT DO FIGMA AI: Instagram Post - Statystyki / Infografika
+==============================================================
+
+Format: 1080x1080px (Instagram kwadrat) lub 1080x1350px (portrait)
+
+Styl:
+- Oficjalny, rządowy - jak infografiki z GUS/gov.pl
+- Czyste, białe tło (#faf8f5) z granatowymi elementami
+- Typografia: serif bold dla dużych liczb, sans-serif dla opisów
+- Kolory: granat (#1a365d), teal (#1A5F5A), złoty (#c9a227), cream (#faf8f5)
+
+Wariant 1 - "17 100 dzieci":
+- Góra: Badge "Fundusz Rekompensaty Społecznej" (złoty)
+- Duża liczba: "17 100" (granat, serif, bardzo duży ~80px)
+- Pod spodem: "dzieci w domach dziecka w Polsce" (granat, mniejszy)
+- Grafika: minimalistyczna ikona domu/dzieci (teal)
+- Dół: "abotax.pl | Podpisz petycję" + logo AboTax
+
+Wariant 2 - "125 mln zł":
+- Duża liczba: "125 mln zł" (złoty, serif bold)
+- Pod spodem: "szacowany roczny wpływ Funduszu" (granat)
+- Mniejszy tekst: "Przy 50 000 zabiegów rocznie × 2 500 zł opłaty"
+- Wizualizacja: prosta grafika wzrostu (bar chart minimalistyczny)
+
+Wariant 3 - "1:8 → 1:5":
+- Tytuł: "Poprawa opieki" (serif, granat)
+- Duże: "1:8" (przekreślone, czerwone) → "1:5" (zielone #95B89C)
+- Opis: "opiekun na dzieci — obecny vs. zalecany wskaźnik"
+- Pod spodem: "Fundusz AboTax pomoże zatrudnić 1 280 nowych opiekunów"
+
+Wariant 4 - Carousel "Jak działa AboTax" (3-4 slajdy):
+- Slajd 1: "Jak działa AboTax?" (tytuł, gradient tło)
+- Slajd 2: "Pacjentka + Klinika → Opłata 100%" (ikony + strzałki)
+- Slajd 3: "Fundusz → Domy dziecka" (token + ikona domu)
+- Slajd 4: "Popieram. Podpisuję. abotax.pl" (CTA)
+
+Dodatkowe wskazówki:
+- Każdy post powinien mieć "@abotax.pl" gdzieś widoczne
+- Unikaj przeładowania - max 3-4 elementy informacyjne na slajd
+- Safe zones - text nie na krawędziach
+- Wygeneruj każdy wariant osobno

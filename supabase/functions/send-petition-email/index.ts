@@ -38,7 +38,7 @@ serve(async (req) => {
         html = generateConfirmationEmail(firstName, reason)
         break
       case "reminder":
-        subject = "Podpisz oficjalną petycję przez ePUAP"
+        subject = "Złóż oficjalną petycję przez e-Doręczenia"
         html = generateReminderEmail(firstName)
         break
       case "share":
@@ -126,18 +126,21 @@ function generateConfirmationEmail(firstName: string, reason?: string): string {
       </div>
 
       <div style="background: #f0f4f8; padding: 24px; border-radius: 12px; margin: 24px 0; border-left: 4px solid #1a365d;">
-        <h3 style="margin-top: 0; color: #1a365d; font-size: 16px;">Złóż oficjalną petycję przez ePUAP</h3>
+        <h3 style="margin-top: 0; color: #1a365d; font-size: 16px;">Złóż oficjalną petycję przez e-Doręczenia</h3>
         <p style="color: #666; font-size: 14px; margin-bottom: 8px;">
-          Twoje poparcie na stronie to dopiero początek. Złóż oficjalną petycję przez ePUAP —
+          Twoje poparcie na stronie to dopiero początek. Złóż oficjalną petycję przez e-Doręczenia —
           trafia ona na skrzynkę <strong>Fundacji Destruktura</strong>, która zbiera podpisy
           i składa je do Sejmu RP.
         </p>
+        <p style="color: #666; font-size: 14px; margin-bottom: 8px;">
+          Adres e-Doręczeń: <strong>AE:PL-18803-44688-HHJBV-13</strong>
+        </p>
         <p style="color: #666; font-size: 14px; margin-bottom: 16px;">
-          Potrzebujesz tylko Profilu Zaufanego (przez bank lub mObywatela).
+          Potrzebujesz Profilu Zaufanego i aktywnej skrzynki e-Doręczeń.
         </p>
         <div style="text-align: center;">
-          <a href="https://epuap.gov.pl" class="button-navy" style="color: white;">
-            Podpisz przez ePUAP
+          <a href="https://edoreczenia.gov.pl" class="button-navy" style="color: white;">
+            Przejdź do e-Doręczeń
           </a>
         </div>
       </div>
@@ -182,13 +185,13 @@ function generateReminderEmail(firstName: string): string {
     <div class="content">
       <p style="font-size: 18px; color: #333;">Dziękujemy za poparcie AboTax.</p>
 
-      <p style="color: #666;">Wiesz, że możesz złożyć <strong>oficjalną petycję przez ePUAP</strong>? Petycja trafia na skrzynkę <strong>Fundacji Destruktura</strong>, która zbiera podpisy i składa je oficjalnie do Sejmu RP.</p>
+      <p style="color: #666;">Wiesz, że możesz złożyć <strong>oficjalną petycję przez e-Doręczenia</strong>? Petycja trafia na skrzynkę <strong>Fundacji Destruktura</strong> (adres: AE:PL-18803-44688-HHJBV-13), która zbiera podpisy i składa je oficjalnie do Sejmu RP.</p>
 
-      <p style="color: #666;">Potrzebujesz tylko Profilu Zaufanego (możesz go założyć przez bankowość elektroniczną lub mObywatela).</p>
+      <p style="color: #666;">Potrzebujesz Profilu Zaufanego i aktywnej skrzynki e-Doręczeń (możesz założyć przez bank lub mObywatela).</p>
 
       <div style="text-align: center; margin: 30px 0;">
-        <a href="https://epuap.gov.pl" class="button" style="color: white;">
-          Podpisz przez ePUAP
+        <a href="https://edoreczenia.gov.pl" class="button" style="color: white;">
+          Przejdź do e-Doręczeń
         </a>
       </div>
 
