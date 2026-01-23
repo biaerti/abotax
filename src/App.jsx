@@ -1,0 +1,78 @@
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { useEffect } from 'react'
+import Layout from './Layout'
+
+// Scroll to top on route change
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
+// Pages
+import Home from './pages/Home'
+import About from './pages/About'
+import Contribute from './pages/Contribute'
+import HomesDirectory from './pages/HomesDirectory'
+import Privacy from './pages/Privacy'
+import RegisterHome from './pages/RegisterHome'
+import FAQ from './pages/FAQ'
+import Transparency from './pages/Transparency'
+import ProjektUstawy from './pages/ProjektUstawy'
+import Impact from './pages/Impact'
+import Dashboard from './pages/Dashboard'
+import HomeProfile from './pages/HomeProfile'
+import PodpiszPetycje from './pages/PodpiszPetycje'
+import GeneratorIG from './pages/GeneratorIG'
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60 * 5, // 5 minutes
+      retry: 1,
+    },
+  },
+})
+
+// Wrapper component to pass currentPageName to Layout
+function PageWrapper({ children, pageName }) {
+  return (
+    <Layout currentPageName={pageName}>
+      {children}
+    </Layout>
+  )
+}
+
+function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<PageWrapper pageName="Home"><Home /></PageWrapper>} />
+          <Route path="/Home" element={<PageWrapper pageName="Home"><Home /></PageWrapper>} />
+          <Route path="/About" element={<PageWrapper pageName="About"><About /></PageWrapper>} />
+          <Route path="/Contribute" element={<PageWrapper pageName="Contribute"><Contribute /></PageWrapper>} />
+          <Route path="/HomesDirectory" element={<PageWrapper pageName="HomesDirectory"><HomesDirectory /></PageWrapper>} />
+          <Route path="/Privacy" element={<PageWrapper pageName="Privacy"><Privacy /></PageWrapper>} />
+          <Route path="/RegisterHome" element={<PageWrapper pageName="RegisterHome"><RegisterHome /></PageWrapper>} />
+          <Route path="/FAQ" element={<PageWrapper pageName="FAQ"><FAQ /></PageWrapper>} />
+          <Route path="/Transparency" element={<PageWrapper pageName="Transparency"><Transparency /></PageWrapper>} />
+          <Route path="/ProjektUstawy" element={<PageWrapper pageName="ProjektUstawy"><ProjektUstawy /></PageWrapper>} />
+          <Route path="/Impact" element={<PageWrapper pageName="Impact"><Impact /></PageWrapper>} />
+          <Route path="/PodpiszPetycje" element={<PageWrapper pageName="PodpiszPetycje"><PodpiszPetycje /></PageWrapper>} />
+          <Route path="/GeneratorIG" element={<PageWrapper pageName="GeneratorIG"><GeneratorIG /></PageWrapper>} />
+          <Route path="/Dashboard" element={<PageWrapper pageName="Dashboard"><Dashboard /></PageWrapper>} />
+          <Route path="/HomeProfile/:id" element={<PageWrapper pageName="HomeProfile"><HomeProfile /></PageWrapper>} />
+        </Routes>
+      </BrowserRouter>
+    </QueryClientProvider>
+  )
+}
+
+export default App
