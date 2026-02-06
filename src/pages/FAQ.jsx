@@ -2,15 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  HelpCircle, 
-  ChevronDown, 
+import {
+  HelpCircle,
+  ChevronDown,
   Search,
   Heart,
   Shield,
   Lock,
-  CreditCard,
-  Users,
   Building2
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -30,52 +28,67 @@ export default function FAQ() {
   const categories = [
     {
       icon: Heart,
-      title: "O rekompensacie",
+      title: "O inicjatywie",
       bgColor: "bg-abotax-primary/10",
       textColor: "text-abotax-primary",
       questions: [
         {
           id: "q1",
-          question: "Czy wpłata rekompensaty jest obowiązkowa?",
-          answer: "Wpłata rekompensaty jest całkowicie dobrowolna. To Twoja decyzja, czy chcesz wesprzeć dzieci w domach dziecka. Nie ma żadnych prawnych konsekwencji związanych z rezygnacją z wpłaty. Naszym celem jest stworzenie możliwości dla osób, które chcą przekształcić swoją decyzję życiową w coś pozytywnego."
+          question: "Czym jest Fundusz Rekompensaty Społecznej?",
+          answer: "To propozycja mechanizmu, w którym za każdy zabieg aborcyjny klinika dodaje dobrowolną opłatę solidarnościową. 100% tych środków trafia do domów dziecka na terapie, edukację i rozwój dzieci. Pacjentka pozostaje anonimowa — klinika wpłaca zbiorczo. Hasło przewodnie: 'Życie za życie — rekompensata, nie kara'."
         },
         {
           id: "q2",
           question: "Czy to jest kara za aborcję?",
-          answer: "Nie. Fundusz Rekompensaty Społecznej nie jest karą, osądem ani formą pokutowania. To dobrowolna inicjatywa dla osób, które chcą wnieść pozytywny wkład w życie dzieci potrzebujących wsparcia. Nie oceniamy decyzji życiowych - oferujemy możliwość przekształcenia ich w pomoc dla innych."
+          answer: "Nie. Fundusz Rekompensaty Społecznej nie jest karą, osądem ani formą pokutowania. To dobrowolna inicjatywa proponująca kompromis w sporze aborcyjnym — trzecią drogę między skrajnościami. Nie oceniamy decyzji życiowych, proponujemy mechanizm przekształcający konflikt w pomoc dla dzieci."
         },
         {
           id: "q3",
-          question: "Dlaczego kwota rekompensaty odpowiada kosztowi zabiegu?",
-          answer: "Kwota rekompensaty została określona jako równowartość kosztu zabiegu, aby stworzyć symboliczną równowagę - 'życie za życie'. To nie jest wymóg, a jedynie sugestia. Możesz wpłacić dowolną kwotę, która jest dla Ciebie odpowiednia. Nawet mniejsza wpłata może znacząco pomóc dziecku w domu dziecka."
+          question: "Na jakim etapie jest inicjatywa?",
+          answer: "Obecnie zbieramy głosy poparcia dla obywatelskiego projektu ustawy. Po zebraniu wystarczającej liczby podpisów, projekt zostanie złożony do Sejmu RP przez Fundację Destruktura. Równolegle budujemy sieć domów dziecka, które będą beneficjentami Funduszu."
         },
         {
           id: "q4",
-          question: "Czy mogę rozłożyć wpłatę na raty?",
-          answer: "Tak, oferujemy możliwość rozłożenia wpłaty na 3, 6 lub 12 miesięcznych rat. Możesz również skorzystać z opcji 'Podziel z partnerem 50/50', która pozwala na współdzielenie wpłaty. Chcemy, aby każdy mógł wziąć udział, niezależnie od aktualnej sytuacji finansowej."
+          question: "Czy podpis na stronie jest formalnym podpisem pod inicjatywą?",
+          answer: "Podpis na stronie to wyrażenie poparcia społecznego. Formalny podpis pod inicjatywą ustawodawczą można złożyć przez platformę e-Doręczenia na adres Fundacji Destruktura (AE:PL-18803-44688-HHJBV-13). Oba sposoby są wartościowe — im więcej głosów, tym większa szansa na zmianę."
+        },
+        {
+          id: "q4a",
+          question: "Dlaczego kwota rekompensaty odpowiada kosztowi zabiegu?",
+          answer: "Kwota została określona jako równowartość kosztu zabiegu, aby stworzyć symboliczną równowagę — 'życie za życie'. To fundament idei: każda procedura generuje wsparcie dla dziecka w potrzebie. Kwota jest stała i obowiązkowa przy każdym zabiegu, ale przewidujemy opcje ułatwiające jej uiszczenie."
+        },
+        {
+          id: "q4b",
+          question: "Czy mogę nie wpłacać rekompensaty?",
+          answer: "Nie. Projekt ustawy przewiduje, że rekompensata jest obowiązkowym elementem każdego zabiegu — to właśnie ten mechanizm zapewnia stałe wsparcie dla domów dziecka. Jednak dla osób w trudniejszej sytuacji finansowej przewidujemy rozłożenie na raty lub podział z partnerem."
+        },
+        {
+          id: "q4c",
+          question: "Czy mogę rozłożyć wpłatę na raty lub podzielić z partnerem?",
+          answer: "Tak. Projekt przewiduje możliwość rozłożenia wpłaty na 3, 6 lub 12 miesięcznych rat. Dostępna jest również opcja 'Podziel z partnerem 50/50', która pozwala na współdzielenie rekompensaty. To pokazuje, że odpowiedzialność może być wspólna i odciąża finansowo obie strony."
         }
       ]
     },
     {
       icon: Shield,
-      title: "Przejrzystość i bezpieczeństwo",
+      title: "Przejrzystość",
       bgColor: "bg-abotax-success/10",
       textColor: "text-abotax-success",
       questions: [
         {
           id: "q5",
-          question: "Gdzie trafiają wpłacone pieniądze?",
-          answer: "100% wpłat (pomniejszone o minimalne koszty transakcji płatniczych ~2%) trafia bezpośrednio do domów dziecka. Możesz sam wybrać, czy Twoja wpłata ma trafić do automatycznie wybranych miejsc o największej potrzebie, do konkretnego domu dziecka, lub na określony cel (np. zakup konsoli, sprzętu sportowego). Wszystkie przepływy finansowe są transparentne i publikowane w naszych raportach."
+          question: "Gdzie będą trafiać środki z Funduszu?",
+          answer: "100% środków (pomniejszone o koszty obsługi) będzie trafiać bezpośrednio do domów dziecka na konkretne cele: terapie psychologiczne, zajęcia edukacyjne, sprzęt, wycieczki. Darczyńcy będą mogli wybrać konkretną placówkę lub cel. Wszystkie przepływy finansowe będą publikowane w raportach."
         },
         {
           id: "q6",
-          question: "Jak mogę zweryfikować, czy pieniądze trafiły do dzieci?",
-          answer: "Na stronie każdego domu dziecka publikujemy zrealizowane cele wraz ze zdjęciami zakupionych przedmiotów. W sekcji Przejrzystość znajdziesz szczegółowe raporty finansowe, audyty zewnętrzne oraz dokładny podział środków. Jeśli utworzysz konto, otrzymasz powiadomienia o realizacji celów, które wsparłeś."
+          question: "Kto stoi za inicjatywą?",
+          answer: "Inicjatywę wspiera Fundacja Destruktura, która zbiera podpisy i będzie składać projekt do Sejmu RP. Fundacja działa transparentnie — wszystkie raporty finansowe i działania są publicznie dostępne. Możesz złożyć oficjalną petycję przez e-Doręczenia na adres Fundacji."
         },
         {
           id: "q7",
-          question: "Kto przeprowadza audyty finansowe?",
-          answer: "Nasze finanse są regularnie audytowane przez niezależne firmy audytorskie (aktualnie Ernst & Young). Raporty z audytów są publicznie dostępne w sekcji Przejrzystość. Dodatkowo, jako fundacja, podlegamy kontroli ze strony Ministerstwa Rodziny i Polityki Społecznej."
+          question: "Jak będzie zapewniona transparentność wydatków?",
+          answer: "Po wejściu w życie ustawy, każdy dom dziecka będzie publikował cele zbiórki (np. 'Terapia dla 12 dzieci', 'Sprzęt sportowy') wraz ze zdjęciami zrealizowanych zakupów. Raporty finansowe będą audytowane przez niezależne firmy i publicznie dostępne."
         }
       ]
     },
@@ -87,59 +100,18 @@ export default function FAQ() {
       questions: [
         {
           id: "q8",
-          question: "Czy moje dane są bezpieczne?",
-          answer: "Tak. Oferujemy pełną anonimowość - możesz wpłacić rekompensatę bez podawania jakichkolwiek danych osobowych. Jeśli zdecydujesz się utworzyć konto, Twoje dane są szyfrowane i przechowywane zgodnie z RODO. Nigdy nie udostępniamy danych osobowych stronom trzecim."
+          question: "Czy moje dane przy podpisaniu petycji są bezpieczne?",
+          answer: "Tak. Twoje dane są przechowywane zgodnie z RODO. Podajesz tylko imię, nazwisko i email — miasto jest opcjonalne. Jeśli nie zaznaczysz zgody na publiczne wyświetlanie, Twoje dane nie będą nigdzie widoczne. Administratorem danych jest Fundacja Destruktura."
         },
         {
           id: "q9",
-          question: "Czy ktokolwiek dowie się o mojej wpłacie?",
-          answer: "Tylko jeśli sam zdecydujesz się to ujawnić. Wpłaty anonimowe nie są w żaden sposób łączone z danymi osobowymi. Nawet jeśli utworzysz konto, informacja o Twoich wpłatach jest widoczna tylko dla Ciebie. Nie wysyłamy żadnych fizycznych potwierdzeń, które mogłyby ujawnić Twoją aktywność."
+          question: "Czy moje poparcie jest anonimowe?",
+          answer: "Domyślnie tak — Twoje dane nie są publicznie wyświetlane. Możesz zaznaczyć opcję 'Zgadzam się na publiczne wyświetlanie imienia', jeśli chcesz być widoczny na liście popierających. Email nigdy nie jest publicznie ujawniany."
         },
         {
           id: "q10",
-          question: "Czy mogę usunąć swoje konto i dane?",
-          answer: "Tak, w każdej chwili możesz usunąć swoje konto w ustawieniach. Po usunięciu konta wszystkie Twoje dane osobowe zostaną trwale usunięte z naszych systemów w ciągu 30 dni, zgodnie z RODO. Historia wpłat zostanie zanonimizowana."
-        }
-      ]
-    },
-    {
-      icon: CreditCard,
-      title: "Płatności",
-      bgColor: "bg-abotax-primary/10",
-      textColor: "text-abotax-primary",
-      questions: [
-        {
-          id: "q11",
-          question: "Jakie metody płatności są dostępne?",
-          answer: "Akceptujemy płatności BLIK, karty płatnicze (Visa, Mastercard) oraz przelewy bankowe. Wszystkie transakcje są szyfrowane i przetwarzane przez certyfikowanych operatorów płatności."
-        },
-        {
-          id: "q12",
-          question: "Czy mogę otrzymać fakturę lub potwierdzenie wpłaty?",
-          answer: "Tak, po każdej wpłacie możesz pobrać certyfikat potwierdzający darowiznę. Certyfikat jest dostępny w formacie PDF i zawiera informacje o kwocie, dacie oraz celu wpłaty (jeśli został wybrany). Dla celów podatkowych możemy również wystawić zaświadczenie o darowiźnie."
-        },
-        {
-          id: "q13",
-          question: "Czy wpłata jest odliczana od podatku?",
-          answer: "Tak, darowizny na rzecz Funduszu Rekompensaty Społecznej mogą być odliczone od podatku dochodowego, zgodnie z obowiązującymi przepisami o darowiznach na cele charytatywne. Maksymalne odliczenie wynosi 6% dochodu. Wystawiamy zaświadczenia do celów podatkowych."
-        }
-      ]
-    },
-    {
-      icon: Users,
-      title: "Wolontariat",
-      bgColor: "bg-abotax-success/10",
-      textColor: "text-abotax-success",
-      questions: [
-        {
-          id: "q14",
-          question: "Czy mogę być wolontariuszem zamiast wpłacać pieniądze?",
-          answer: "Tak, oferujemy alternatywę w formie wolontariatu. Wymagane jest od 50 do 100 godzin pracy wolontariackiej w wybranym domu dziecka. Program obejmuje wstępne szkolenie online, przypisanie do najbliższego domu dziecka oraz system śledzenia godzin. Po ukończeniu wymaganej liczby godzin otrzymasz oficjalny certyfikat."
-        },
-        {
-          id: "q15",
-          question: "Jak wygląda szkolenie dla wolontariuszy?",
-          answer: "Szkolenie to krótki moduł online (ok. 2-3 godziny), który przygotowuje do pracy z dziećmi w domach dziecka. Obejmuje podstawy psychologii dziecięcej, zasady bezpieczeństwa oraz informacje o specyfice pracy w placówkach opiekuńczych. Po ukończeniu szkolenia i pozytywnej weryfikacji zostaniesz przypisany do najbliższego domu dziecka."
+          question: "Czy mogę usunąć swoje dane?",
+          answer: "Tak, zgodnie z RODO masz prawo do usunięcia swoich danych. Napisz na kontakt@abotax.pl z prośbą o usunięcie, a Twoje dane zostaną trwale usunięte z naszych systemów."
         }
       ]
     },
@@ -150,19 +122,19 @@ export default function FAQ() {
       textColor: "text-abotax-secondary",
       questions: [
         {
-          id: "q16",
-          question: "Jakie domy dziecka są objęte programem?",
-          answer: "W programie uczestniczy ponad 120 domów dziecka z całej Polski. Każda placówka przeszła proces weryfikacji i spełnia nasze standardy transparentności. Lista wszystkich domów jest dostępna w sekcji 'Domy dziecka', gdzie możesz zobaczyć ich profile, aktualne cele i historię wsparcia."
+          id: "q11",
+          question: "Jakie domy dziecka będą objęte programem?",
+          answer: "Program jest na etapie budowania sieci placówek. Docelowo chcemy objąć wsparciem jak najwięcej domów dziecka w Polsce. Każda placówka przejdzie proces weryfikacji i będzie musiała spełniać standardy transparentności. Jeśli znasz placówkę zainteresowaną pilotażem — napisz do nas."
         },
         {
-          id: "q17",
-          question: "Jak mogę zobaczyć, na co konkretnie przeznaczane są środki?",
-          answer: "Każdy dom dziecka publikuje konkretne cele zbiórki (np. 'Konsola PS5 dla świetlicy', 'Sprzęt sportowy'). Możesz śledzić postęp realizacji celów w czasie rzeczywistym. Po osiągnięciu celu publikowane są zdjęcia zakupionych przedmiotów oraz podziękowania od personelu."
+          id: "q12",
+          question: "Ile dzieci może skorzystać z Funduszu?",
+          answer: "W Polsce w domach dziecka przebywa około 17 100 dzieci. Szacujemy, że Fundusz może generować około 125 mln zł rocznie na terapie, edukację i rozwój tych dzieci. To realna pomoc, która może zmienić ich życie."
         },
         {
-          id: "q18",
-          question: "Czy jako dom dziecka możemy dołączyć do programu?",
-          answer: "Tak, zapraszamy wszystkie placówki opiekuńczo-wychowawcze do udziału w programie. Proces rejestracji obejmuje weryfikację statusu prawnego, wizytę naszego koordynatora oraz podpisanie umowy o współpracy. Skontaktuj się z nami przez formularz kontaktowy lub napisz na kontakt@abotax.pl."
+          id: "q13",
+          question: "Czy jako dom dziecka możemy dołączyć do pilotażu?",
+          answer: "Tak! Jesteśmy na etapie budowania sieci placówek. Skontaktuj się przez formularz kontaktowy lub napisz na kontakt@abotax.pl — odezwiemy się z informacjami o kolejnych krokach i wymaganiach dotyczących transparentności."
         }
       ]
     }

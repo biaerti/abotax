@@ -29,6 +29,8 @@ import Dashboard from './pages/Dashboard'
 import HomeProfile from './pages/HomeProfile'
 import PodpiszPetycje from './pages/PodpiszPetycje'
 import GeneratorIG from './pages/GeneratorIG'
+import Regulamin from './pages/Regulamin'
+import PolitykaPrywatnosci from './pages/PolitykaPrywatnosci'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -67,6 +69,8 @@ function App() {
           <Route path="/Impact" element={<PageWrapper pageName="Impact"><Impact /></PageWrapper>} />
           <Route path="/PodpiszPetycje" element={<PageWrapper pageName="PodpiszPetycje"><PodpiszPetycje /></PageWrapper>} />
           <Route path="/GeneratorIG" element={<PageWrapper pageName="GeneratorIG"><GeneratorIG /></PageWrapper>} />
+          <Route path="/Regulamin" element={<PageWrapper pageName="Regulamin"><Regulamin /></PageWrapper>} />
+          <Route path="/PolitykaPrywatnosci" element={<PageWrapper pageName="PolitykaPrywatnosci"><PolitykaPrywatnosci /></PageWrapper>} />
           <Route path="/Dashboard" element={<PageWrapper pageName="Dashboard"><Dashboard /></PageWrapper>} />
           <Route path="/HomeProfile/:id" element={<PageWrapper pageName="HomeProfile"><HomeProfile /></PageWrapper>} />
         </Routes>

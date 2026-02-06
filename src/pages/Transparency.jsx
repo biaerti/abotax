@@ -100,15 +100,19 @@ export default function Transparency() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-official-gold/20 rounded-full text-official-gold text-sm font-medium mb-6 border border-official-gold/30">
               <Shield className="w-4 h-4" />
-              Transparentność finansowa
+              Wizja transparentności
             </div>
             <h1 className="text-4xl lg:text-5xl font-serif font-bold mb-4">
               100% Przejrzystości
             </h1>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              Każda złotówka jest śledzona i raportowana. Zero ukrytych kosztów.
+              Każda złotówka będzie śledzona i raportowana. Zero ukrytych kosztów.
               Pełna transparentność to fundament naszego działania.
             </p>
+            <div className="mt-6 inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg text-white/70 text-sm border border-white/20">
+              <FileText className="w-4 h-4" />
+              Poniższe dane są przykładowe — pokazują jak będzie wyglądać raportowanie po uruchomieniu Funduszu
+            </div>
           </motion.div>
         </div>
       </section>
@@ -301,7 +305,10 @@ export default function Transparency() {
 
             <TabsContent value="distribution">
               <div className="bg-white rounded-2xl p-6 lg:p-8 border border-official-navy/10">
-                <h3 className="text-xl font-serif font-bold text-official-navy mb-6">Szczegółowa dystrybucja środków</h3>
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-xl font-serif font-bold text-official-navy">Przykładowa dystrybucja środków</h3>
+                  <span className="text-xs bg-amber-100 text-amber-700 px-3 py-1 rounded-full">Dane przykładowe</span>
+                </div>
                 
                 <div className="grid lg:grid-cols-2 gap-8">
                   <div>
@@ -360,7 +367,10 @@ export default function Transparency() {
 
             <TabsContent value="reports">
               <div className="bg-white rounded-2xl p-6 lg:p-8 border border-official-navy/10">
-                <h3 className="text-xl font-serif font-bold text-official-navy mb-6">Raporty do pobrania</h3>
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-xl font-serif font-bold text-official-navy">Przykładowe raporty</h3>
+                  <span className="text-xs bg-amber-100 text-amber-700 px-3 py-1 rounded-full">Dane przykładowe</span>
+                </div>
                 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {[
@@ -399,15 +409,14 @@ export default function Transparency() {
                 </div>
 
                 <div className="mt-8 p-6 bg-official-cream rounded-xl">
-                  <h4 className="font-semibold text-official-navy mb-2">Audyty zewnętrzne</h4>
+                  <h4 className="font-semibold text-official-navy mb-2">Planowane audyty zewnętrzne</h4>
                   <p className="text-official-navy/70 mb-4">
-                    Nasze finanse są regularnie weryfikowane przez niezależnych audytorów. 
-                    Ostatni audyt przeprowadzono w styczniu 2024 przez firmę Ernst & Young.
+                    Po uruchomieniu Funduszu finanse będą regularnie weryfikowane przez niezależnych audytorów.
+                    Raporty audytowe będą publicznie dostępne na tej stronie.
                   </p>
-                  <Button variant="outline" className="border-abotax-primary text-abotax-primary">
-                    <FileText className="w-4 h-4 mr-2" />
-                    Zobacz pełny raport audytowy
-                  </Button>
+                  <p className="text-sm text-amber-700 bg-amber-50 px-3 py-2 rounded-lg inline-block">
+                    Fundusz jeszcze nie działa — raporty pojawią się po uchwaleniu ustawy
+                  </p>
                 </div>
               </div>
             </TabsContent>
@@ -424,11 +433,13 @@ export default function Transparency() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="text-3xl font-serif font-bold text-official-navy mb-6">Metodologia</h2>
+            <h2 className="text-3xl font-serif font-bold text-official-navy mb-6">Zasady transparentności</h2>
             <p className="text-official-navy/70 leading-relaxed mb-8">
-              Wszystkie dane prezentowane na tej stronie pochodzą z naszego systemu księgowego 
-              i są aktualizowane w czasie rzeczywistym. Każda transakcja jest rejestrowana 
-              z pełną historią i jest dostępna do wglądu podczas audytów.
+              Po uruchomieniu Funduszu wszystkie dane będą pochodzić z systemu księgowego
+              i aktualizowane w czasie rzeczywistym. Każda transakcja będzie rejestrowana
+              z pełną historią i dostępna do wglądu podczas audytów.
+              <strong className="text-official-navy"> Maksymalnie 2% środków może być przeznaczone na administrację</strong> —
+              reszta trafia bezpośrednio do domów dziecka.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="p-4 rounded-xl bg-official-cream">

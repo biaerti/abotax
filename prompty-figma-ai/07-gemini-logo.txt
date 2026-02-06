@@ -1,0 +1,61 @@
+PROMPT DO GEMINI: Logo AboTax — Fundusz Rekompensaty Społecznej
+================================================================
+
+Stwórz logo dla inicjatywy obywatelskiej "AboTax — Fundusz Rekompensaty Społecznej".
+
+=== KONTEKST ===
+AboTax to obywatelski projekt ustawy — fundusz społeczny, który ma wspierać dzieci
+w domach dziecka. To inicjatywa łącząca różne strony sporu — kompromis i trzecia droga.
+Logo musi budzić zaufanie, być godne i oficjalne — jak instytucja państwowa lub fundacja.
+
+=== WYMAGANIA ===
+Emocje: zaufanie, bezpieczeństwo, godność, oficjalność, kompromis
+Ton: poważny ale przystępny, rządowy ale ludzki
+Zastosowanie: strona internetowa, social media, dokumenty, materiały drukowane
+
+=== STYL ===
+- Minimalistyczny, profesjonalny, instytucjonalny
+- Inspiracja: logo polskich instytucji publicznych (NIK, RPO, ZUS), fundacji (WOŚP logo simplicity)
+- ŻADNYCH: clipartów, stockowych ikon, overdesignu, gradientów w samym logo
+- Logo musi działać w jednym kolorze (monochromatycznie) i w małym rozmiarze (favicon)
+
+=== SYMBOL / IKONA ===
+Zaproponuj kilka wariantów symbolu, np.:
+1. **Waga** — symbol równowagi i sprawiedliwości (nawiązanie do kompromisu)
+2. **Dłonie chroniące** — dwie ręce obejmujące coś (ochrona, troska)
+3. **Tarcza z sercem** — bezpieczeństwo + empatia
+4. **Liść/gałązka** — wzrost, nowe szanse, nadzieja
+5. **Abstrakcyjna forma** — np. dwie połączone formy symbolizujące dwie strony łączące się
+
+Preferowane: waga lub tarcza z elementem ludzkim/serca
+
+=== TYPOGRAFIA ===
+- "AboTax" — czytelna, serif lub sans-serif o umiarkowanej grubości
+- Pod spodem opcjonalnie: "Fundusz Rekompensaty Społecznej" (mniejsza, cieńsza)
+- Nie używaj overdesignu w literach — proste, czyste krojenie
+
+=== KOLORY ===
+Logo powinno działać w tych wariantach:
+1. Pełny kolor: granat (#1a365d) + złoty akcent (#c9a227)
+2. Monochromatyczny: sam granat (#1a365d)
+3. Inwersja: biały na ciemnym tle
+4. Skala szarości
+
+Główne kolory:
+- Granat (#1a365d) — godność, oficjalność, zaufanie
+- Złoty (#c9a227) — szlachetność, wartość (używany oszczędnie, np. jako akcent)
+- Teal (#1A5F5A) — opcjonalnie jako kolor towarzyszący
+
+=== WARIANTY DO WYGENEROWANIA ===
+1. Logo pełne (ikona + tekst "AboTax" obok)
+2. Logo pełne (ikona + tekst pod spodem, wycentrowane)
+3. Sama ikona (do faviconu, awatarów social media)
+4. Wersja jednokolorowa (granat)
+5. Wersja negatywowa (biały na ciemnym tle)
+
+=== WAŻNE ===
+- Logo NIE powinno wyglądać jak startup tech — bardziej jak fundacja lub instytucja państwowa
+- Unikaj: okrągłych badge'ów z dużą ilością tekstu, skomplikowanych herbów
+- Logo musi być rozpoznawalne w rozmiarze 32x32px (favicon)
+- Preferuj prostotę — mniej elementów = lepiej
+- Musi budzić natychmiastowe zaufanie — to logo, na które ludzie patrzą decydując czy podpisać petycję

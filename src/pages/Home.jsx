@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import WhyAboTax from "@/components/home/WhyAboTax";
+import { db } from "@/lib/supabase";
 
 // Animated counter component
 function AnimatedCounter({ end, duration = 2000, suffix = "", prefix = "" }) {
@@ -70,8 +71,14 @@ export default function Home() {
   const heroOpacity = useTransform(scrollY, [0, 300], [1, 0]);
   const heroScale = useTransform(scrollY, [0, 300], [1, 0.95]);
 
-  // Simulated petition count (will connect to Supabase later)
-  const [petitionCount] = useState(127847);
+  // Real petition count from Supabase
+  const [petitionCount, setPetitionCount] = useState(0);
+
+  useEffect(() => {
+    db.petition.getCount().then(setPetitionCount);
+    const unsubscribe = db.petition.subscribeToCount(setPetitionCount);
+    return unsubscribe;
+  }, []);
 
   return (
     <div className="bg-official-cream">
@@ -98,26 +105,12 @@ export default function Home() {
                 <span className="block text-abotax-primary mt-2">Społecznej</span>
               </h1>
 
-              <p className="text-xl text-official-navy/70 mb-8 leading-relaxed max-w-xl font-light">
-                Systemowe rozwiązanie łączące prawa jednostki z odpowiedzialnością społeczną.
-                <span className="font-medium text-official-navy"> Życie za życie — rekompensata, nie kara.</span>
+              <p className="text-xl text-official-navy/70 mb-4 leading-relaxed max-w-xl font-light">
+                Obywatelski projekt ustawy: za każdy zabieg — równowartość kosztów trafia do domów dziecka.
               </p>
-
-              {/* Key points */}
-              <div className="flex flex-wrap gap-6 mb-10">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-abotax-primary/10 flex items-center justify-center">
-                    <Lock className="w-5 h-5 text-abotax-primary" />
-                  </div>
-                  <span className="text-sm font-medium text-official-navy">Pełna anonimowość</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-abotax-primary/10 flex items-center justify-center">
-                    <Eye className="w-5 h-5 text-abotax-primary" />
-                  </div>
-                  <span className="text-sm font-medium text-official-navy">100% transparentności</span>
-                </div>
-              </div>
+              <p className="text-lg font-serif font-semibold text-official-navy mb-8">
+                Życie za życie — rekompensata, nie kara.
+              </p>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
@@ -166,7 +159,7 @@ export default function Home() {
                           <Scale className="w-6 h-6" />
                         </div>
                         <div>
-                          <p className="text-xs text-white/70 uppercase tracking-wider">Rzeczpospolita Polska</p>
+                          <p className="text-xs text-white/70 uppercase tracking-wider">Inicjatywa obywatelska</p>
                           <p className="font-serif font-bold">Projekt Ustawy</p>
                         </div>
                       </div>
@@ -185,23 +178,33 @@ export default function Home() {
                     <h3 className="text-xl font-serif">o Funduszu Rekompensaty Społecznej</h3>
                   </div>
 
-                  {/* Document content preview */}
-                  <div className="p-6 space-y-4">
-                    <div className="space-y-2">
-                      <p className="text-xs text-official-navy/50 uppercase tracking-wider">Artykuł 1 — Cel ustawy</p>
-                      <p className="text-sm text-official-navy/80 leading-relaxed">
-                        Ustawa określa zasady funkcjonowania Funduszu Rekompensaty Społecznej,
-                        którego celem jest zapewnienie wsparcia finansowego dla dzieci
-                        pozbawionych opieki rodzicielskiej...
-                      </p>
-                    </div>
+                  {/* Document content - key points */}
+                  <div className="p-6 space-y-3">
+                    {[
+                      { icon: Building2, text: "Klinika dodaje opłatę solidarnościową do faktury" },
+                      { icon: Lock, text: "Pacjentka pozostaje w pełni anonimowa" },
+                      { icon: Heart, text: "100% środków trafia do domów dziecka" }
+                    ].map((item, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.6 + i * 0.15 }}
+                        className="flex items-center gap-3"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-abotax-primary/10 flex items-center justify-center flex-shrink-0">
+                          <item.icon className="w-4 h-4 text-abotax-primary" />
+                        </div>
+                        <span className="text-sm text-official-navy/80">{item.text}</span>
+                      </motion.div>
+                    ))}
 
-                    <div className="h-px bg-official-navy/10" />
+                    <div className="h-px bg-official-navy/10 !mt-4" />
 
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-official-navy/50">18 artykułów</span>
-                      <Link to={createPageUrl("PodpiszPetycje")} className="text-abotax-primary font-medium hover:underline">
-                        Czytaj całość →
+                    <div className="flex items-center justify-between text-sm !mt-3">
+                      <span className="text-official-navy/50 font-serif italic">Życie za życie</span>
+                      <Link to={createPageUrl("ProjektUstawy")} className="text-abotax-primary font-medium hover:underline">
+                        Czytaj projekt →
                       </Link>
                     </div>
                   </div>

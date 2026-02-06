@@ -65,7 +65,7 @@ export default function PodpiszPetycje() {
   const [emailSent, setEmailSent] = useState(false);
   const [customReason, setCustomReason] = useState("");
   const [showCustomInput, setShowCustomInput] = useState(false);
-  const [signatureCount, setSignatureCount] = useState(12847);
+  const [signatureCount, setSignatureCount] = useState(0);
   const imageRef = useRef(null);
 
   const goalCount = 150000;
@@ -322,31 +322,29 @@ export default function PodpiszPetycje() {
                           </div>
                         </div>
 
-                        <div className="space-y-3 pt-2">
-                          <div className="flex items-start space-x-3">
+                        <div className="space-y-2 pt-2">
+                          <label htmlFor="isPublic" className="flex items-center gap-2 cursor-pointer">
                             <Checkbox
                               id="isPublic"
                               checked={formData.isPublic}
                               onCheckedChange={(checked) => setFormData({...formData, isPublic: checked})}
-                              className="mt-0.5"
                             />
-                            <Label htmlFor="isPublic" className="text-sm text-official-navy/70 cursor-pointer font-normal">
+                            <span className="text-sm text-official-navy/70">
                               Zgadzam się na publiczne wyświetlanie imienia
-                            </Label>
-                          </div>
+                            </span>
+                          </label>
 
-                          <div className="flex items-start space-x-3">
+                          <label htmlFor="acceptTerms" className="flex items-center gap-2 cursor-pointer">
                             <Checkbox
                               id="acceptTerms"
                               checked={formData.acceptTerms}
                               onCheckedChange={(checked) => setFormData({...formData, acceptTerms: checked})}
                               required
-                              className="mt-0.5"
                             />
-                            <Label htmlFor="acceptTerms" className="text-sm text-official-navy/70 cursor-pointer font-normal">
-                              Akceptuję <a href="#" className="text-abotax-primary underline">regulamin</a> i <a href="#" className="text-abotax-primary underline">politykę prywatności</a> *
-                            </Label>
-                          </div>
+                            <span className="text-sm text-official-navy/70">
+                              Akceptuję <Link to={createPageUrl("Regulamin")} className="text-abotax-primary underline underline-offset-2 hover:text-abotax-primary/80">regulamin</Link> i <Link to={createPageUrl("PolitykaPrywatnosci")} className="text-abotax-primary underline underline-offset-2 hover:text-abotax-primary/80">politykę prywatności</Link> *
+                            </span>
+                          </label>
                         </div>
 
                         <Button
@@ -381,18 +379,20 @@ export default function PodpiszPetycje() {
                       <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="py-4"
+                        className="py-2"
                       >
-                        <div className="text-center mb-6">
-                          <div className="w-16 h-16 bg-abotax-success/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                            <CheckCircle2 className="w-8 h-8 text-abotax-primary" />
+                        <div className="flex items-center gap-3 mb-4 p-3 bg-abotax-success/10 rounded-lg">
+                          <div className="flex-1">
+                            <h3 className="text-lg font-bold text-official-navy">
+                              Dziękujemy, {formData.firstName}!
+                            </h3>
+                            <p className="text-official-navy/70 text-sm">
+                              Twój głos został zarejestrowany.
+                            </p>
                           </div>
-                          <h3 className="text-xl font-bold text-official-navy mb-1">
-                            Dziękujemy, {formData.firstName}!
-                          </h3>
-                          <p className="text-official-navy/70 text-sm">
-                            Twój głos został zarejestrowany.
-                          </p>
+                          <div className="w-10 h-10 bg-abotax-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                            <CheckCircle2 className="w-5 h-5 text-abotax-primary" />
+                          </div>
                         </div>
 
                         {!generatedImage ? (
@@ -794,50 +794,55 @@ export default function PodpiszPetycje() {
         </div>
       </section>
 
-      {/* Hidden canvas for image generation */}
+      {/* Hidden canvas for image generation - Square 1080x1080 (scaled 3x = 360x360) */}
       <div className="fixed -left-[9999px] top-0">
         <div
           ref={imageRef}
-          className="w-[360px] h-[640px]"
+          className="w-[360px] h-[360px]"
           style={{
             background: "linear-gradient(135deg, #1a365d 0%, #1A5F5A 100%)"
           }}
         >
-          <div className="h-full flex flex-col justify-between p-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                  <Scale className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <p className="text-white/70 text-xs">Inicjatywa obywatelska</p>
-                  <p className="text-[#c9a227] font-bold text-sm">AboTax</p>
+          <div className="h-full flex flex-col justify-between p-6">
+            {/* Top - Logo & title */}
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <img
+                  src="/LOGO_abotax_noBG.png"
+                  alt="AboTax"
+                  className="w-8 h-8 object-contain"
+                  crossOrigin="anonymous"
+                />
+                <div className="text-left">
+                  <p className="text-white/50 text-[9px] leading-tight">Inicjatywa obywatelska</p>
+                  <p className="text-[#c9a227] font-bold text-[11px]">AboTax</p>
                 </div>
               </div>
-              <h2 className="text-white text-3xl font-serif font-bold leading-tight mb-2">
-                Popieram<br />
-                <span className="text-[#c9a227]">Fundusz Rekompensaty</span>
+              <h2 className="text-white text-lg font-serif font-bold leading-tight">
+                Popieram <span className="text-[#c9a227]">Fundusz Rekompensaty</span>
               </h2>
             </div>
 
-            <div className="flex-1 flex items-center justify-center py-8">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                <p className="text-white text-xl font-medium text-center leading-relaxed">
+            {/* Middle - Reason */}
+            <div className="flex-1 flex items-center justify-center py-3">
+              <div className="w-full bg-white/10 rounded-lg p-3 border border-white/15">
+                <p className="text-white text-sm font-medium leading-snug" style={{ textAlign: 'center' }}>
                   {selectedReason?.text || ""}
                 </p>
               </div>
             </div>
 
+            {/* Bottom - branding + empty space for @mention */}
             <div className="text-center">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <Heart className="w-5 h-5 text-[#c9a227]" />
-                <span className="text-white/90 text-sm">Życie za życie — rekompensata, nie kara</span>
+              <p className="text-white/60 text-[10px] mb-2" style={{ textAlign: 'center' }}>
+                <Heart className="w-3 h-3 text-[#c9a227] inline-block align-middle mr-1" />
+                <span className="align-middle">Życie za życie — rekompensata, nie kara</span>
+              </p>
+              {/* Empty space where user will tag @abotax.pl */}
+              <div className="h-5 flex items-center justify-center">
+                <span className="text-white/30 text-[10px]">@ ___________</span>
               </div>
-              <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
-                <Instagram className="w-4 h-4 text-white" />
-                <span className="text-white text-sm font-medium">@abotax.pl</span>
-              </div>
-              <p className="text-white/60 text-xs mt-3">abotax.pl • #AboTax</p>
+              <p className="text-white/40 text-[9px]">abotax.pl • #AboTax</p>
             </div>
           </div>
         </div>

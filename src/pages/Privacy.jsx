@@ -433,6 +433,45 @@ export default function Privacy() {
         </div>
       </section>
 
+      {/* RODO - Administrator danych */}
+      <section className="py-16 lg:py-20 bg-official-cream">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-2xl lg:text-3xl font-serif font-bold text-official-navy mb-6">
+              Administrator danych osobowych
+            </h2>
+            <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-sm border border-official-navy/10 space-y-4 text-official-navy/80 leading-relaxed">
+              <p>
+                Administratorem danych osobowych zbieranych za pośrednictwem strony abotax.pl
+                (formularz petycji, formularz kontaktowy) jest{" "}
+                <strong className="text-official-navy">Fundacja Destruktura</strong>,
+                z siedzibą w Polsce, kontakt:{" "}
+                <a href="mailto:kontakt@abotax.pl" className="text-abotax-primary underline">kontakt@abotax.pl</a>.
+              </p>
+              <p>
+                Dane osobowe (imię, nazwisko, adres e-mail, miejscowość) są przetwarzane wyłącznie
+                w celu rejestracji poparcia dla petycji oraz komunikacji z osobami popierającymi inicjatywę,
+                na podstawie dobrowolnej zgody (art. 6 ust. 1 lit. a RODO).
+              </p>
+              <p>
+                Masz prawo do dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania
+                oraz cofnięcia zgody w dowolnym momencie. W celu realizacji tych praw skontaktuj się z nami
+                pod adresem{" "}
+                <a href="mailto:kontakt@abotax.pl" className="text-abotax-primary underline">kontakt@abotax.pl</a>.
+              </p>
+              <p className="text-sm text-official-navy/60">
+                Dane nie są przekazywane podmiotom trzecim, z wyjątkiem sytuacji wymaganych prawem.
+                Przysługuje Ci również prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 bg-gradient-to-br from-official-navy via-official-navy to-official-navy/90">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

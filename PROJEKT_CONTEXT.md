@@ -77,7 +77,7 @@ Stworzyć **wiralową stronę**, która wygląda jak **oficjalna strona rządowa
 
 ### Strony:
 - [x] **/** - Landing page (Home.jsx) - hero, jak działa system, statystyki
-- [x] **/podpiszpetycje** - Strona petycji z formularzem + sekcja ePUAP
+- [x] **/podpiszpetycje** - Petycja z formularzem + generacja obrazka + e-Doręczenia
 - [x] **/projektustawy** - Treść ustawy z małym widgetem petycji
 - [x] **/generatorig** - Generator obrazków na Instagram Story
 - [x] **/homesdirectory** - Domy dziecka z wyjaśnieniem mechanizmu tokenu
@@ -97,9 +97,16 @@ Stworzyć **wiralową stronę**, która wygląda jak **oficjalna strona rządowa
 - [x] Poprawione statystyki (17 100 dzieci / ~2 140 opiekunów)
 - [x] Poprawiony opis opłaty (100% wartości zabiegu)
 - [x] Generator IG Story z preset reasons + custom text
-- [x] Link do generatora po podpisaniu petycji
 - [x] Wyjaśnienie mechanizmu tokenu na stronie domów dziecka
 - [x] Demo banner "To są przykładowe placówki"
+- [x] **Formularz petycji → Supabase** (real-time licznik podpisów)
+- [x] **Po podpisaniu:** wybór "Popieram AboTax bo..." (6 presetów + własny tekst)
+- [x] **Auto-generacja obrazka** po wyborze powodu (html2canvas)
+- [x] **Pobierz / IG @abotax.pl / Kopiuj link / Inny powód** — przyciski
+- [x] **Email wysyłany automatycznie** przez Resend po podpisaniu
+- [x] **e-Doręczenia** z adresem Fundacji Destruktura (AE:PL-18803-44688-HHJBV-13)
+- [x] **Vercel deploy** (vercel.json + build fix)
+- [x] **Prompty do Figma AI** w folderze `prompty-figma-ai/`
 
 ---
 
@@ -160,17 +167,28 @@ Stworzyć **wiralową stronę**, która wygląda jak **oficjalna strona rządowa
 - [ ] **Hero powinien zaczynać od:** "FUNDUSZ REKOMPENSATY SPOŁECZNEJ" (główny nagłówek)
 - [ ] Górny pasek już mówi "Inicjatywa obywatelska | AboTax | Projekt ustawy..." więc nie powtarzać w hero
 
-### Supabase (gotowe do wdrożenia):
-- [x] Schema SQL w `supabase/schema.sql`
+### Supabase (SKONFIGUROWANE):
+- [x] Projekt: `uiljtfusyuwyfljkmnkm.supabase.co`
+- [x] Schema SQL w `supabase/schema.sql` — **URUCHOMIONY**
 - [x] Tabele: petition_signatures, childrens_homes, goals
 - [x] Demo dane: 3 domy dziecka z celami
 - [x] RLS policies
 - [x] Klient w `src/lib/supabase.js`
+- [x] Real-time subscription na petition_signatures
 
-### Email (gotowe do wdrożenia):
-- [x] Edge Function w `supabase/functions/send-petition-email/`
-- [x] Szablony HTML: confirmation, reminder, share
-- [x] Konfiguracja SMTP w .env.example
+### Email (Mailgun - SKONFIGUROWANE):
+- [x] Edge Function zdeployowana na Supabase
+- [x] **Mailgun API** — from: petycja@abotax.pl
+- [x] Szablony HTML: confirmation (z powodem), reminder, share
+- [x] CTA do e-Doręczeń + Fundacja Destruktura w każdym mailu
+- [x] Secrets ustawione: MAILGUN_API_KEY, MAILGUN_DOMAIN, MAILGUN_REGION
+- [ ] **DO ZROBIENIA:** Zweryfikuj domenę abotax.pl w Mailgun (DNS records)
+
+### e-Doręczenia / Fundacja Destruktura:
+- [x] Adres: `AE:PL-18803-44688-HHJBV-13`
+- [x] Instrukcje na stronie (3 kroki)
+- [x] CTA w emailach
+- [ ] ePUAP nie ma API do integracji — jedynie link do edoreczenia.gov.pl
 
 ---
 
