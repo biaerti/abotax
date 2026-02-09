@@ -1,0 +1,27 @@
+PROMPT FIGMA AI — Facebook Post (obraz)
+Post 01: Czym jest AboTax?
+=====================================
+
+STYL: oficjalny/rzadowy, minimalistyczny. Kolory: navy #1a365d, teal #1A5F5A, zloty #c9a227, cream #faf8f5. Gradient hero: 135deg #1a365d -> #1A5F5A. Fonty: serif bold na naglowki, sans-serif na body. Ton: merytoryczny, neutralny politycznie. Branding: "AboTax" zloty serif bold, @abotax.pl, #AboTax.
+
+FORMAT: Facebook post, 1200x630px, pojedynczy obraz
+
+=== OPIS GRAFIKI ===
+Tlo: gradient hero (135deg, #1a365d -> #1A5F5A)
+
+Lewa strona (60%):
+- Naglowek: "Czym jest AboTax?" — bialy, serif, bold, 40px
+- Podnaglowek: "Trzecia droga w sporze aborcyjnym" — bialy 80% opacity, sans-serif, 18px
+- Trzy bullet points (bialy, sans-serif, 16px, z ikonami teal w kolkach):
+  * Ikona waga: "Aborcja legalna + rekompensata solidarnosciowa"
+  * Ikona serce: "100% srodkow trafia do domow dziecka"
+  * Ikona tarcza: "Pelna anonimowosc pacjentki"
+
+Prawa strona (40%):
+- Duzy napis: "125 mln zl" — #c9a227, serif, bold, 56px
+- Pod spodem: "rocznie dla dzieci" — bialy 70%, sans-serif, 16px
+- Tlo: biale kolko 10% opacity jako dekoracja za liczba
+
+Dol (pelna szerokosc):
+- Cienka biala linia (1px, 20% opacity)
+- "abotax.pl" — bialy, bold, 14px (lewo) | "@abotax.pl" — bialy 60%, 14px (prawo)

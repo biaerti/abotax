@@ -36,7 +36,28 @@ interface EmailPayload {
   firstName: string
   type: "confirmation" | "followup" | "share"
   reason?: string
+  reasonId?: string
   imageUrl?: string
+}
+
+// Map reason IDs to plansza filenames
+const PLANSZA_MAP: Record<string, string> = {
+  compromise: "ABOTAX_KOMPROMISY.png",
+  children: "ABOTAX_DZIECI_ZASLUGUJA.png",
+  war_end: "ABOTAX_KONIEC_Wojny.png",
+  no_sides: "ABOTAX_OBOZ.png",
+  stigma: "ABOTAX_STYGMATYZOWANIA.png",
+  solution: "ABOTAX_DA_SIE_ROZWIAZAC.png",
+  custom: "ABOTAX_PUSTE.png",
+}
+
+function getPlanszaUrl(reasonId?: string): string {
+  const filename = (reasonId && PLANSZA_MAP[reasonId]) || PLANSZA_MAP.custom
+  return `${SOCIAL_LINKS.website}/plansze/${filename}`
+}
+
+function getPlanszaFilename(reasonId?: string): string {
+  return (reasonId && PLANSZA_MAP[reasonId]) || PLANSZA_MAP.custom
 }
 
 // Get Supabase client for DB operations
@@ -54,7 +75,7 @@ serve(async (req) => {
   }
 
   try {
-    const { to, firstName, type, reason, imageUrl } = await req.json() as EmailPayload
+    const { to, firstName, type, reason, reasonId, imageUrl } = await req.json() as EmailPayload
 
     let subject = ""
     let html = ""
@@ -62,7 +83,7 @@ serve(async (req) => {
     switch (type) {
       case "confirmation":
         subject = "Dziękujemy za poparcie AboTax!"
-        html = generateConfirmationEmail(firstName, reason, imageUrl)
+        html = generateConfirmationEmail(firstName, reason, reasonId, imageUrl)
 
         // Mark that confirmation was sent (for follow-up logic)
         const supabase = getSupabaseClient()
@@ -157,7 +178,11 @@ serve(async (req) => {
   }
 })
 
-function generateConfirmationEmail(firstName: string, reason?: string, imageUrl?: string): string {
+function generateConfirmationEmail(firstName: string, reason?: string, reasonId?: string, imageUrl?: string): string {
+  const planszaUrl = getPlanszaUrl(reasonId)
+  const planszaFilename = getPlanszaFilename(reasonId)
+  const isCustom = reasonId === "custom"
+
   const reasonBlock = reason ? `
       <div style="background: linear-gradient(135deg, #1a365d 0%, #1A5F5A 100%); padding: 24px; border-radius: 12px; margin: 24px 0; text-align: center;">
         <p style="color: rgba(255,255,255,0.7); font-size: 12px; margin: 0 0 8px 0;">Twój powód poparcia:</p>
@@ -166,11 +191,10 @@ function generateConfirmationEmail(firstName: string, reason?: string, imageUrl?
       </div>
   ` : '';
 
-  const imageBlock = imageUrl ? `
-      <div style="text-align: center; margin: 24px 0;">
-        <p style="color: #666; margin-bottom: 12px;">Twoja plansza poparcia:</p>
-        <img src="${imageUrl}" alt="Popieram AboTax" style="max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
-      </div>
+  const customNote = isCustom ? `
+        <p style="color: #666; font-size: 13px; margin-top: 12px;">
+          Na planszy jest puste miejsce — wpisz swój powód jako tekst na IG Story w pustym polu.
+        </p>
   ` : '';
 
   return `
@@ -180,95 +204,124 @@ function generateConfirmationEmail(firstName: string, reason?: string, imageUrl?
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dziękujemy za poparcie!</title>
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background-color: #faf8f5; }
-    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-    .header { background: linear-gradient(135deg, #1a365d 0%, #1A5F5A 100%); padding: 40px; text-align: center; border-radius: 12px 12px 0 0; }
-    .header h1 { color: white; margin: 0; font-size: 24px; }
-    .header .gold { color: #c9a227; }
-    .content { background: white; padding: 40px; border-radius: 0 0 12px 12px; }
-    .button { display: inline-block; background: #1A5F5A; color: white; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: 600; }
-    .button-navy { display: inline-block; background: #1a365d; color: white; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: 600; }
-    .button-ig { display: inline-block; background: linear-gradient(135deg, #7c3aed, #ec4899); color: white; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: 600; }
-    .button-fb { display: inline-block; background: #1877f2; color: white; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: 600; }
-    .footer { text-align: center; padding: 20px; color: #666; font-size: 12px; }
-    .social { margin-top: 20px; }
-    .social a { display: inline-block; margin: 0 10px; color: #1a365d; text-decoration: none; }
-  </style>
 </head>
-<body>
-  <div class="container">
-    <div class="header">
-      <h1>Dziękujemy, <span class="gold">${firstName}</span>!</h1>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background-color: #faf8f5;">
+  <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+    <div style="background: linear-gradient(135deg, #1a365d 0%, #1A5F5A 100%); padding: 32px 40px 40px; text-align: center; border-radius: 12px 12px 0 0;">
+      <div style="width: 56px; height: 56px; background: #faf8f5; border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;">
+        <img src="${SOCIAL_LINKS.website}/LOGO_abotax_noBG.png" alt="AboTax" width="36" height="36" style="display: block;" />
+      </div>
+      <h1 style="color: white; margin: 0; font-size: 28px; font-weight: 700;">Dziękujemy, <span style="color: #c9a227;">${firstName}</span>!</h1>
+      <p style="color: rgba(255,255,255,0.7); margin: 8px 0 0 0; font-size: 14px;">Twój głos został zarejestrowany</p>
     </div>
-    <div class="content">
-      <p style="font-size: 18px; color: #333;">Twój głos poparcia dla <strong>Funduszu Rekompensaty Społecznej</strong> został zarejestrowany.</p>
+    <div style="background: white; padding: 40px; border-radius: 0 0 12px 12px;">
 
-      <p style="color: #666;">Razem z tysiącami Polaków budujesz trzecią drogę w sporze aborcyjnym — kompromis, który może zmienić życie 17 100 dzieci w domach dziecka.</p>
+      <p style="font-size: 18px; color: #333; line-height: 1.6;">
+        To może być <strong>prawdziwy przełom</strong> w sporze aborcyjnym w Polsce.
+      </p>
+
+      <p style="color: #666; line-height: 1.6;">
+        AboTax to trzecia droga — kompromis, który łączy wolność wyboru z&nbsp;odpowiedzialnością za 17&nbsp;100 dzieci w domach dziecka. Żadna ze stron nie musi przegrać.
+      </p>
+
+      <p style="color: #666; line-height: 1.6;">
+        Twój podpis na stronie to wyrażenie poparcia — formalnie petycję można złożyć tylko papierowo lub przez e-Doręczenia. Ale <strong>prawdziwa siła tej inicjatywy to viral w internecie</strong>. Jeśli politycy zobaczą, że tysiące ludzi mają gotowe rozwiązanie — będą musieli zareagować.
+      </p>
 
       ${reasonBlock}
-      ${imageBlock}
 
-      <div style="background: linear-gradient(135deg, #7c3aed15, #ec489915); padding: 20px; border-radius: 12px; margin: 24px 0; border: 1px solid #7c3aed30;">
-        <h3 style="margin-top: 0; color: #1a365d;">Masz swoją planszę poparcia!</h3>
-        <p style="color: #666; margin-bottom: 12px;">
-          Pobierz ją ze strony i wrzuć na <strong>Instagram Story</strong>.<br>
-          W miejscu oznaczonym "@ ___" wstaw oznaczenie:
+      <!-- PLANSZA DOWNLOAD -->
+      <div style="background: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(236,72,153,0.08)); padding: 24px; border-radius: 12px; margin: 24px 0; border: 1px solid rgba(124,58,237,0.2); text-align: center;">
+        <h3 style="margin: 0 0 8px 0; color: #1a365d; font-size: 18px;">Twoja plansza poparcia jest gotowa</h3>
+        <p style="color: #666; margin: 0 0 16px 0; font-size: 14px;">
+          Pobierz, wrzuć na <strong>Instagram Story</strong> i oznacz nas:
         </p>
-        <p style="text-align: center; margin: 16px 0;">
-          <span style="background: linear-gradient(135deg, #7c3aed, #ec4899); color: white; padding: 8px 16px; border-radius: 20px; font-weight: 600;">
-            @abotax.pl
+        <div style="margin: 16px 0;">
+          <a href="${planszaUrl}" download="${planszaFilename}" style="display: inline-block; background: linear-gradient(135deg, #7c3aed, #ec4899); color: white; padding: 14px 32px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px;">
+            Pobierz planszę
+          </a>
+        </div>
+        <p style="margin: 16px 0 0 0;">
+          <span style="background: #1a365d; color: white; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 14px;">
+            Oznacz @abotax.pl
           </span>
         </p>
-        <p style="color: #999; font-size: 13px; text-align: center;">
-          Każde oznaczenie pomaga dotrzeć do nowych osób!
-        </p>
+        ${customNote}
       </div>
 
-      <div style="background: #f0f4f8; padding: 24px; border-radius: 12px; margin: 24px 0; border-left: 4px solid #1a365d;">
-        <h3 style="margin-top: 0; color: #1a365d; font-size: 16px;">Obserwuj nas w social mediach!</h3>
-        <p style="color: #666; font-size: 14px; margin-bottom: 16px;">
-          Bądź na bieżąco z postępami petycji i dołącz do dyskusji.
-        </p>
-        <div style="text-align: center;">
-          <a href="${SOCIAL_LINKS.instagram}" class="button-ig" style="color: white; margin: 5px; display: inline-block;">
+      <!-- INSTRUKCJA 3 KROKI -->
+      <div style="margin: 24px 0;">
+        <h3 style="color: #1a365d; font-size: 16px; margin: 0 0 16px 0;">Jak to działa?</h3>
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr>
+            <td style="padding: 8px 12px 8px 0; vertical-align: top; width: 32px;">
+              <div style="width: 28px; height: 28px; background: #1A5F5A; color: white; border-radius: 50%; text-align: center; line-height: 28px; font-weight: 700; font-size: 14px;">1</div>
+            </td>
+            <td style="padding: 8px 0; color: #666; font-size: 14px;">
+              <strong style="color: #333;">Pobierz planszę</strong> — kliknij przycisk powyżej
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 12px 8px 0; vertical-align: top;">
+              <div style="width: 28px; height: 28px; background: #1A5F5A; color: white; border-radius: 50%; text-align: center; line-height: 28px; font-weight: 700; font-size: 14px;">2</div>
+            </td>
+            <td style="padding: 8px 0; color: #666; font-size: 14px;">
+              <strong style="color: #333;">Wrzuć na Instagram Story</strong> — dodaj jako zdjęcie
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 8px 12px 8px 0; vertical-align: top;">
+              <div style="width: 28px; height: 28px; background: #1A5F5A; color: white; border-radius: 50%; text-align: center; line-height: 28px; font-weight: 700; font-size: 14px;">3</div>
+            </td>
+            <td style="padding: 8px 0; color: #666; font-size: 14px;">
+              <strong style="color: #333;">Oznacz @abotax.pl</strong> — sprawmy, by politycy to zobaczyli
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- SOCIAL MEDIA -->
+      <div style="background: #f0f4f8; padding: 20px; border-radius: 12px; margin: 24px 0; text-align: center;">
+        <p style="color: #333; font-weight: 600; font-size: 15px; margin: 0 0 12px 0;">Obserwuj nas — bądź na bieżąco</p>
+        <div>
+          <a href="${SOCIAL_LINKS.instagram}" style="display: inline-block; background: linear-gradient(135deg, #7c3aed, #ec4899); color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: 600; margin: 4px;">
             Instagram
           </a>
-          <a href="${SOCIAL_LINKS.facebook}" class="button-fb" style="color: white; margin: 5px; display: inline-block;">
+          <a href="${SOCIAL_LINKS.facebook}" style="display: inline-block; background: #1877f2; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: 600; margin: 4px;">
             Facebook
           </a>
         </div>
       </div>
 
+      <!-- E-DORECZENIA -->
       <div style="background: #fffbeb; padding: 20px; border-radius: 8px; margin: 24px 0; border-left: 4px solid #c9a227;">
-        <h3 style="margin-top: 0; color: #1a365d; font-size: 16px;">Złóż oficjalną petycję przez e-Doręczenia</h3>
-        <p style="color: #666; font-size: 14px; margin-bottom: 8px;">
-          Twoje poparcie na stronie to dopiero początek. Złóż oficjalną petycję przez e-Doręczenia —
-          trafia ona na skrzynkę <strong>Fundacji Destruktura</strong>, która zbiera podpisy
-          i składa je do Sejmu RP.
+        <h3 style="margin-top: 0; color: #1a365d; font-size: 15px;">Chcesz złożyć formalną petycję?</h3>
+        <p style="color: #666; font-size: 13px; margin-bottom: 8px;">
+          Wyślij ją przez <strong>e-Doręczenia</strong> na adres Fundacji Destruktura, która zbiera podpisy i składa je do Sejmu RP.
         </p>
-        <p style="color: #666; font-size: 14px; margin-bottom: 8px;">
-          Adres e-Doręczeń: <strong>AE:PL-18803-44688-HHJBV-13</strong>
+        <p style="color: #666; font-size: 13px; margin-bottom: 12px;">
+          Adres: <strong style="font-family: monospace;">AE:PL-18803-44688-HHJBV-13</strong>
         </p>
-        <div style="text-align: center; margin-top: 16px;">
-          <a href="https://edoreczenia.gov.pl" class="button-navy" style="color: white;">
+        <div style="text-align: center;">
+          <a href="https://edoreczenia.gov.pl" style="display: inline-block; background: #1a365d; color: white; padding: 10px 20px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 13px;">
             Przejdź do e-Doręczeń
           </a>
         </div>
       </div>
+
     </div>
 
-    <div class="footer">
-      <p><strong>AboTax</strong> — Fundusz Rekompensaty Społecznej</p>
-      <p>Inicjatywa wspierana przez Fundację Destruktura</p>
-      <div class="social">
-        <a href="${SOCIAL_LINKS.instagram}" style="color: #1a365d; text-decoration: none;">Instagram</a> •
-        <a href="${SOCIAL_LINKS.facebook}" style="color: #1a365d; text-decoration: none;">Facebook</a> •
-        <a href="${SOCIAL_LINKS.website}" style="color: #1a365d; text-decoration: none;">abotax.pl</a>
+    <div style="text-align: center; padding: 20px; color: #666; font-size: 12px;">
+      <p style="margin: 0 0 4px 0;"><strong>AboTax</strong> — Fundusz Rekompensaty Społecznej</p>
+      <p style="margin: 0 0 12px 0; color: #999;">Inicjatywa wspierana przez Fundację Destruktura</p>
+      <div>
+        <a href="${SOCIAL_LINKS.instagram}" style="color: #1a365d; text-decoration: none; margin: 0 8px;">Instagram</a> •
+        <a href="${SOCIAL_LINKS.facebook}" style="color: #1a365d; text-decoration: none; margin: 0 8px;">Facebook</a> •
+        <a href="${SOCIAL_LINKS.website}" style="color: #1a365d; text-decoration: none; margin: 0 8px;">abotax.pl</a>
       </div>
       <p style="margin-top: 16px; font-size: 11px; color: #999;">
         Otrzymujesz ten email, ponieważ podpisałeś/aś petycję AboTax.<br>
-        <a href="mailto:kontakt@abotax.pl" style="color: #999; text-decoration: none;">Wypisz się z listy mailingowej</a>
+        <a href="mailto:kontakt@abotax.pl" style="color: #999; text-decoration: none;">Wypisz się</a>
       </p>
     </div>
   </div>

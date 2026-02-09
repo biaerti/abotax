@@ -1,0 +1,66 @@
+PROMPT FIGMA AI — Instagram Karuzela
+Post 02: Jak dziala system AboTax?
+=====================================
+
+STYL: oficjalny/rzadowy, minimalistyczny. Kolory: navy #1a365d, teal #1A5F5A, zloty #c9a227, cream #faf8f5. Gradient hero: 135deg #1a365d -> #1A5F5A. Fonty: serif bold na naglowki, sans-serif na body. Ton: merytoryczny, neutralny politycznie. Branding: "AboTax" zloty serif bold, @abotax.pl, #AboTax.
+
+FORMAT: Karuzela Instagram, 1080x1080px, 6 slajdow
+
+=== SLAJD 1 (okladka) ===
+Tlo: gradient hero (135deg, #1a365d -> #1A5F5A)
+Srodek: "Jak dziala AboTax?" — bialy, serif, bold, 44px
+Pod spodem: "Krok po kroku" — #c9a227, sans-serif, 20px
+Dekoracja: ikona wagi (bialy, 64px) nad naglowkiem, w kolku bialy 10% opacity
+Na dole: "abotax.pl" bialy 50%, 14px
+
+=== SLAJD 2 — KROK 1 ===
+Tlo: cream #faf8f5
+Gora: duzy numer "01" — #c9a227, serif, bold, 72px
+Naglowek: "Decyzja" — navy, serif, bold, 28px
+Tekst (navy 70%, sans-serif, 18px):
+"Kobieta decyduje sie na aborcje na zadanie.
+Legalna do 12. tygodnia ciazy.
+Jej decyzja. Jej prawo."
+Ikona: User — teal, 40px
+
+=== SLAJD 3 — KROK 2 ===
+Tlo: cream #faf8f5
+Gora: "02" — #c9a227, serif, bold, 72px
+Naglowek: "Zabieg + rachunek" — navy, serif, bold, 28px
+Tekst:
+"Klinika wykonuje zabieg i wystawia rachunek:
+• Koszt zabiegu: 2 500 zl
+• Oplata AboTax: 2 500 zl
+• Lacznie: 5 000 zl"
+Dekoracja: prosty rachunek/faktura — biala karta z cieniem, navy tekst, zlota linia akcentowa
+
+=== SLAJD 4 — KROK 3 ===
+Tlo: cream #faf8f5
+Gora: "03" — #c9a227, serif, bold, 72px
+Naglowek: "Token solidarnosciowy" — navy, serif, bold, 28px
+Tekst:
+"Pacjentka otrzymuje anonimowy token.
+Moze wskazac dom dziecka,
+ktory dostanie do 50% jej oplaty.
+Nikt nie zna jej danych."
+Ikona: Shield — teal, 40px
+
+=== SLAJD 5 — KROK 4 ===
+Tlo: cream #faf8f5
+Gora: "04" — #c9a227, serif, bold, 72px
+Naglowek: "Srodki trafiaja do dzieci" — navy, serif, bold, 28px
+Tekst:
+"Klinika co miesiac przekazuje
+100% oplat do Funduszu.
+Fundusz finansuje:
+terapie, edukacje, opieke."
+Ikona: Heart — teal, 40px
+Dekoracja: strzalka w dol od "Fundusz" do listy
+
+=== SLAJD 6 (CTA) ===
+Tlo: gradient hero
+Srodek: "Mozna rozlozyc na raty" — bialy, bold, 28px
+Pod spodem: "3, 6 lub 12 rat. Opcja 50/50 z partnerem." — bialy 70%, 18px
+Separator: zlota linia
+CTA: "Podpisz petycje — abotax.pl" — #c9a227, bold, 22px
+Na dole: "@abotax.pl" bialy

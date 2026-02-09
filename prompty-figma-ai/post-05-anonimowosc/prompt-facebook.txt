@@ -1,0 +1,30 @@
+PROMPT FIGMA AI — Facebook Post (obraz)
+Post 05: Anonimowosc pacjentki
+=====================================
+
+STYL: oficjalny/rzadowy, minimalistyczny. Kolory: navy #1a365d, teal #1A5F5A, zloty #c9a227, cream #faf8f5. Gradient hero: 135deg #1a365d -> #1A5F5A. Fonty: serif bold na naglowki, sans-serif na body. Ton: merytoryczny, neutralny politycznie. Branding: "AboTax" zloty serif bold, @abotax.pl, #AboTax.
+
+FORMAT: Facebook post, 1200x630px, pojedynczy obraz
+
+=== OPIS GRAFIKI ===
+Tlo: navy #1a365d (pelny, bez gradientu)
+
+Lewa strona (45%):
+- Ikona Shield — bialy, 56px
+- "Twoja anonimowosc" — bialy, serif, bold, 32px
+- "nasza odpowiedzialnosc" — #c9a227, sans-serif, 16px
+- Zlota linia dekoracyjna
+
+Prawa strona (55%):
+- Biala karta (rounded 12px, padding 24px):
+  - Naglowek: "Co Fundusz wie o Tobie?" — navy, bold, 20px
+  - Duzy napis: "Nic." — navy, serif, bold, 48px
+  - Separator navy 10% linia
+  - 3 pozycje z checkmarkami teal:
+    * "Brak danych osobowych w Funduszu"
+    * "Anonimowy token solidarnosciowy"
+    * "Klinika raportuje tylko zagregowane dane"
+  - Dol karty: "Art. 15 projektu ustawy" — navy 40%, 12px, italic
+
+Dol:
+- "abotax.pl" bialy bold | "Podpisz petycje" #c9a227 bold

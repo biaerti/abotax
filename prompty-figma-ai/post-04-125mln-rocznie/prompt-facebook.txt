@@ -1,0 +1,31 @@
+PROMPT FIGMA AI — Facebook Post (obraz)
+Post 04: 125 mln zl rocznie
+=====================================
+
+STYL: oficjalny/rzadowy, minimalistyczny. Kolory: navy #1a365d, teal #1A5F5A, zloty #c9a227, cream #faf8f5. Gradient hero: 135deg #1a365d -> #1A5F5A. Fonty: serif bold na naglowki, sans-serif na body. Ton: merytoryczny, neutralny politycznie. Branding: "AboTax" zloty serif bold, @abotax.pl, #AboTax.
+
+FORMAT: Facebook post, 1200x630px, pojedynczy obraz
+
+=== OPIS GRAFIKI ===
+Tlo: gradient hero (#1a365d -> #1A5F5A)
+
+Lewa strona (50%):
+- "125 mln zl" — #c9a227, serif, bold, 56px
+- "rocznie dla domow dziecka" — bialy, sans-serif, 18px
+- Zlota linia dekoracyjna
+- Rownanie w bialych kartach (male, ulozone pionowo):
+  "50 000 zabiegow" x "2 500 zl" = "125 mln zl"
+  — bialy bg, navy text, rounded 8px, padding 8px 12px
+
+Prawa strona (50%):
+- Naglowek: "Na co ida srodki?" — bialy, serif, bold, 24px
+- 4 pozycje z ikonami (bialy tekst, 16px):
+  * Ikona serce: "Terapie psychologiczne"
+  * Ikona ksiazka: "Edukacja i korepetycje"
+  * Ikona klucz: "Wyposazenie i remonty"
+  * Ikona kompas: "Zajecia rozwojowe"
+- Separator bialy 20%
+- "97% do dzieci. Max 3% administracja." — bialy 70%, 14px, bold na procentach
+
+Dol:
+- "abotax.pl" bialy bold | "@abotax.pl" bialy 50%

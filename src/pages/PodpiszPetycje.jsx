@@ -136,7 +136,8 @@ export default function PodpiszPetycje() {
             to: formData.email,
             firstName: formData.firstName,
             type: 'confirmation',
-            reason: reason?.text || ''
+            reason: reason?.text || '',
+            reasonId: reason?.id || 'custom'
           }
         });
         setEmailSent(true);

@@ -1,0 +1,44 @@
+PROMPT FIGMA AI — Instagram Karuzela
+Post 03: 17 100 dzieci
+=====================================
+
+STYL: oficjalny/rzadowy, minimalistyczny. Kolory: navy #1a365d, teal #1A5F5A, zloty #c9a227, cream #faf8f5. Gradient hero: 135deg #1a365d -> #1A5F5A. Fonty: serif bold na naglowki, sans-serif na body. Ton: merytoryczny, neutralny politycznie. Branding: "AboTax" zloty serif bold, @abotax.pl, #AboTax.
+
+FORMAT: Karuzela Instagram, 1080x1080px, 4 slajdy
+
+=== SLAJD 1 (okladka — uderzajaca liczba) ===
+Tlo: cream #faf8f5
+Srodek: "17 100" — navy #1a365d, serif, bold, 96px
+Pod spodem: "dzieci w polskich domach dziecka" — navy 70%, sans-serif, 20px
+Na dole: maly badge zloty — "dane GUS" — #c9a227, 12px, uppercase
+Dekoracja: subtelna cienka zlota linia nad i pod liczba
+
+=== SLAJD 2 ===
+Tlo: cream #faf8f5
+Naglowek: "Jak im teraz pomagamy?" — navy, serif, bold, 32px
+Duzy napis srodek: "1:8" — czerwien #dc2626, serif, bold, 80px, z przekresleniem (linia)
+Pod spodem: "Na jednego opiekuna przypada 8 dzieci" — navy 70%, sans-serif, 18px
+Dol: szara linia + "To za duzo. Mozna lepiej." — navy 50%, 14px, italic
+
+=== SLAJD 3 ===
+Tlo: cream #faf8f5
+Naglowek: "Co zmieni AboTax?" — navy, serif, bold, 32px
+Dwa bloki obok siebie (gora/dol):
+
+Blok 1 (karta biala, border teal):
+- "1:5" — teal #1A5F5A, serif, bold, 64px
+- "Nowy stosunek opiekunow" — navy 70%, 16px
+- "+1 280 nowych opiekunow" — teal, bold, 14px
+
+Blok 2 (karta biala, border zloty):
+- "125 mln zl" — #c9a227, serif, bold, 48px
+- "rocznie na:" — navy 70%, 16px
+- Lista: "terapie • edukacje • wyposazenie • zajecia" — navy, 14px
+
+=== SLAJD 4 (CTA) ===
+Tlo: gradient hero (#1a365d -> #1A5F5A)
+Srodek: "Te dzieci juz sa na swiecie." — bialy, serif, bold, 32px
+Pod spodem: "Pomozmy im teraz." — bialy 80%, sans-serif, 20px
+Separator zlota linia
+CTA: "abotax.pl/podpiszpetycje" — #c9a227, bold, 20px
+Dol: "@abotax.pl • #AboTax" bialy 50%

@@ -1,0 +1,115 @@
+BAZA WIEDZY — AboTax / Fundusz Rekompensaty Spolecznej
+=====================================================
+
+Plik referencyjny — uzywany przez Claude do generowania tresci.
+Zawiera pelna wiedze o projekcie, filozofii i argumentach.
+
+=== CZYM JEST ABOTAX ===
+
+AboTax to obywatelski projekt ustawy o Funduszu Rekompensaty Spolecznej.
+Petycja do Sejmu RP. Trzecia droga w sporze aborcyjnym.
+
+Mechanizm: za kazdy zabieg aborcji na zadanie klinika dolicza oplate solidarnosciowa
+(rowna kosztowi zabiegu), a 100% tej kwoty trafia do domow dziecka.
+Pacjentka pozostaje anonimowa. Klinika raportuje tylko zagregowane dane.
+
+Haslo: "Zycie za zycie — rekompensata, nie kara"
+Wartosci: "Twoja anonimowosc, nasza transparentnosc"
+
+=== JAK DZIALA SYSTEM ===
+
+1. Kobieta decyduje sie na aborcje na zadanie (do 12. tygodnia ciazy)
+2. Klinika wykonuje zabieg i wystawia rachunek:
+   - Koszt zabiegu (np. 2500 zl)
+   - Oplata solidarnosciowa AboTax (rowna kosztowi = 2500 zl)
+   - Lacznie pacjentka placi 5000 zl
+3. Pacjentka otrzymuje "token solidarnosciowy" — anonimowy kod
+4. Moze za pomoca tokenu wskazac dom dziecka, do ktorego trafi do 50% jej oplaty
+5. Jesli nie wybierze — Fundusz rozdziela srodki wg wlasnych zasad
+6. Klinika co miesiac przekazuje zebrane oplaty na rachunek Funduszu
+7. Fundusz publikuje kwartalne zestawienia wplywow i wydatkow
+
+=== KLUCZOWE LICZBY ===
+
+- 17 100 dzieci w polskich domach dziecka (dane GUS)
+- ~50 000 zabiegow rocznie (szacunek po legalizacji)
+- ~125 mln zl rocznie — szacowany wplyw do Funduszu
+- Stosunek opiekunow: 1:8 obecnie -> cel 1:5 (zatrudnienie ~1280 nowych opiekunow)
+- Max 3% przychodow Funduszu na koszty administracyjne
+- Reszta (97%+) na: terapie, edukacje, wyposazenie, zajecia rozwojowe
+
+=== FILOZOFIA REKOMPENSATY ===
+
+To NIE jest kara za aborcje. To NIE jest podatek od aborcji.
+To mechanizm solidarnosciowy — symboliczna rownowaga "zycie za zycie".
+
+Zalozenia:
+- Aborcja na zadanie powinna byc legalna (do 12 tygodnia)
+- Ale decyzja ma konsekwencje spoleczne — rekompensata jest forma odpowiedzialnosci
+- Srodki trafiaja do dzieci, ktore juz sa na swiecie i potrzebuja pomocy
+- Zadna ze stron konfliktu nie musi przegrac:
+  * Pro-choice: aborcja legalna, pacjentka anonimowa
+  * Pro-life: kazdy zabieg generuje realne wsparcie dla dzieci
+  * Spoleczenstwo: koniec wojny kulturowej, konkretne rozwiazanie
+
+Rekompensata jest OBOWIAZKOWA — nie dobrowolna. To zapewnia stabilne finansowanie.
+Mozliwosc rozlozenia na 3, 6 lub 12 rat.
+Opcja "Podziel z partnerem 50/50" — wspolna odpowiedzialnosc.
+
+=== ANONIMOWOSC PACJENTKI ===
+
+- Fundusz NIE gromadzi danych osobowych pacjentek
+- Klinika NIE przekazuje Funduszowi zadnych danych identyfikujacych
+- Token solidarnosciowy jest anonimowy — nie da sie polaczyc z pacjentka
+- Jedyny wyjtek: egzekucja administracyjna przy braku zaplaty (po 12 miesiacach)
+- Raporty klinik zawieraja TYLKO: liczbe zabiegow, laczne kwoty, tokeny
+
+=== TRANSPARENTNOSC ===
+
+- Kwartalne zestawienia wplywow i wydatkow — publicznie dostepne
+- Coroczny audyt zewnetrzny — raporty publiczne
+- Kazda placowka pieczy zastepczej publikuje cele zbiorek
+  (np. "Terapia dla 12 dzieci", "Wyposazenie sali zabaw")
+- Darczyzcy widza na co poszly srodki
+- Max 3% na administracje — reszta bezposrednio do dzieci
+
+=== KTO STOI ZA INICJATYWA ===
+
+- Fundacja Destruktura — zbiera podpisy, sklada petycje do Sejmu RP
+- Adres e-Doreczen: AE:PL-18803-44688-HHJBV-13
+- Kontakt: kontakt@abotax.pl
+- Strona: abotax.pl
+- Instagram: @abotax.pl
+- Facebook: @abotaxx
+
+=== ETAP INICJATYWY ===
+
+- Zbieranie podpisow poparcia na stronie abotax.pl
+- Formalna petycja przez e-Doreczenia
+- Budowanie sieci domow dziecka do programu pilotazowego
+- Podpis na stronie = wyrazenie poparcia (nie formalny podpis ustawodawczy)
+- Formalnie petycje mozna zlozyc papierowo lub przez e-Doreczenia
+
+=== TON KOMUNIKACJI ===
+
+- Oficjalny ale przystepny — jak materialy rzadowe (gov.pl), nie jak startup
+- Merytoryczny, nie emocjonalny — fakty, liczby, mechanizmy
+- Neutralny politycznie — ani lewa, ani prawa strona
+- Nie stygmatyzujemy — ani kobiet, ani zwolennikow zadnej ze stron
+- Nie manipulujemy emocjonalnie — pokazujemy rozwiazanie, nie strach
+- Szanujemy kazda perspektywe — dlatego to kompromis
+- Unikamy slow: "zabijanie", "mordowanie", "grzech", "zbrodnia"
+- Uzywamy: "przerwanie ciazy", "zabieg", "rekompensata", "solidarnosc"
+
+=== KLUCZOWE ARGUMENTY DO POSTOW ===
+
+1. KOMPROMIS: "Trzecia droga — ani pro-life, ani pro-choice. Pro-compromise."
+2. DZIECI: "17 100 dzieci w domach dziecka zasluzyje na wiecej niz status quo."
+3. KONIEC WOJNY: "Od lat spor aborcyjny dzieli Polakow. Czas na rozwiazanie."
+4. ANONOIMOSC: "Pacjentka anonimowa. Dane nie trafiaja do Funduszu."
+5. TRANSPARENTNOSC: "Kazda zlotowka przeliczona. Raporty publiczne. Audyt co roku."
+6. REALNE PIENIADZE: "125 mln zl rocznie na terapie, edukacje, opieke."
+7. ROWNOSC: "Zycie za zycie — symboliczna rownowaga, nie kara."
+8. RATY: "Nie stac Cie od razu? 3, 6 lub 12 rat. Podziel z partnerem 50/50."
+9. TOKEN: "Anonimowy token — Ty wybierasz, ktory dom dziecka dostanie wsparcie."
+10. LEGALNOSC: "Ustawa czeka na legalizacje aborcji. Fundusz gotowy od pierwszego dnia."

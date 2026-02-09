@@ -1,0 +1,29 @@
+PROMPT FIGMA AI — Facebook Post (obraz)
+Post 03: 17 100 dzieci
+=====================================
+
+STYL: oficjalny/rzadowy, minimalistyczny. Kolory: navy #1a365d, teal #1A5F5A, zloty #c9a227, cream #faf8f5. Gradient hero: 135deg #1a365d -> #1A5F5A. Fonty: serif bold na naglowki, sans-serif na body. Ton: merytoryczny, neutralny politycznie. Branding: "AboTax" zloty serif bold, @abotax.pl, #AboTax.
+
+FORMAT: Facebook post, 1200x630px, pojedynczy obraz
+
+=== OPIS GRAFIKI ===
+Tlo: cream #faf8f5
+
+Lewa strona (55%):
+- Duzy napis: "17 100" — navy, serif, bold, 72px
+- Pod spodem: "dzieci w polskich domach dziecka" — navy 70%, sans-serif, 20px
+- Zlota linia dekoracyjna
+- Trzy statystyki (navy, sans-serif, 16px):
+  * "1:8 — obecny stosunek opiekunow"
+  * "1:5 — cel po uruchomieniu AboTax"
+  * "+1 280 nowych opiekunow"
+- Kazda statystyka z mala ikona teal po lewej
+
+Prawa strona (45%):
+- Gradient tlo (navy -> teal) w zaokraglonym prostokecie (rounded 16px)
+- Srodek: "125 mln zl" — #c9a227, serif, bold, 48px
+- Pod spodem: "rocznie na terapie, edukacje i opieke" — bialy 80%, 16px
+- Dol: "dane GUS" badge — bialy 30%, 11px
+
+Dol calej grafiki:
+- "abotax.pl" navy bold 14px | "Podpisz petycje" teal bold 14px

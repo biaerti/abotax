@@ -1,0 +1,51 @@
+PROMPT FIGMA AI — Instagram Karuzela
+Post 04: 125 mln zl rocznie
+=====================================
+
+STYL: oficjalny/rzadowy, minimalistyczny. Kolory: navy #1a365d, teal #1A5F5A, zloty #c9a227, cream #faf8f5. Gradient hero: 135deg #1a365d -> #1A5F5A. Fonty: serif bold na naglowki, sans-serif na body. Ton: merytoryczny, neutralny politycznie. Branding: "AboTax" zloty serif bold, @abotax.pl, #AboTax.
+
+FORMAT: Karuzela Instagram, 1080x1080px, 4 slajdy
+
+=== SLAJD 1 (okladka — duza kwota) ===
+Tlo: gradient hero (#1a365d -> #1A5F5A)
+Srodek: "125 mln zl" — #c9a227, serif, bold, 72px
+Pod spodem: "rocznie" — bialy, sans-serif, 24px
+Nizej: "Tyle moze trafic do domow dziecka dzieki AboTax" — bialy 70%, 16px
+Dol: "abotax.pl" bialy 50%
+
+=== SLAJD 2 (skad ta kwota) ===
+Tlo: cream #faf8f5
+Naglowek: "Skad 125 mln?" — navy, serif, bold, 32px
+Prosty rachunek (navy, sans-serif, wycentrowany):
+
+Biala karta z cieniem:
+"~50 000 zabiegow rocznie"
+"x"
+"~2 500 zl sredni koszt"
+"="
+"125 000 000 zl"
+
+Kazda linia: 20px, bold na liczbach, normal na opisach
+Znak "=" na tle zlotego kolka
+Pod karta: "Szacunek po legalizacji aborcji na zadanie" — navy 50%, 12px, italic
+
+=== SLAJD 3 (na co ida srodki) ===
+Tlo: cream #faf8f5
+Naglowek: "Na co ida srodki?" — navy, serif, bold, 32px
+
+4 karty (2x2 grid), kazda biala z cieniem i ikona teal:
+1. Ikona Brain + "Terapie" — "Psychologiczne i pedagogiczne"
+2. Ikona GraduationCap + "Edukacja" — "Korepetycje, kursy, szkolenia"
+3. Ikona Wrench + "Wyposazenie" — "Sale, meble, sprzet"
+4. Ikona Compass + "Rozwoj" — "Zajecia, wycieczki, sport"
+
+Kazda karta: 140x140px wewnatrz, navy tekst, teal ikona, rounded 12px
+
+=== SLAJD 4 (CTA — transparentnosc) ===
+Tlo: gradient hero
+Gora: "97% do dzieci" — bialy, serif, bold, 40px
+Srodek: "Max 3% na administracje" — bialy 70%, 18px
+"Kwartalne raporty. Coroczny audyt. Wszystko publiczne." — bialy 60%, 16px
+Separator zlota linia
+CTA: "Podpisz petycje — abotax.pl" — #c9a227, bold, 20px
+Dol: "@abotax.pl" bialy 50%

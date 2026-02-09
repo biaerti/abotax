@@ -1,0 +1,51 @@
+PROMPT FIGMA AI — Instagram Karuzela
+Post 01: Czym jest AboTax?
+=====================================
+
+STYL: oficjalny/rzadowy, minimalistyczny. Kolory: navy #1a365d, teal #1A5F5A, zloty #c9a227, cream #faf8f5. Gradient hero: 135deg #1a365d -> #1A5F5A. Fonty: serif bold na naglowki, sans-serif na body. Ton: merytoryczny, neutralny politycznie. Branding: "AboTax" zloty serif bold, @abotax.pl, #AboTax.
+
+FORMAT: Karuzela Instagram, 1080x1080px, 5 slajdow
+
+=== SLAJD 1 (okladka) ===
+Tlo: gradient hero (135deg, #1a365d -> #1A5F5A)
+Srodek: duzy napis "Czym jest AboTax?" — bialy, serif, bold, 48px
+Pod spodem: "Fundusz Rekompensaty Spolecznej" — #c9a227, 18px, sans-serif
+Na dole: "abotax.pl" — bialy 60% opacity, 14px
+Dekoracja: subtelne kolka (bialy 5% opacity) w rogach
+
+=== SLAJD 2 ===
+Tlo: cream #faf8f5
+Naglowek: "Problem" — navy, serif, bold, 32px
+Tekst glowny (navy, sans-serif, 20px, wycentrowany):
+"Od lat spor aborcyjny dzieli Polakow.
+Jedna strona chce zakazu.
+Druga strona chce pelnej legalizacji.
+Nikt nie proponuje rozwiazania."
+Dekoracja: cienka zlota linia (2px, #c9a227) pod naglowkiem
+
+=== SLAJD 3 ===
+Tlo: cream #faf8f5
+Naglowek: "Rozwiazanie" — navy, serif, bold, 32px
+Tekst (navy, sans-serif, 20px):
+"AboTax to trzecia droga.
+Aborcja legalna do 12. tygodnia.
+Klinika dolicza oplate solidarnosciowa
+rowna kosztowi zabiegu.
+100% trafia do domow dziecka."
+Ikona: waga (Scale) — teal, 48px, wycentrowana nad tekstem
+Zlota linia pod naglowkiem
+
+=== SLAJD 4 ===
+Tlo: cream #faf8f5
+Naglowek: "Kto zyskuje?" — navy, serif, bold, 32px
+Trzy bloki (karty biale z cieniem, ulozone pionowo):
+1. Ikona serce + "Dzieci" — "17 100 dzieci dostaje terapie, edukacje, opieke"
+2. Ikona tarcza + "Kobiety" — "Pelna anonimowosc. Fundusz nie zna Twoich danych"
+3. Ikona waga + "Spoleczenstwo" — "Koniec wojny kulturowej. Konkretny kompromis"
+Kazda karta: bialy bg, navy border 1px, rounded 12px, padding 16px
+
+=== SLAJD 5 (CTA) ===
+Tlo: gradient hero (jak slajd 1)
+Srodek: "Podpisz petycje" — bialy, serif, bold, 36px
+Pod spodem: "abotax.pl/podpiszpetycje" — #c9a227, 20px
+Na dole: logo AboTax (zloty tekst) + "@abotax.pl" bialy

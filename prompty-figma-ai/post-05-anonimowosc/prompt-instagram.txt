@@ -1,0 +1,48 @@
+PROMPT FIGMA AI — Instagram Karuzela
+Post 05: Anonimowosc pacjentki
+=====================================
+
+STYL: oficjalny/rzadowy, minimalistyczny. Kolory: navy #1a365d, teal #1A5F5A, zloty #c9a227, cream #faf8f5. Gradient hero: 135deg #1a365d -> #1A5F5A. Fonty: serif bold na naglowki, sans-serif na body. Ton: merytoryczny, neutralny politycznie. Branding: "AboTax" zloty serif bold, @abotax.pl, #AboTax.
+
+FORMAT: Karuzela Instagram, 1080x1080px, 4 slajdy
+
+=== SLAJD 1 (okladka) ===
+Tlo: navy #1a365d (pelny, bez gradientu — powazny ton)
+Ikona: Shield — bialy, 72px, wycentrowana
+Pod ikona: "Twoja anonimowosc" — bialy, serif, bold, 40px
+Nizej: "nasza odpowiedzialnosc" — #c9a227, sans-serif, 20px
+Dol: "abotax.pl" bialy 40%
+
+=== SLAJD 2 ===
+Tlo: cream #faf8f5
+Naglowek: "Co Fundusz wie o pacjentce?" — navy, serif, bold, 28px
+
+Srodek — duzy napis w ramce:
+"NIC."
+— navy, serif, bold, 80px
+Ramka: border 3px #1A5F5A, rounded 16px, padding 24px
+
+Pod ramka (navy 60%, 16px):
+"Fundusz nie gromadzi i nie przetwarza
+danych osobowych pacjentek.
+Art. 15 projektu ustawy."
+
+=== SLAJD 3 ===
+Tlo: cream #faf8f5
+Naglowek: "Jak to dziala?" — navy, serif, bold, 28px
+
+3 bloki pionowo (karty biale z ikona po lewej):
+
+1. Ikona FileText + "Klinika" — "Raportuje TYLKO: liczbe zabiegow i laczne kwoty. Zero danych osobowych."
+2. Ikona Key + "Token" — "Anonimowy kod. Nie da sie polaczyc z pacjentka. Sluzy do wyboru domu dziecka."
+3. Ikona ShieldOff + "Fundusz" — "Nie zna imienia, nazwiska, PESELu ani adresu pacjentki."
+
+Kazda karta: bialy bg, navy border-left 3px, padding 16px, navy tekst 14px
+
+=== SLAJD 4 (CTA) ===
+Tlo: gradient hero
+Gora: "Twoja anonimowosc, nasza transparentnosc." — bialy, serif, bold, 28px
+Srodek: "Anonimowosc zapisana w ustawie. Nie w regulaminie. Nie w polityce prywatnosci. W ustawie." — bialy 70%, 16px
+Separator zlota linia
+CTA: "Przeczytaj projekt: abotax.pl" — #c9a227, bold, 18px
+Dol: "@abotax.pl" bialy 50%
