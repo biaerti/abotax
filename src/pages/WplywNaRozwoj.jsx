@@ -83,7 +83,7 @@ export default function WplywNaRozwoj() {
             </h2>
             <p className="text-official-navy/70 max-w-2xl mx-auto">
               Polskie prawo pozwala na max 14 dzieci w jednej grupie wychowawczej.
-              <br></br>To rzeczywistość ~1 000 placówek w Polsce.
+              <br></br>To rzeczywistość 1 238 placówek w Polsce.
             </p>
           </motion.div>
 
@@ -432,8 +432,8 @@ export default function WplywNaRozwoj() {
               Koniec z molochami. Czas na dom.
             </h2>
             <p className="text-official-navy/70 max-w-3xl mx-auto">
-              W Polsce jest około 1 000 domów dziecka. Fundusz zbiera środki i kieruje je tam,
-              gdzie wskaźnik dzieci na opiekuna jest najgorszy — tworząc nowe, małe grupy rodzinne.
+              Według aktualnych rejestrów wojewódzkich, w Polsce działa <strong className="text-official-navy">1 238 placówek</strong> opiekuńczo-wychowawczych.
+              Fundusz zbiera środki i kieruje je tam, gdzie wskaźnik dzieci na opiekuna jest najgorszy — tworząc nowe, małe grupy rodzinne.
             </p>
           </motion.div>
 
@@ -512,6 +512,96 @@ W Polsce są tysiące pustych mieszkań komunalnych. Przystosowanie mieszkania n
             </p>
           </motion.div>
 
+          {/* Data-driven: 1238 → ~1535 */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white border border-official-navy/10 rounded-2xl p-8 shadow-lg mb-8"
+          >
+            <div className="text-center mb-6">
+              <p className="text-xs font-semibold uppercase tracking-widest text-abotax-primary mb-2">Dane z rejestrów wojewódzkich (2024–2025)</p>
+              <h3 className="text-2xl font-serif font-bold text-official-navy">
+                Jak AboTax rozrzedzi system?
+              </h3>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 items-center mb-8">
+              {/* DZIŚ */}
+              <div className="text-center">
+                <div className="bg-official-red/5 border border-official-red/15 rounded-xl p-6">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-official-red/70 mb-2">Dziś</p>
+                  <div className="text-5xl font-bold text-official-navy mb-1">1 238</div>
+                  <p className="text-sm text-official-navy/60">placówek w 16 województwach</p>
+                  <div className="mt-3 flex flex-wrap justify-center gap-[2px]">
+                    {Array.from({ length: 40 }).map((_, i) => (
+                      <div key={i} className="w-2 h-2 rounded-full bg-official-red/30" />
+                    ))}
+                  </div>
+                  <p className="text-xs text-official-navy/40 mt-2">17 100 dzieci rozlokowanych w tych placówkach</p>
+                </div>
+              </div>
+
+              {/* STRZAŁKA */}
+              <div className="text-center">
+                <div className="bg-official-gold/10 border border-official-gold/20 rounded-xl p-6">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-official-gold mb-2">AboTax dodaje</p>
+                  <div className="text-5xl font-bold text-official-gold mb-1">+297</div>
+                  <p className="text-sm text-official-navy/60">nowych małych grup rocznie</p>
+                  <p className="text-xs text-official-navy/40 mt-2">po 7 dzieci, 5 etatów (obsada 24/7)</p>
+                  <div className="mt-3">
+                    <ArrowRight className="w-8 h-8 text-official-gold mx-auto" />
+                  </div>
+                </div>
+              </div>
+
+              {/* PO */}
+              <div className="text-center">
+                <div className="bg-abotax-primary/5 border border-abotax-primary/15 rounded-xl p-6">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-abotax-primary/70 mb-2">Po roku AboTax</p>
+                  <div className="text-5xl font-bold text-abotax-primary mb-1">~1 535</div>
+                  <p className="text-sm text-official-navy/60">placówek i grup w systemie</p>
+                  <div className="mt-3 flex flex-wrap justify-center gap-[2px]">
+                    {Array.from({ length: 40 }).map((_, i) => (
+                      <div key={i} className="w-2 h-2 rounded-full bg-abotax-primary/30" />
+                    ))}
+                    {Array.from({ length: 10 }).map((_, i) => (
+                      <div key={`new-${i}`} className="w-2 h-2 rounded-full bg-official-gold/60" />
+                    ))}
+                  </div>
+                  <p className="text-xs text-official-navy/40 mt-2">te same dzieci, ale rozłożone na więcej punktów</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Progress bar visualization */}
+            <div className="space-y-4">
+              <div>
+                <div className="flex justify-between text-sm mb-1">
+                  <span className="text-official-navy/60">Dziś: ~14 dzieci / grupa</span>
+                  <span className="text-official-red font-semibold">przepełnione</span>
+                </div>
+                <div className="h-4 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-official-red/60 to-official-red/80 rounded-full" style={{ width: '100%' }} />
+                </div>
+              </div>
+              <div>
+                <div className="flex justify-between text-sm mb-1">
+                  <span className="text-official-navy/60">Po AboTax: ~11 dzieci / grupa (średnia)</span>
+                  <span className="text-abotax-primary font-semibold">odciążone</span>
+                </div>
+                <div className="h-4 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-abotax-primary/60 to-abotax-primary/80 rounded-full" style={{ width: '79%' }} />
+                </div>
+              </div>
+            </div>
+
+            <p className="text-xs text-official-navy/50 mt-4 text-center">
+              Dane o 1 238 placówkach pochodzą z oficjalnych rejestrów 16 urzędów wojewódzkich (stan 2024–2025).
+              Nowe grupy 7-osobowe obniżają średnią krajową z ~14 do ~11 dzieci na grupę.
+            </p>
+          </motion.div>
+
           {/* Disclaimers */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -525,7 +615,7 @@ W Polsce są tysiące pustych mieszkań komunalnych. Przystosowanie mieszkania n
                 <h3 className="font-semibold text-official-navy mb-2">Ważne zastrzeżenia</h3>
                 <ul className="text-official-navy/70 text-sm leading-relaxed space-y-2">
                   <li>Obliczenie 5 etatów na grupę to uproszczenie. Realna obsada 24/7 zależy od grafiku, urlopów i rotacji.</li>
-                  <li>Liczba ~1 000 domów dziecka to szacunek wstępny — dokładne dane będą aktualizowane.</li>
+                  <li>Dane o 1 238 placówkach pochodzą z publicznych rejestrów wojewódzkich (2024–2025) — obejmują placówki socjalizacyjne, interwencyjne, rodzinne i specjalistyczne.</li>
                   <li>Fundusz nie buduje lokali — finansuje wyłącznie etaty. Współpraca z samorządami wymaga porozumień.</li>
                   <li>Liczby służą ilustracji skali systemu, nie stanowią precyzyjnej prognozy.</li>
                 </ul>
