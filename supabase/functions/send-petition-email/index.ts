@@ -40,8 +40,8 @@ interface EmailPayload {
   imageUrl?: string
 }
 
-// Map reason IDs to plansza filenames
-const PLANSZA_MAP: Record<string, string> = {
+// Map reason IDs to plansza filenames and download URLs
+const PLANSZA_FILENAMES: Record<string, string> = {
   compromise: "ABOTAX_KOMPROMISY.png",
   children: "ABOTAX_DZIECI_ZASLUGUJA.png",
   war_end: "ABOTAX_KONIEC_Wojny.png",
@@ -51,13 +51,23 @@ const PLANSZA_MAP: Record<string, string> = {
   custom: "ABOTAX_PUSTE.png",
 }
 
+// Direct download links for plansze
+const PLANSZA_DOWNLOAD: Record<string, string> = {
+  compromise: "https://drive.google.com/uc?export=download&id=136ArFqJeUhzPSnibS7sLi1Xt_S4UfOEO",
+  children: "https://drive.google.com/uc?export=download&id=1Ppn2fzhS6YXfK2aBdYoHNtD9OTBWhUNM",
+  war_end: "https://drive.google.com/uc?export=download&id=1rCHqMVSeFAm4kz1JqxUTz9THaeMZOC-P",
+  no_sides: "https://drive.google.com/uc?export=download&id=1k9MQt7-W324z2TdjRTt6hTITMrXfwsXM",
+  stigma: "https://drive.google.com/uc?export=download&id=1lOtuTvvPLjs82C48pAKcCLk1Ougro5CC",
+  solution: "https://drive.google.com/uc?export=download&id=1X3iz6UUTdu6AYL0_02O9BuGMPdbZ_Q_m",
+  custom: "https://drive.google.com/uc?export=download&id=1S2ZCdDuUL1tXQWc_HZyCbDcBMoopAXpJ",
+}
+
 function getPlanszaUrl(reasonId?: string): string {
-  const filename = (reasonId && PLANSZA_MAP[reasonId]) || PLANSZA_MAP.custom
-  return `${SOCIAL_LINKS.website}/plansze/${filename}`
+  return (reasonId && PLANSZA_DOWNLOAD[reasonId]) || PLANSZA_DOWNLOAD.custom
 }
 
 function getPlanszaFilename(reasonId?: string): string {
-  return (reasonId && PLANSZA_MAP[reasonId]) || PLANSZA_MAP.custom
+  return (reasonId && PLANSZA_FILENAMES[reasonId]) || PLANSZA_FILENAMES.custom
 }
 
 // Get Supabase client for DB operations
@@ -208,9 +218,9 @@ function generateConfirmationEmail(firstName: string, reason?: string, reasonId?
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background-color: #faf8f5;">
   <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
     <div style="background: linear-gradient(135deg, #1a365d 0%, #1A5F5A 100%); padding: 32px 40px 40px; text-align: center; border-radius: 12px 12px 0 0;">
-      <div style="width: 56px; height: 56px; background: #faf8f5; border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center;">
-        <img src="${SOCIAL_LINKS.website}/LOGO_abotax_noBG.png" alt="AboTax" width="36" height="36" style="display: block;" />
-      </div>
+      <table role="presentation" style="margin: 0 auto 16px;" cellpadding="0" cellspacing="0"><tr><td style="width: 56px; height: 56px; background: #faf8f5; border-radius: 50%; text-align: center; vertical-align: middle;">
+        <img src="${SOCIAL_LINKS.website}/LOGO_abotax_noBG.png" alt="AboTax" width="36" height="36" style="display: inline-block; vertical-align: middle;" />
+      </td></tr></table>
       <h1 style="color: white; margin: 0; font-size: 28px; font-weight: 700;">Dziękujemy, <span style="color: #c9a227;">${firstName}</span>!</h1>
       <p style="color: rgba(255,255,255,0.7); margin: 8px 0 0 0; font-size: 14px;">Twój głos został zarejestrowany</p>
     </div>
@@ -285,10 +295,10 @@ function generateConfirmationEmail(firstName: string, reason?: string, reasonId?
         <p style="color: #333; font-weight: 600; font-size: 15px; margin: 0 0 12px 0;">Obserwuj nas — bądź na bieżąco</p>
         <div>
           <a href="${SOCIAL_LINKS.instagram}" style="display: inline-block; background: linear-gradient(135deg, #7c3aed, #ec4899); color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: 600; margin: 4px;">
-            Instagram
+            &#x1F4F7;&nbsp; Instagram
           </a>
           <a href="${SOCIAL_LINKS.facebook}" style="display: inline-block; background: #1877f2; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: 600; margin: 4px;">
-            Facebook
+            &#x1F44D;&nbsp; Facebook
           </a>
         </div>
       </div>

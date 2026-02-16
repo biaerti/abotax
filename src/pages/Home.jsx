@@ -9,7 +9,6 @@ import {
   Scale,
   FileText,
   Building2,
-  QrCode,
   Heart,
   Users,
   CheckCircle2,
@@ -183,7 +182,7 @@ export default function Home() {
                     {[
                       { icon: Building2, text: "Klinika dodaje opłatę solidarnościową do faktury" },
                       { icon: Lock, text: "Pacjentka pozostaje w pełni anonimowa" },
-                      { icon: Heart, text: "100% środków trafia do domów dziecka" }
+                      { icon: Heart, text: "100% środków → etaty opiekunów w domach dziecka" }
                     ].map((item, i) => (
                       <motion.div
                         key={i}
@@ -240,7 +239,7 @@ export default function Home() {
                     </div>
                     <div>
                       <p className="text-xs text-official-navy/50">Szacowany wpływ</p>
-                      <p className="font-bold text-official-navy">125 mln zł/rok</p>
+                      <p className="font-bold text-official-navy">200+ mln zł/rok</p>
                     </div>
                   </div>
                 </motion.div>
@@ -299,8 +298,8 @@ export default function Home() {
             </p>
           </motion.div>
 
-          {/* Steps - New Model */}
-          <div className="grid lg:grid-cols-5 gap-8 lg:gap-4">
+          {/* Steps - Simplified Model (no tokens) */}
+          <div className="grid lg:grid-cols-4 gap-8 lg:gap-6">
             {[
               {
                 step: 1,
@@ -318,24 +317,17 @@ export default function Home() {
               },
               {
                 step: 3,
-                icon: QrCode,
-                title: "Token solidarnościowy",
-                description: "Pacjentka otrzymuje unikalny kod QR do anonimowego wyboru domu dziecka",
+                icon: Landmark,
+                title: "Klinika wpłaca do Funduszu",
+                description: "Klinika odprowadza środki zbiorczo — pacjentka pozostaje w pełni anonimowa",
                 color: "bg-official-gold"
               },
               {
                 step: 4,
-                icon: Landmark,
-                title: "Klinika wpłaca do Funduszu",
-                description: "Klinika rozlicza się z Funduszem — pacjentka pozostaje anonimowa",
-                color: "bg-abotax-primary"
-              },
-              {
-                step: 5,
                 icon: Heart,
-                title: "Wsparcie dla dzieci",
-                description: "100% środków trafia do domów dziecka wybranych przez pacjentki",
-                color: "bg-official-red"
+                title: "Nowe etaty dla opiekunów",
+                description: "Fundusz kieruje 100% środków tam, gdzie wskaźnik opieki jest najgorszy",
+                color: "bg-abotax-primary"
               }
             ].map((item, index) => (
               <motion.div
@@ -347,7 +339,7 @@ export default function Home() {
                 className="relative"
               >
                 {/* Connector line */}
-                {index < 4 && (
+                {index < 3 && (
                   <div className="hidden lg:block absolute top-12 left-[60%] w-full h-0.5 bg-gradient-to-r from-official-navy/20 to-transparent" />
                 )}
 
@@ -387,11 +379,11 @@ export default function Home() {
                 <h4 className="text-xl font-bold text-official-navy mb-2">Dlaczego to anonimowe?</h4>
                 <p className="text-official-navy/70">
                   <span className="font-medium text-abotax-primary">Fundusz nie wie kim jest pacjentka</span> —
-                  otrzymuje tylko anonimową wpłatę od kliniki. Token pozwala pacjentce wybrać dom dziecka,
-                  ale nie ujawnia jej tożsamości. To rozwiązanie zgodne z Art. 10, 12 i 15 projektu ustawy.
+                  klinika odprowadza środki zbiorczo, przekazując tylko łączne kwoty. Pacjentka nie musi robić niczego
+                  po wyjściu z kliniki. Fundusz nie gromadzi żadnych danych osobowych.
                 </p>
               </div>
-              <Link to={createPageUrl("Privacy")} className="flex-shrink-0">
+              <Link to={createPageUrl("About")} className="flex-shrink-0">
                 <Button variant="outline" className="border-abotax-primary text-abotax-primary hover:bg-abotax-primary/5">
                   Dowiedz się więcej
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -407,9 +399,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { value: 125, suffix: " mln zł", label: "Szacowany roczny wpływ", prefix: "~" },
+              { value: 200, suffix: " mln zł", label: "Szacowany roczny wpływ", prefix: "~" },
               { value: 17100, suffix: "", label: "Dzieci w domach dziecka", prefix: "" },
-              { value: 100, suffix: "%", label: "Środków trafia do dzieci", prefix: "" },
+              { value: 100, suffix: "%", label: "Środków → etaty opiekunów", prefix: "" },
               { value: petitionCount, suffix: "", label: "Podpisów pod petycją", prefix: "" }
             ].map((stat, index) => (
               <motion.div
@@ -452,26 +444,26 @@ export default function Home() {
               </h2>
               <p className="text-white/80 text-lg mb-8 leading-relaxed">
                 Każda złotówka jest śledzona i raportowana publicznie.
-                Zero ukrytych kosztów administracyjnych. Pełna transparentność to nasz fundament.
+                Maksymalnie 2% na administrację — reszta na etaty opiekunów.
               </p>
 
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-4 text-white">
                   <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
-                    <Shield className="w-6 h-6" />
+                    <Eye className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-semibold">Audyty zewnętrzne</h4>
-                    <p className="text-white/60 text-sm">Regularne kontrole niezależnych audytorów</p>
+                    <h4 className="font-semibold">Publiczny Rejestr Etatów</h4>
+                    <p className="text-white/60 text-sm">Mapa Polski: ile dodatkowych etatów sfinansował AboTax w każdym powiecie</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 text-white">
                   <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
-                    <Eye className="w-6 h-6" />
+                    <Shield className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-semibold">Publiczne raporty</h4>
-                    <p className="text-white/60 text-sm">Dostęp do wszystkich raportów finansowych online</p>
+                    <h4 className="font-semibold">Weryfikacja zatrudnienia</h4>
+                    <p className="text-white/60 text-sm">Fundusz weryfikuje realne zatrudnienie opiekunów w placówkach</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 text-white">
@@ -479,15 +471,15 @@ export default function Home() {
                     <Users className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-semibold">Kontrola społeczna</h4>
-                    <p className="text-white/60 text-sm">Przedstawiciele społeczeństwa w Radzie Funduszu</p>
+                    <h4 className="font-semibold">Publiczne raporty kwartalne</h4>
+                    <p className="text-white/60 text-sm">Wpływy, wydatki, liczba nowych etatów — wszystko online</p>
                   </div>
                 </div>
               </div>
 
-              <Link to={createPageUrl("Transparency")}>
+              <Link to={createPageUrl("Impact")}>
                 <Button size="lg" className="bg-white text-abotax-primary hover:bg-white/90 rounded-xl shadow-lg">
-                  Zobacz raporty
+                  Zobacz wpływ AboTax
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
@@ -501,13 +493,13 @@ export default function Home() {
             >
               <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
                 <div className="text-center mb-6">
-                  <div className="text-6xl font-bold text-white mb-2">100%</div>
-                  <p className="text-white/70">środków trafia do dzieci</p>
+                  <div className="text-6xl font-bold text-white mb-2">98%</div>
+                  <p className="text-white/70">środków → etaty opiekunów</p>
                 </div>
                 <div className="space-y-4">
                   <div className="bg-white/10 rounded-xl p-4">
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-white/80">Wsparcie domów dziecka</span>
+                      <span className="text-white/80">Etaty opiekunów</span>
                       <span className="text-white font-bold">98%</span>
                     </div>
                     <div className="h-2 bg-white/20 rounded-full overflow-hidden">
@@ -579,13 +571,13 @@ export default function Home() {
                   Podpisz petycję
                 </Button>
               </Link>
-              <Link to={createPageUrl("Impact")}>
+              <Link to={createPageUrl("WplywNaRozwoj")}>
                 <Button
                   size="lg"
                   variant="outline"
                   className="border-2 border-official-navy/30 text-official-navy hover:bg-official-navy/5 rounded-xl px-10 py-6 text-lg"
                 >
-                  Zobacz szacunkowy wpływ
+                  Wpływ na rozwój dzieci
                 </Button>
               </Link>
             </div>

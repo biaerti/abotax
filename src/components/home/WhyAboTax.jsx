@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Scale, Heart, Users, Home as HomeIcon, ArrowRight, Shield, Landmark, BookOpen, CheckCircle2 } from "lucide-react";
+import { Scale, Heart, Users, Home as HomeIcon, ArrowRight, Shield, Landmark, BookOpen, CheckCircle2, UserCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { Button } from "@/components/ui/button";
@@ -148,7 +148,7 @@ export default function WhyAboTax() {
                     <p className="text-xs text-official-navy/50 mt-2">Zalecany standard: max 1:5 (potrzeba ~3 420 opiekunów)</p>
                   </div>
 
-                  <Link to={createPageUrl("Impact")} className="block">
+                  <Link to={createPageUrl("WplywNaRozwoj")} className="block">
                     <Button variant="outline" className="w-full border-official-navy/20 text-official-navy hover:bg-official-navy/5">
                       Zobacz pełną analizę
                       <ArrowRight className="w-4 h-4 ml-2" />
@@ -303,7 +303,7 @@ export default function WhyAboTax() {
         </div>
       </div>
 
-      {/* Section 3: Rekompensata - Money flow */}
+      {/* Section 3: Rekompensata - Caregiver ratio impact */}
       <div className="py-16 lg:py-24 bg-official-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -324,18 +324,19 @@ export default function WhyAboTax() {
               <div className="space-y-4 text-official-navy/70 leading-relaxed text-lg">
                 <p>
                   To nie kara ani odkupienie winy. To <span className="font-bold text-abotax-primary">społeczna rekompensata</span>
-                  {" "}i sprawiedliwość wobec dzieci, które już żyją.
+                  {" "}— i konkretna odpowiedź na problem, który widzimy w Sekcji powyżej.
                 </p>
                 <p>
-                  Jeśli decydujesz, że nie możesz dać życia konkretnemu dziecku, wspierasz inne dzieci,
-                  które potrzebują pomocy tutaj i teraz. Przywracasz równowagę tam, gdzie społeczeństwo może realnie pomóc.
+                  Twoja wpłata finansuje <span className="font-semibold text-official-navy">godziny obecności</span>.
+                  Nie kupujemy przedmiotów. Finansujemy etaty dla wykwalifikowanych opiekunów, aby każde dziecko miało obok
+                  siebie dorosłego, który ma czas je wysłuchać.
                 </p>
 
                 {/* Money allocation card */}
                 <div className="bg-white rounded-xl p-6 border border-abotax-primary/20 shadow-sm mt-6">
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-14 h-14 rounded-xl bg-abotax-primary/10 flex items-center justify-center">
-                      <HomeIcon className="w-7 h-7 text-abotax-primary" />
+                      <UserCheck className="w-7 h-7 text-abotax-primary" />
                     </div>
                     <div className="flex-1">
                       <div className="text-sm text-official-navy/60">Twoja wpłata</div>
@@ -343,13 +344,18 @@ export default function WhyAboTax() {
                     </div>
                   </div>
                   <p className="text-sm text-official-navy/70">
-                    trafia bezpośrednio do dzieci — na terapeutów, opiekunów, sprzęt, wycieczki, ich przyszłość
+                    trafia na etaty opiekunów w domach dziecka — indywidualna uwaga dla każdego dziecka
                   </p>
+                  <div className="mt-3 pt-3 border-t border-official-navy/10">
+                    <p className="text-xs text-official-navy/50">
+                      Koszt pracodawcy: ~7 000 zł/mies. na etat (wynagrodzenie netto opiekuna: ~4 200–4 500 zł)
+                    </p>
+                  </div>
                 </div>
               </div>
             </motion.div>
 
-            {/* Visual - Right: House with flowing support */}
+            {/* Visual - Right: Before/After ratio comparison */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -362,54 +368,80 @@ export default function WhyAboTax() {
                 <div className="bg-gradient-to-r from-abotax-primary to-abotax-primary-light p-6 text-white">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-                      <HomeIcon className="w-6 h-6" />
+                      <Users className="w-6 h-6" />
                     </div>
                     <div>
-                      <p className="text-xs text-white/70 uppercase tracking-wider">Przykładowy dom dziecka</p>
-                      <p className="font-serif font-bold">Dom Dziecka "Słoneczny"</p>
+                      <p className="text-xs text-white/70 uppercase tracking-wider">Wpływ AboTax</p>
+                      <p className="font-serif font-bold">Zmiana wskaźnika opieki</p>
                     </div>
                   </div>
                 </div>
 
-                {/* Content */}
-                <div className="p-6 space-y-4">
-                  {/* Goals */}
-                  <div className="space-y-3">
-                    {[
-                      { name: "Terapia psychologiczna", progress: 78, target: "15 000 zł", color: "bg-abotax-primary" },
-                      { name: "Kolonie letnie", progress: 45, target: "8 000 zł", color: "bg-abotax-secondary" },
-                      { name: "Sprzęt sportowy", progress: 92, target: "3 500 zł", color: "bg-abotax-success" }
-                    ].map((goal, index) => (
-                      <motion.div
-                        key={goal.name}
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1 }}
-                        className="bg-official-cream/50 rounded-lg p-3"
-                      >
-                        <div className="flex justify-between items-center mb-1">
-                          <span className="text-sm font-medium text-official-navy">{goal.name}</span>
-                          <span className="text-xs text-official-navy/60">{goal.progress}%</span>
-                        </div>
-                        <div className="h-2 bg-official-navy/10 rounded-full overflow-hidden">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${goal.progress}%` }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1, delay: 0.3 + index * 0.1 }}
-                            className={`h-full ${goal.color} rounded-full`}
-                          />
-                        </div>
-                        <p className="text-xs text-official-navy/50 mt-1">Cel: {goal.target}</p>
-                      </motion.div>
-                    ))}
+                {/* Content - Before/After */}
+                <div className="p-6 space-y-5">
+                  {/* WITHOUT AboTax */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    className="bg-official-red/5 rounded-xl p-4 border border-official-red/20"
+                  >
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="w-2 h-2 rounded-full bg-official-red" />
+                      <span className="text-sm font-bold text-official-red">Bez AboTax — dziś</span>
+                    </div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm text-official-navy/70">Grupa w placówce</span>
+                      <span className="font-bold text-official-red">do 14 dzieci</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-official-navy/70">Opiekun na grupę</span>
+                      <span className="font-bold text-official-red">1 osoba</span>
+                    </div>
+                    <p className="text-xs text-official-navy/50 mt-3 italic">Tylko dozór — brak czasu na indywidualną uwagę</p>
+                  </motion.div>
+
+                  {/* Arrow */}
+                  <div className="flex justify-center">
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.4, type: "spring" }}
+                      className="w-10 h-10 rounded-full bg-abotax-primary flex items-center justify-center shadow-lg"
+                    >
+                      <ArrowRight className="w-5 h-5 text-white rotate-90" />
+                    </motion.div>
                   </div>
 
+                  {/* WITH AboTax */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5 }}
+                    className="bg-abotax-success/10 rounded-xl p-4 border border-abotax-success/30"
+                  >
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="w-2 h-2 rounded-full bg-abotax-primary" />
+                      <span className="text-sm font-bold text-abotax-primary">Z AboTax — cel</span>
+                    </div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm text-official-navy/70">Grupa w placówce</span>
+                      <span className="font-bold text-abotax-primary">6–8 dzieci</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-official-navy/70">Opiekunów na grupę</span>
+                      <span className="font-bold text-abotax-primary">2–3 osoby</span>
+                    </div>
+                    <p className="text-xs text-official-navy/50 mt-3 italic">Prawdziwa relacja — czas na rozmowę, zabawę, wysłuchanie</p>
+                  </motion.div>
+
                   <div className="pt-4 border-t border-official-navy/10">
-                    <Link to={createPageUrl("HomesDirectory")}>
+                    <Link to={createPageUrl("WplywNaRozwoj")}>
                       <Button className="w-full bg-abotax-primary hover:bg-abotax-primary-light text-white">
-                        Zobacz domy dziecka
+                        Zobacz badania naukowe
                         <ArrowRight className="w-4 h-4 ml-2" />
                       </Button>
                     </Link>
@@ -555,6 +587,14 @@ export default function WhyAboTax() {
                     </motion.li>
                   ))}
                 </ul>
+                <div className="pt-4">
+                  <Link to={createPageUrl("Impact")}>
+                    <Button className="bg-abotax-primary hover:bg-abotax-primary-light text-white">
+                      Zobacz, co AboTax może zmienić
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </motion.div>
           </div>

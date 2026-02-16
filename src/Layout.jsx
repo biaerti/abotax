@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import {
   Home,
-  Building2,
-  Heart,
   BarChart3,
   HelpCircle,
   Menu,
@@ -12,10 +10,8 @@ import {
   ChevronDown,
   FileText,
   Info,
-  Shield,
-  Scale,
   Landmark,
-  ExternalLink
+  Brain
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -45,20 +41,12 @@ export default function Layout({ children, currentPageName }) {
       icon: Info,
       submenu: [
         { name: "Jak to działa", page: "About", icon: HelpCircle },
-        { name: "Szacunkowy wpływ", page: "Impact", icon: BarChart3 },
+        { name: "Analiza wpływu", page: "Impact", icon: BarChart3 },
+        { name: "Wpływ na dzieci", page: "WplywNaRozwoj", icon: Brain },
         { name: "FAQ", page: "FAQ", icon: HelpCircle },
       ]
     },
-    {
-      name: "Wartości",
-      icon: Scale,
-      submenu: [
-        { name: "Nasza transparentność", page: "Transparency", icon: BarChart3 },
-        { name: "Twoja anonimowość", page: "Privacy", icon: Shield },
-      ]
-    },
     { name: "Projekt ustawy", page: "ProjektUstawy", icon: FileText },
-    { name: "Domy dziecka", page: "HomesDirectory", icon: Building2 },
   ];
 
   const isActive = (page) => currentPageName === page;
@@ -318,7 +306,7 @@ export default function Layout({ children, currentPageName }) {
                 </div>
                 <p className="text-white/70 text-sm leading-relaxed max-w-md mb-6">
                   Systemowe rozwiązanie łączące prawa jednostki z odpowiedzialnością społeczną.
-                  100% środków z rekompensaty trafia bezpośrednio do dzieci w domach dziecka.
+                  100% środków z rekompensaty trafia na etaty opiekunów w domach dziecka.
                 </p>
                 <div className="flex items-center gap-4 text-sm mb-4">
                   <Landmark className="w-4 h-4 text-official-gold" />
@@ -353,19 +341,19 @@ export default function Layout({ children, currentPageName }) {
                 <h4 className="font-semibold mb-4 text-official-gold">Nawigacja</h4>
                 <ul className="space-y-3 text-sm text-white/70">
                   <li><Link to={createPageUrl("Home")} className="hover:text-white transition-colors flex items-center gap-2"><Home className="w-4 h-4" />Strona główna</Link></li>
-                  <li><Link to={createPageUrl("HomesDirectory")} className="hover:text-white transition-colors flex items-center gap-2"><Building2 className="w-4 h-4" />Domy dziecka</Link></li>
+                  <li><Link to={createPageUrl("About")} className="hover:text-white transition-colors flex items-center gap-2"><HelpCircle className="w-4 h-4" />Jak to działa</Link></li>
+                  <li><Link to={createPageUrl("Impact")} className="hover:text-white transition-colors flex items-center gap-2"><BarChart3 className="w-4 h-4" />Analiza wpływu</Link></li>
+                  <li><Link to={createPageUrl("WplywNaRozwoj")} className="hover:text-white transition-colors flex items-center gap-2"><Brain className="w-4 h-4" />Wpływ na dzieci</Link></li>
                   <li><Link to={createPageUrl("ProjektUstawy")} className="hover:text-white transition-colors flex items-center gap-2"><FileText className="w-4 h-4" />Projekt ustawy</Link></li>
-                  <li><Link to={createPageUrl("Impact")} className="hover:text-white transition-colors flex items-center gap-2"><Heart className="w-4 h-4" />Szacunkowy wpływ</Link></li>
                 </ul>
               </div>
 
               <div>
                 <h4 className="font-semibold mb-4 text-official-gold">Informacje</h4>
                 <ul className="space-y-3 text-sm text-white/70">
-                  <li><Link to={createPageUrl("About")} className="hover:text-white transition-colors flex items-center gap-2"><HelpCircle className="w-4 h-4" />Jak to działa</Link></li>
-                  <li><Link to={createPageUrl("Transparency")} className="hover:text-white transition-colors flex items-center gap-2"><BarChart3 className="w-4 h-4" />Transparentność</Link></li>
-                  <li><Link to={createPageUrl("Privacy")} className="hover:text-white transition-colors flex items-center gap-2"><Shield className="w-4 h-4" />Anonimowość</Link></li>
-                  <li><Link to={createPageUrl("Impact")} className="hover:text-white transition-colors flex items-center gap-2"><BarChart3 className="w-4 h-4" />Szacunkowy wpływ</Link></li>
+                  <li><Link to={createPageUrl("FAQ")} className="hover:text-white transition-colors flex items-center gap-2"><HelpCircle className="w-4 h-4" />FAQ</Link></li>
+                  <li><Link to={createPageUrl("PodpiszPetycje")} className="hover:text-white transition-colors flex items-center gap-2"><FileText className="w-4 h-4" />Podpisz petycję</Link></li>
+                  <li><a href="mailto:kontakt@abotax.pl" className="hover:text-white transition-colors flex items-center gap-2"><Info className="w-4 h-4" />kontakt@abotax.pl</a></li>
                 </ul>
               </div>
             </div>

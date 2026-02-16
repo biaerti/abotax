@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -12,9 +12,10 @@ import {
   Landmark,
   Hospital,
   BarChart3,
-  QrCode,
-  CheckCircle2
+  CheckCircle2,
+  Brain
 } from "lucide-react";
+import { db } from "@/lib/supabase";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -23,8 +24,13 @@ import ImpactCounter from "@/components/ui/ImpactCounter";
 import { createPageUrl } from "@/utils/createPageUrl";
 
 export default function ProjektUstawy() {
-  // Mock data - będzie z Supabase
-  const signatureCount = 127847;
+  const [signatureCount, setSignatureCount] = useState(null);
+
+  useEffect(() => {
+    db.petition.getCount().then(setSignatureCount);
+    const unsubscribe = db.petition.subscribeToCount(setSignatureCount);
+    return unsubscribe;
+  }, []);
 
   const chapters = [
     {
@@ -121,9 +127,9 @@ export default function ProjektUstawy() {
       description: "Placówka medyczna wystawia fakturę i odprowadza środki"
     },
     {
-      icon: QrCode,
-      title: "Token = anonimowość",
-      description: "Kod QR pozwala wybrać dom dziecka bez ujawniania tożsamości"
+      icon: Brain,
+      title: "Automatyczna alokacja",
+      description: "Fundusz kieruje środki tam, gdzie wskaźnik dzieci/opiekun jest najgorszy"
     },
     {
       icon: Shield,
@@ -334,8 +340,10 @@ export default function ProjektUstawy() {
                   Popierasz projekt?
                 </h2>
                 <p className="text-white/80 mb-4">
-                  Dołącz do <span className="font-bold text-white">{signatureCount.toLocaleString('pl-PL')}</span> osób,
-                  które już podpisały petycję za Funduszem Rekompensaty.
+                  {signatureCount !== null
+                    ? <>Dołącz do <span className="font-bold text-white">{signatureCount.toLocaleString('pl-PL')}</span> osób, które już podpisały petycję za Funduszem Rekompensaty.</>
+                    : <>Dołącz do osób, które podpisały petycję za Funduszem Rekompensaty.</>
+                  }
                 </p>
                 <div className="flex items-center gap-2 text-white/60 text-sm">
                   <CheckCircle2 className="w-4 h-4" />
@@ -369,18 +377,18 @@ export default function ProjektUstawy() {
                   <Scale className="w-8 h-8 text-abotax-primary mb-4" />
                   <h3 className="font-semibold text-official-navy mb-2">Jak działa system</h3>
                   <p className="text-sm text-official-navy/60">
-                    Poznaj mechanizm klinika-token-fundusz
+                    Poznaj mechanizm kliniki i Funduszu
                   </p>
                 </CardContent>
               </Card>
             </Link>
-            <Link to={createPageUrl("Privacy")}>
+            <Link to={createPageUrl("WplywNaRozwoj")}>
               <Card className="border-official-navy/10 hover:border-official-navy/30 transition-all hover:shadow-lg h-full">
                 <CardContent className="p-6">
-                  <Shield className="w-8 h-8 text-abotax-primary mb-4" />
-                  <h3 className="font-semibold text-official-navy mb-2">Anonimowość</h3>
+                  <Brain className="w-8 h-8 text-abotax-primary mb-4" />
+                  <h3 className="font-semibold text-official-navy mb-2">Wpływ na dzieci</h3>
                   <p className="text-sm text-official-navy/60">
-                    Jak chronimy dane pacjentek
+                    Co mówią badania o małych grupach i opiece
                   </p>
                 </CardContent>
               </Card>
@@ -391,7 +399,7 @@ export default function ProjektUstawy() {
                   <BarChart3 className="w-8 h-8 text-abotax-primary mb-4" />
                   <h3 className="font-semibold text-official-navy mb-2">Szacunkowy wpływ</h3>
                   <p className="text-sm text-official-navy/60">
-                    125 mln zł rocznie dla domów dziecka
+                    125 mln zł rocznie na etaty opiekunów
                   </p>
                 </CardContent>
               </Card>

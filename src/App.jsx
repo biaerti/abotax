@@ -17,16 +17,10 @@ function ScrollToTop() {
 // Pages
 import Home from './pages/Home'
 import About from './pages/About'
-import Contribute from './pages/Contribute'
-import HomesDirectory from './pages/HomesDirectory'
-import Privacy from './pages/Privacy'
-import RegisterHome from './pages/RegisterHome'
 import FAQ from './pages/FAQ'
-import Transparency from './pages/Transparency'
 import ProjektUstawy from './pages/ProjektUstawy'
 import Impact from './pages/Impact'
-import Dashboard from './pages/Dashboard'
-import HomeProfile from './pages/HomeProfile'
+import WplywNaRozwoj from './pages/WplywNaRozwoj'
 import PodpiszPetycje from './pages/PodpiszPetycje'
 import GeneratorIG from './pages/GeneratorIG'
 import Regulamin from './pages/Regulamin'
@@ -59,20 +53,14 @@ function App() {
           <Route path="/" element={<PageWrapper pageName="Home"><Home /></PageWrapper>} />
           <Route path="/Home" element={<PageWrapper pageName="Home"><Home /></PageWrapper>} />
           <Route path="/About" element={<PageWrapper pageName="About"><About /></PageWrapper>} />
-          <Route path="/Contribute" element={<PageWrapper pageName="Contribute"><Contribute /></PageWrapper>} />
-          <Route path="/HomesDirectory" element={<PageWrapper pageName="HomesDirectory"><HomesDirectory /></PageWrapper>} />
-          <Route path="/Privacy" element={<PageWrapper pageName="Privacy"><Privacy /></PageWrapper>} />
-          <Route path="/RegisterHome" element={<PageWrapper pageName="RegisterHome"><RegisterHome /></PageWrapper>} />
           <Route path="/FAQ" element={<PageWrapper pageName="FAQ"><FAQ /></PageWrapper>} />
-          <Route path="/Transparency" element={<PageWrapper pageName="Transparency"><Transparency /></PageWrapper>} />
           <Route path="/ProjektUstawy" element={<PageWrapper pageName="ProjektUstawy"><ProjektUstawy /></PageWrapper>} />
           <Route path="/Impact" element={<PageWrapper pageName="Impact"><Impact /></PageWrapper>} />
+          <Route path="/WplywNaRozwoj" element={<PageWrapper pageName="WplywNaRozwoj"><WplywNaRozwoj /></PageWrapper>} />
           <Route path="/PodpiszPetycje" element={<PageWrapper pageName="PodpiszPetycje"><PodpiszPetycje /></PageWrapper>} />
           <Route path="/GeneratorIG" element={<PageWrapper pageName="GeneratorIG"><GeneratorIG /></PageWrapper>} />
           <Route path="/Regulamin" element={<PageWrapper pageName="Regulamin"><Regulamin /></PageWrapper>} />
           <Route path="/PolitykaPrywatnosci" element={<PageWrapper pageName="PolitykaPrywatnosci"><PolitykaPrywatnosci /></PageWrapper>} />
-          <Route path="/Dashboard" element={<PageWrapper pageName="Dashboard"><Dashboard /></PageWrapper>} />
-          <Route path="/HomeProfile/:id" element={<PageWrapper pageName="HomeProfile"><HomeProfile /></PageWrapper>} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

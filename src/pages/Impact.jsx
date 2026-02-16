@@ -4,17 +4,17 @@ import { motion } from "framer-motion";
 import {
   TrendingUp,
   Users,
-  Building2,
   Calculator,
   ArrowRight,
   Heart,
   Info,
   BarChart3,
-  PieChart,
   Target,
   CheckCircle2,
-  AlertCircle,
-  FileText
+  FileText,
+  Brain,
+  Baby,
+  AlertTriangle
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -25,41 +25,38 @@ export default function Impact() {
     {
       name: "Minimalny",
       abortions: "40 000",
+      avgFee: "2 500 zł",
       funding: "100 mln zł",
-      description: "Konserwatywny szacunek oparty na danych z Czech",
+      caregivers: "~1 190",
+      description: "Konserwatywny szacunek zbliżony do szacunków organizacji pro-life",
       color: "bg-blue-100 text-blue-700 border-blue-200"
     },
     {
       name: "Umiarkowany",
       abortions: "50 000",
+      avgFee: "2 500 zł",
       funding: "125 mln zł",
-      description: "Bazowy scenariusz - analogia do Czech (15k/10.7mln populacji)",
+      caregivers: "~1 488",
+      description: "Bazowy scenariusz — analogia do Czech (15 tys. / 10,7 mln populacji)",
       color: "bg-green-100 text-green-700 border-green-200",
       highlighted: true
     },
     {
       name: "Rozszerzony",
       abortions: "70 000",
+      avgFee: "2 500 zł",
       funding: "175 mln zł",
+      caregivers: "~2 083",
       description: "Uwzględnia słabszy dostęp do antykoncepcji niż w Czechach",
       color: "bg-amber-100 text-amber-700 border-amber-200"
     }
   ];
 
-  const currentStats = [
+  const fosterStats = [
     { label: "Dzieci w pieczy zastępczej (2023)", value: "75 903", icon: Users },
-    { label: "W domach dziecka", value: "17 100", icon: Building2 },
-    { label: "Porzucone noworodki rocznie", value: "715", icon: Heart },
-    { label: "Koszt utrzymania dziecka/rok", value: "~100 000 zł", icon: Calculator }
-  ];
-
-  const fundingUses = [
-    "Remonty i wyposażenie placówek",
-    "Zwiększenie liczby opiekunów i pedagogów",
-    "Zajęcia terapeutyczne i rehabilitacja",
-    "Wsparcie edukacyjne i korepetycje",
-    "Programy usamodzielniania dla młodzieży",
-    "Szkolenia dla rodzin zastępczych"
+    { label: "W domach dziecka", value: "17 100", icon: Baby },
+    { label: "Porzucone noworodki rocznie", value: "715", icon: AlertTriangle, highlight: true },
+    { label: "Koszt utrzymania dziecka / rok", value: "~100 000 zł", icon: Calculator }
   ];
 
   return (
@@ -77,8 +74,8 @@ export default function Impact() {
               Analiza wpływu AboTax
             </div>
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">
-              Szacunkowy wpływ na{" "}
-              <span className="text-official-gold">system pieczy zastępczej</span>
+              Szacunkowy wpływ na system{" "}
+              <span className="text-official-gold">pieczy zastępczej</span>
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
               Obliczenia oparte na danych demograficznych i porównaniu z innymi krajami europejskimi.
@@ -88,25 +85,28 @@ export default function Impact() {
         </div>
       </section>
 
-      {/* Methodology note */}
-      <section className="py-12 px-4">
+      {/* Metodologia — osobna kremowa sekcja */}
+      <section className="py-10 px-4 bg-official-cream">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="bg-white border border-official-navy/10 rounded-2xl p-6 shadow-sm"
           >
             <div className="flex items-start gap-4">
-              <Info className="w-6 h-6 text-official-navy flex-shrink-0 mt-1" />
+              <div className="w-10 h-10 rounded-full bg-official-navy/10 flex items-center justify-center flex-shrink-0">
+                <Info className="w-5 h-5 text-official-navy" />
+              </div>
               <div>
                 <h3 className="font-semibold text-official-navy mb-2">Metodologia szacunków</h3>
                 <p className="text-official-navy/70 text-sm leading-relaxed">
-                  Szacunki oparto na porównaniu z Czechami (populacja 10,7 mln, ~15 000 legalnych aborcji rocznie).
-                  Przeliczenie proporcjonalne na populację Polski (38 mln) daje około 50 000 zabiegów.
-                  Ta wartość mieści się pomiędzy skrajnymi szacunkami organizacji pro-life (7-14 tys.)
-                  a organizacji proaborcyjnych (120-150 tys.). Badania WHO wskazują, że legalizacja nie zwiększa
-                  liczby aborcji - przenosi je jedynie z szarej strefy do legalnej służby zdrowia.
+                  Szacunki oparto na porównaniu z <strong className="text-official-navy">Czechami</strong> (populacja 10,7 mln,
+                  ~15 000 legalnych aborcji rocznie). Przeliczenie proporcjonalne na populację Polski (38 mln) daje
+                  około <strong className="text-official-navy">50 000 zabiegów</strong>. Ta wartość mieści się pomiędzy
+                  skrajnymi szacunkami organizacji pro-life (7–14 tys.) a organizacji proaborcyjnych (120–150 tys.).
+                  Badania WHO wskazują, że legalizacja nie zwiększa liczby aborcji — przenosi je jedynie z szarej strefy
+                  do legalnej służby zdrowia.
                 </p>
               </div>
             </div>
@@ -114,7 +114,7 @@ export default function Impact() {
         </div>
       </section>
 
-      {/* Current State */}
+      {/* Obecny stan pieczy — białe tło */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -130,7 +130,7 @@ export default function Impact() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {currentStats.map((stat, index) => (
+            {fosterStats.map((stat, index) => (
               <motion.div
                 key={stat.label}
                 initial={{ opacity: 0, y: 20 }}
@@ -138,12 +138,12 @@ export default function Impact() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="border-official-navy/10 hover:shadow-lg transition-shadow h-full">
+                <Card className={`border-official-navy/10 hover:shadow-lg transition-shadow h-full ${stat.highlight ? 'ring-2 ring-official-red/30' : ''}`}>
                   <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 rounded-xl bg-abotax-primary/10 flex items-center justify-center mx-auto mb-4">
-                      <stat.icon className="w-6 h-6 text-abotax-primary" />
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4 ${stat.highlight ? 'bg-official-red/10' : 'bg-abotax-primary/10'}`}>
+                      <stat.icon className={`w-6 h-6 ${stat.highlight ? 'text-official-red' : 'text-abotax-primary'}`} />
                     </div>
-                    <div className="text-3xl font-bold text-abotax-primary mb-2">{stat.value}</div>
+                    <div className={`text-3xl font-bold mb-2 ${stat.highlight ? 'text-official-red' : 'text-abotax-primary'}`}>{stat.value}</div>
                     <div className="text-sm text-official-navy/70">{stat.label}</div>
                   </CardContent>
                 </Card>
@@ -155,16 +155,16 @@ export default function Impact() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="mt-8 p-6 bg-amber-50 border border-amber-200 rounded-2xl"
+            className="mt-8 p-6 bg-official-red/5 border-l-4 border-official-red border border-official-red/20 rounded-2xl"
           >
             <div className="flex items-start gap-4">
-              <AlertCircle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
+              <TrendingUp className="w-6 h-6 text-official-red flex-shrink-0 mt-1" />
               <div>
-                <h3 className="font-semibold text-amber-900 mb-2">Trend wzrostowy</h3>
-                <p className="text-amber-800/80 text-sm">
-                  W 2023 r. do pieczy zastępczej trafiło 14 901 nowych dzieci (wzrost z 13 661 rok wcześniej).
-                  Liczba porzuconych noworodków wzrosła z 643 w 2021 r. do 715 w 2023 r.
-                  System wymaga pilnego dodatkowego finansowania.
+                <h3 className="font-semibold text-official-navy mb-2">Trend wzrostowy</h3>
+                <p className="text-official-navy/70 text-sm">
+                  W 2023 r. do pieczy zastępczej trafiło <strong>14 901</strong> nowych dzieci
+                  (wzrost z 13 661 rok wcześniej). Liczba porzuconych noworodków wzrosła z 643
+                  w 2021 r. do 715 w 2023 r. System wymaga pilnego dodatkowego finansowania.
                 </p>
               </div>
             </div>
@@ -172,7 +172,7 @@ export default function Impact() {
         </div>
       </section>
 
-      {/* Scenarios */}
+      {/* Scenariusze + Kluczowe wnioski — kremowe tło (łącznie) */}
       <section className="py-16 px-4 bg-official-cream">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -185,7 +185,7 @@ export default function Impact() {
               Scenariusze finansowania
             </h2>
             <p className="text-official-navy/70 max-w-2xl mx-auto">
-              Przy średnim koszcie zabiegu 2500 zł, opłata solidarnościowa wynosi również 2500 zł.
+              Przy średnim koszcie zabiegu 2 500 zł, opłata solidarnościowa wynosi również 2 500 zł.
               Poniżej przedstawiamy trzy realistyczne scenariusze.
             </p>
           </motion.div>
@@ -210,7 +210,14 @@ export default function Impact() {
                   <CardContent>
                     <div className="mb-4">
                       <div className="text-4xl font-bold text-abotax-primary">{scenario.funding}</div>
-                      <div className="text-sm text-official-navy/60">rocznie dla domów dziecka</div>
+                      <div className="text-sm text-official-navy/60">rocznie dla pieczy zastępczej</div>
+                    </div>
+                    <div className="bg-abotax-primary/5 rounded-lg p-3 mb-3">
+                      <div className="flex items-center gap-2">
+                        <Users className="w-4 h-4 text-abotax-primary" />
+                        <span className="font-bold text-abotax-primary">{scenario.caregivers}</span>
+                        <span className="text-sm text-official-navy/60">nowych etatów/rok</span>
+                      </div>
                     </div>
                     <p className="text-sm text-official-navy/70">{scenario.description}</p>
                     {scenario.highlighted && (
@@ -227,11 +234,12 @@ export default function Impact() {
             ))}
           </div>
 
-          {/* Impact calculation */}
+          {/* What does 125M mean */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="mb-16"
           >
             <Card className="bg-official-navy text-white border-0">
               <CardContent className="p-8">
@@ -243,23 +251,23 @@ export default function Impact() {
                     <div className="space-y-4">
                       <div className="flex items-start gap-3">
                         <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
-                          <Calculator className="w-4 h-4" />
+                          <Users className="w-4 h-4" />
                         </div>
                         <div>
-                          <div className="font-semibold">~7 300 zł dodatkowo na dziecko</div>
+                          <div className="font-semibold">~1 488 nowych etatów opiekunów</div>
                           <div className="text-white/70 text-sm">
-                            125 mln zł / 17 100 dzieci w domach dziecka
+                            Przy koszcie pracodawcy ~7 000 zł/mies. (84 000 zł/rok)
                           </div>
                         </div>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
-                          <Building2 className="w-4 h-4" />
+                          <Target className="w-4 h-4" />
                         </div>
                         <div>
-                          <div className="font-semibold">1250 pełnych miejsc</div>
+                          <div className="font-semibold">~297 nowych małych grup rodzinnych / rok</div>
                           <div className="text-white/70 text-sm">
-                            Pełne roczne utrzymanie przy 100 tys. zł/dziecko/rok
+                            Podział przepełnionych grup na kameralne 7-osobowe "rodzinki"
                           </div>
                         </div>
                       </div>
@@ -268,9 +276,9 @@ export default function Impact() {
                           <TrendingUp className="w-4 h-4" />
                         </div>
                         <div>
-                          <div className="font-semibold">+7% wzrost budżetu</div>
+                          <div className="font-semibold">Średnio 14 → 11 dzieci na grupę</div>
                           <div className="text-white/70 text-sm">
-                            Znaczące wsparcie dla niedofinansowanego systemu
+                            Wskaźnik opieki: 1:8 → 1:5 — osiągamy zalecany standard europejski
                           </div>
                         </div>
                       </div>
@@ -279,24 +287,50 @@ export default function Impact() {
                   <div>
                     <h3 className="text-xl font-bold mb-4">Na co zostaną przeznaczone środki:</h3>
                     <ul className="space-y-2">
-                      {fundingUses.map((use, index) => (
+                      {[
+                        "Zwiększenie liczby opiekunów i pedagogów",
+                        "Podział 14-osobowych grup na 7-osobowe rodzinki",
+                        "Podwyżki wynagrodzeń (przyciąganie lepszych kandydatów)",
+                        "Szkolenia i superwizja opiekunów",
+                        "Stabilizacja zatrudnienia (mniejsza rotacja)",
+                        "Programy usamodzielniania dla 18+"
+                      ].map((use, index) => (
                         <li key={index} className="flex items-center gap-2 text-white/90">
                           <CheckCircle2 className="w-4 h-4 text-green-400 flex-shrink-0" />
                           {use}
                         </li>
                       ))}
                     </ul>
+
+                    <div className="mt-6 p-4 bg-white/10 rounded-xl">
+                      <p className="text-sm text-white/70">
+                        <strong className="text-white">Rekompensata to nie kara</strong> — to Twoja wpłata
+                        na godziny obecności dorosłego przy dziecku, które tej obecności potrzebuje.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </motion.div>
-        </div>
-      </section>
 
-      {/* Key Insights */}
-      <section className="py-16 px-4 bg-official-cream">
-        <div className="max-w-6xl mx-auto">
+          {/* Link to children impact */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mb-16 text-center"
+          >
+            <Link to={createPageUrl("WplywNaRozwoj")}>
+              <Button size="lg" className="bg-abotax-primary hover:bg-abotax-primary/90 text-white rounded-xl">
+                <Brain className="w-5 h-5 mr-2" />
+                Na co dokładnie idą pieniądze?
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+          </motion.div>
+
+          {/* Key Insights */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -314,19 +348,18 @@ export default function Impact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full border-official-navy/10">
+              <Card className="h-full border-official-navy/10 bg-white">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <PieChart className="w-5 h-5 text-abotax-primary" />
-                    Legalizacja nie zwiększa liczby aborcji
+                    <Users className="w-5 h-5 text-abotax-primary" />
+                    Realne wsparcie dla systemu
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-official-navy/70">
-                    Badania WHO i Instytutu Guttmachera pokazują, że odsetek niezamierzonych ciąż
-                    kończących się aborcją jest zbliżony w państwach z zakazem i z liberalnym prawem.
-                    Ograniczenia prawne wpływają bardziej na bezpieczeństwo aborcji niż na ich częstość.
-                    Legalizacja przenosi zjawisko z szarej strefy do kontrolowanego systemu zdrowia.
+                    Badanie St. Petersburg udowodniło, że samo szkolenie opiekunów (bez zmniejszenia grup)
+                    daje gorsze efekty niż zmiana struktury. Potrzeba więcej osób, nie lepszych szkoleń.
+                    125 mln zł rocznie to konkretne etaty, nie kolejne programy pilotażowe.
                   </p>
                 </CardContent>
               </Card>
@@ -337,19 +370,18 @@ export default function Impact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full border-official-navy/10">
+              <Card className="h-full border-official-navy/10 bg-white">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Calculator className="w-5 h-5 text-abotax-primary" />
-                    Opłata nie zmniejszy liczby aborcji
+                    Matematyka się zgadza
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-official-navy/70">
-                    Obecnie Polki już ponoszą wysokie koszty: zakup tabletek (kilkaset do tysiąca zł)
-                    lub wyjazd za granicę (kilka tysięcy zł). Determinacja w niechcianej ciąży jest
-                    na tyle duża, że dodatkowa opłata raczej nie odwiedzie od zamiaru. Celem AboTax
-                    jest wsparcie dzieci, nie zmiana zachowań reprodukcyjnych.
+                    50 tys. zabiegów &times; 2 500 zł = 125 mln zł rocznie. To więcej niż koszt zamknięcia
+                    luki kadrowej (~107 mln zł). 297 nowych grup przesuwa średnią z 14 na 11 dzieci
+                    i poprawia wskaźnik opieki z 1:8 na 1:5.
                   </p>
                 </CardContent>
               </Card>
@@ -361,19 +393,19 @@ export default function Impact() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <Card className="h-full border-official-navy/10">
+              <Card className="h-full border-official-navy/10 bg-white">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Users className="w-5 h-5 text-abotax-primary" />
-                    Realne wsparcie dla systemu
+                    <BarChart3 className="w-5 h-5 text-abotax-primary" />
+                    Legalizacja nie zwiększa liczby aborcji
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-official-navy/70">
-                    System pieczy zastępczej jest chronicznie niedofinansowany. Samorządy mają trudności
-                    z pokryciem rosnących kosztów, placówki są przepełnione, brakuje specjalistów.
-                    125 mln zł rocznie to konkretne środki na poprawę warunków życia dzieci -
-                    nie abstrakcyjne cele, lecz wymierne korzyści.
+                    Badania WHO i Instytutu Guttmachera pokazują, że odsetek niezamierzonych ciąż kończących
+                    się aborcją jest zbliżony w państwach z zakazem i z liberalnym prawem. Ograniczenia prawne
+                    wpływają bardziej na bezpieczeństwo aborcji niż na ich częstość. Legalizacja przenosi
+                    zjawisko z szarej strefy do kontrolowanego systemu zdrowia.
                   </p>
                 </CardContent>
               </Card>
@@ -385,19 +417,19 @@ export default function Impact() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <Card className="h-full border-official-navy/10">
+              <Card className="h-full border-official-navy/10 bg-white">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Heart className="w-5 h-5 text-abotax-primary" />
-                    Psychologiczna kompensacja
+                    Opłata nie zmniejszy liczby aborcji
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-official-navy/70">
-                    Dla niektórych kobiet świadomość, że ich opłata wspiera konkretny dom dziecka,
-                    może działać uspokajająco - tworząc poczucie "psychologicznej kompensacji".
-                    Możliwość wyboru placówki przez token solidarnościowy daje realny wpływ
-                    na przeznaczenie środków.
+                    Obecnie Polki już ponoszą wysokie koszty: zakup tabletek (kilkaset do tysiąca zł)
+                    lub wyjazd za granicę (kilka tysięcy). Determinacja w niechcianej ciąży jest na tyle duża,
+                    że dodatkowa opłata raczej nie odwiedzie od zamiaru. Celem AboTax jest wsparcie dzieci,
+                    nie zmiana zachowań reprodukcyjnych.
                   </p>
                 </CardContent>
               </Card>
@@ -415,23 +447,22 @@ export default function Impact() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-serif font-bold text-white mb-6">
-              Poznaj szczegóły projektu ustawy
+              Wesprzyj zmianę. Podpisz petycję.
             </h2>
             <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-              Pełny tekst projektu ustawy o Funduszu Rekompensaty Społecznej wyjaśnia
-              wszystkie mechanizmy: token solidarnościowy, rozliczenia klinik, ochronę danych
-              i transparentność wydatkowania środków.
+              Twój podpis pokazuje politykom, że istnieje trzecia droga w sporze aborcyjnym.
+              Rozwiązanie oparte na badaniach, matematyce i empatii.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to={createPageUrl("ProjektUstawy")}>
+              <Link to={createPageUrl("PodpiszPetycje")}>
                 <Button size="lg" className="bg-white text-abotax-primary hover:bg-white/90">
                   <FileText className="w-5 h-5 mr-2" />
-                  Czytaj projekt ustawy
+                  Podpisz petycję
                 </Button>
               </Link>
-              <Link to={createPageUrl("About")}>
+              <Link to={createPageUrl("WplywNaRozwoj")}>
                 <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  Jak działa system
+                  Wpływ na dzieci
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>

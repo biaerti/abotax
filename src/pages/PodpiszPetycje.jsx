@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -7,11 +7,9 @@ import {
   Users,
   Scale,
   Heart,
-  Share2,
   AlertTriangle,
   ExternalLink,
   ArrowRight,
-  Shield,
   Landmark,
   Mail,
   MapPin,
@@ -24,16 +22,13 @@ import {
   Instagram,
   Sparkles,
   Download,
-  Send
 } from "lucide-react";
-import html2canvas from "html2canvas";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ImpactCounter from "@/components/ui/ImpactCounter";
 import { createPageUrl } from "@/utils/createPageUrl";
 import { db, supabase } from "@/lib/supabase";
@@ -46,6 +41,22 @@ const SUPPORT_REASONS = [
   { id: "stigma", text: "Bo mam dość stygmatyzowania", emoji: "🚫" },
   { id: "solution", text: "Bo to da się rozwiązać", emoji: "💡" }
 ];
+
+// Map reason IDs to pre-made plansza filenames in /Abotax_plansze/
+const PLANSZA_MAP = {
+  compromise: "ABOTAX_KOMPROMISY.png",
+  children: "ABOTAX_DZIECI_ZASLUGUJA.png",
+  war_end: "ABOTAX_KONIEC_Wojny.png",
+  no_sides: "ABOTAX_OBOZ.png",
+  stigma: "ABOTAX_STYGMATYZOWANIA.png",
+  solution: "ABOTAX_DA_SIE_ROZWIAZAC.png",
+  custom: "ABOTAX_PUSTE.png",
+};
+
+function getPlanszaUrl(reasonId) {
+  const filename = PLANSZA_MAP[reasonId] || PLANSZA_MAP.custom;
+  return `/Abotax_plansze/${filename}`;
+}
 
 export default function PodpiszPetycje() {
   const [formData, setFormData] = useState({
@@ -60,13 +71,9 @@ export default function PodpiszPetycje() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [copied, setCopied] = useState(false);
   const [selectedReason, setSelectedReason] = useState(null);
-  const [generatedImage, setGeneratedImage] = useState(null);
-  const [isGenerating, setIsGenerating] = useState(false);
+  const [planszaUrl, setPlanszaUrl] = useState(null);
   const [emailSent, setEmailSent] = useState(false);
-  const [customReason, setCustomReason] = useState("");
-  const [showCustomInput, setShowCustomInput] = useState(false);
   const [signatureCount, setSignatureCount] = useState(0);
-  const imageRef = useRef(null);
 
   const goalCount = 150000;
   const progressPercent = Math.round((signatureCount / goalCount) * 100);
@@ -100,32 +107,13 @@ export default function PodpiszPetycje() {
     setIsSubmitted(true);
   };
 
-  const generateImage = async (reason) => {
+  const selectReason = (reason) => {
     setSelectedReason(reason);
-    setIsGenerating(true);
+    const url = getPlanszaUrl(reason.id);
+    setPlanszaUrl(url);
 
-    // Wait for render
-    await new Promise(resolve => setTimeout(resolve, 100));
-
-    try {
-      const element = imageRef.current;
-      if (element) {
-        const canvas = await html2canvas(element, {
-          scale: 2,
-          useCORS: true,
-          backgroundColor: null
-        });
-        const dataUrl = canvas.toDataURL("image/png");
-        setGeneratedImage(dataUrl);
-
-        // Send confirmation email with image
-        sendConfirmationEmail(reason);
-      }
-    } catch (error) {
-      console.error("Error generating image:", error);
-    }
-
-    setIsGenerating(false);
+    // Send confirmation email
+    sendConfirmationEmail(reason);
   };
 
   const sendConfirmationEmail = async (reason) => {
@@ -148,10 +136,10 @@ export default function PodpiszPetycje() {
   };
 
   const downloadImage = () => {
-    if (!generatedImage) return;
+    if (!planszaUrl) return;
     const link = document.createElement("a");
     link.download = "popieram-abotax.png";
-    link.href = generatedImage;
+    link.href = planszaUrl;
     link.click();
   };
 
@@ -396,7 +384,7 @@ export default function PodpiszPetycje() {
                           </div>
                         </div>
 
-                        {!generatedImage ? (
+                        {!planszaUrl ? (
                           <div>
                             <h4 className="font-semibold text-official-navy text-sm mb-3">
                               Popieram AboTax, bo...
@@ -405,8 +393,7 @@ export default function PodpiszPetycje() {
                               {SUPPORT_REASONS.map((reason) => (
                                 <button
                                   key={reason.id}
-                                  onClick={() => { setShowCustomInput(false); generateImage(reason); }}
-                                  disabled={isGenerating}
+                                  onClick={() => selectReason(reason)}
                                   className="w-full text-left p-3 rounded-lg border border-official-navy/10 hover:border-abotax-primary hover:bg-abotax-primary/5 transition-all text-sm flex items-center gap-2"
                                 >
                                   <span>{reason.emoji}</span>
@@ -415,62 +402,29 @@ export default function PodpiszPetycje() {
                               ))}
                             </div>
 
-                            {/* Custom text option */}
+                            {/* Custom reason option - shows blank plansza */}
                             <div className="mt-3">
-                              {!showCustomInput ? (
-                                <button
-                                  onClick={() => setShowCustomInput(true)}
-                                  className="w-full text-left p-3 rounded-lg border-2 border-dashed border-official-navy/20 hover:border-abotax-primary hover:bg-abotax-primary/5 transition-all text-sm flex items-center gap-2"
-                                >
-                                  <span>✍️</span>
-                                  <span className="text-official-navy/70">Wpisz własny powód...</span>
-                                </button>
-                              ) : (
-                                <div className="space-y-2">
-                                  <div className="flex gap-2">
-                                    <Input
-                                      value={customReason}
-                                      onChange={(e) => setCustomReason(e.target.value)}
-                                      placeholder="Bo..."
-                                      maxLength={60}
-                                      className="border-official-navy/20 text-sm"
-                                      autoFocus
-                                    />
-                                    <Button
-                                      size="sm"
-                                      onClick={() => {
-                                        if (customReason.trim()) {
-                                          generateImage({ id: "custom", text: customReason.trim(), emoji: "✍️" });
-                                        }
-                                      }}
-                                      disabled={!customReason.trim() || isGenerating}
-                                      className="bg-abotax-primary hover:bg-abotax-primary/90 text-white px-4"
-                                    >
-                                      OK
-                                    </Button>
-                                  </div>
-                                  <p className="text-xs text-official-navy/50">{customReason.length}/60 znaków</p>
-                                </div>
-                              )}
+                              <button
+                                onClick={() => selectReason({ id: "custom", text: "Wpiszę własny powód", emoji: "✍️" })}
+                                className="w-full text-left p-3 rounded-lg border-2 border-dashed border-official-navy/20 hover:border-abotax-primary hover:bg-abotax-primary/5 transition-all text-sm flex items-center gap-2"
+                              >
+                                <span>✍️</span>
+                                <span className="text-official-navy/70">Wpiszę własny powód</span>
+                              </button>
                             </div>
-
-                            {isGenerating && (
-                              <div className="flex items-center justify-center gap-2 mt-4 text-sm text-official-navy/60">
-                                <motion.div
-                                  animate={{ rotate: 360 }}
-                                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                                  className="w-4 h-4 border-2 border-abotax-primary/30 border-t-abotax-primary rounded-full"
-                                />
-                                Generuję obrazek...
-                              </div>
-                            )}
                           </div>
                         ) : (
                           <div className="space-y-4">
-                            {/* Generated image preview */}
+                            {/* Pre-made plansza image */}
                             <div className="rounded-lg overflow-hidden shadow-md">
-                              <img src={generatedImage} alt="Popieram AboTax" className="w-full" />
+                              <img src={planszaUrl} alt="Popieram AboTax" className="w-full" />
                             </div>
+
+                            {selectedReason?.id === "custom" && (
+                              <p className="text-xs text-official-navy/60 text-center">
+                                Wpisz swój powód jako tekst na IG Story w pustym polu na planszy.
+                              </p>
+                            )}
 
                             {emailSent && (
                               <div className="flex items-center gap-2 text-xs text-abotax-primary bg-abotax-primary/10 rounded-lg p-2">
@@ -508,7 +462,7 @@ export default function PodpiszPetycje() {
                                 variant="outline"
                                 size="sm"
                                 className="flex-1 text-xs"
-                                onClick={() => setGeneratedImage(null)}
+                                onClick={() => { setPlanszaUrl(null); setSelectedReason(null); }}
                               >
                                 <Sparkles className="w-3 h-3 mr-1" />
                                 Inny powód
@@ -679,7 +633,7 @@ export default function PodpiszPetycje() {
               {
                 icon: Heart,
                 title: "125 mln zł rocznie",
-                description: "Szacowana kwota, która trafi do domów dziecka na terapie, edukację i rozwój dzieci."
+                description: "Szacowana kwota, która trafi na nowe etaty opiekunów w domach dziecka."
               },
               {
                 icon: Scale,
@@ -795,59 +749,6 @@ export default function PodpiszPetycje() {
         </div>
       </section>
 
-      {/* Hidden canvas for image generation - Square 1080x1080 (scaled 3x = 360x360) */}
-      <div className="fixed -left-[9999px] top-0">
-        <div
-          ref={imageRef}
-          className="w-[360px] h-[360px]"
-          style={{
-            background: "linear-gradient(135deg, #1a365d 0%, #1A5F5A 100%)"
-          }}
-        >
-          <div className="h-full flex flex-col justify-between p-6">
-            {/* Top - Logo & title */}
-            <div className="text-center">
-              <div className="flex items-center justify-center gap-2 mb-2">
-                <img
-                  src="/LOGO_abotax_noBG.png"
-                  alt="AboTax"
-                  className="w-8 h-8 object-contain"
-                  crossOrigin="anonymous"
-                />
-                <div className="text-left">
-                  <p className="text-white/50 text-[9px] leading-tight">Inicjatywa obywatelska</p>
-                  <p className="text-[#c9a227] font-bold text-[11px]">AboTax</p>
-                </div>
-              </div>
-              <h2 className="text-white text-lg font-serif font-bold leading-tight">
-                Popieram <span className="text-[#c9a227]">Fundusz Rekompensaty</span>
-              </h2>
-            </div>
-
-            {/* Middle - Reason */}
-            <div className="flex-1 flex items-center justify-center py-3">
-              <div className="w-full bg-white/10 rounded-lg p-3 border border-white/15">
-                <p className="text-white text-sm font-medium leading-snug" style={{ textAlign: 'center' }}>
-                  {selectedReason?.text || ""}
-                </p>
-              </div>
-            </div>
-
-            {/* Bottom - branding + empty space for @mention */}
-            <div className="text-center">
-              <p className="text-white/60 text-[10px] mb-2" style={{ textAlign: 'center' }}>
-                <Heart className="w-3 h-3 text-[#c9a227] inline-block align-middle mr-1" />
-                <span className="align-middle">Życie za życie — rekompensata, nie kara</span>
-              </p>
-              {/* Empty space where user will tag @abotax.pl */}
-              <div className="h-5 flex items-center justify-center">
-                <span className="text-white/30 text-[10px]">@ ___________</span>
-              </div>
-              <p className="text-white/40 text-[9px]">abotax.pl • #AboTax</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

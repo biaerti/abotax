@@ -9,7 +9,7 @@ import {
   Heart,
   Shield,
   Lock,
-  Building2
+  Users
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -35,17 +35,17 @@ export default function FAQ() {
         {
           id: "q1",
           question: "Czym jest Fundusz Rekompensaty Społecznej?",
-          answer: "To propozycja mechanizmu, w którym za każdy zabieg aborcyjny klinika dodaje dobrowolną opłatę solidarnościową. 100% tych środków trafia do domów dziecka na terapie, edukację i rozwój dzieci. Pacjentka pozostaje anonimowa — klinika wpłaca zbiorczo. Hasło przewodnie: 'Życie za życie — rekompensata, nie kara'."
+          answer: "To propozycja mechanizmu, w którym za każdy zabieg aborcyjny klinika dodaje obowiązkową opłatę solidarnościową. 100% tych środków trafia na etaty opiekunów w domach dziecka — zmniejszamy liczbę dzieci przypadających na jednego wychowawcę. Pacjentka pozostaje anonimowa — klinika wpłaca zbiorczo. Hasło przewodnie: 'Życie za życie — rekompensata, nie kara'."
         },
         {
           id: "q2",
           question: "Czy to jest kara za aborcję?",
-          answer: "Nie. Fundusz Rekompensaty Społecznej nie jest karą, osądem ani formą pokutowania. To dobrowolna inicjatywa proponująca kompromis w sporze aborcyjnym — trzecią drogę między skrajnościami. Nie oceniamy decyzji życiowych, proponujemy mechanizm przekształcający konflikt w pomoc dla dzieci."
+          answer: "Nie. Fundusz Rekompensaty Społecznej nie jest karą, osądem ani formą pokutowania. To inicjatywa proponująca kompromis w sporze aborcyjnym — trzecią drogę między skrajnościami. Nie oceniamy decyzji życiowych, proponujemy mechanizm przekształcający konflikt w realną pomoc dla dzieci w domach dziecka."
         },
         {
           id: "q3",
           question: "Na jakim etapie jest inicjatywa?",
-          answer: "Obecnie zbieramy głosy poparcia dla obywatelskiego projektu ustawy. Po zebraniu wystarczającej liczby podpisów, projekt zostanie złożony do Sejmu RP przez Fundację Destruktura. Równolegle budujemy sieć domów dziecka, które będą beneficjentami Funduszu."
+          answer: "Obecnie zbieramy głosy poparcia dla obywatelskiego projektu ustawy. Po zebraniu wystarczającej liczby podpisów, projekt zostanie złożony do Sejmu RP przez Fundację Destruktura."
         },
         {
           id: "q4",
@@ -55,17 +55,17 @@ export default function FAQ() {
         {
           id: "q4a",
           question: "Dlaczego kwota rekompensaty odpowiada kosztowi zabiegu?",
-          answer: "Kwota została określona jako równowartość kosztu zabiegu, aby stworzyć symboliczną równowagę — 'życie za życie'. To fundament idei: każda procedura generuje wsparcie dla dziecka w potrzebie. Kwota jest stała i obowiązkowa przy każdym zabiegu, ale przewidujemy opcje ułatwiające jej uiszczenie."
+          answer: "Kwota została określona jako równowartość kosztu zabiegu, aby stworzyć symboliczną równowagę — 'życie za życie'. To fundament idei: każda procedura generuje środki na etat opiekuna dla dziecka w potrzebie. Kwota jest stała i obowiązkowa przy każdym zabiegu, ale przewidujemy opcje ułatwiające jej uiszczenie."
         },
         {
           id: "q4b",
           question: "Czy mogę nie wpłacać rekompensaty?",
-          answer: "Nie. Projekt ustawy przewiduje, że rekompensata jest obowiązkowym elementem każdego zabiegu — to właśnie ten mechanizm zapewnia stałe wsparcie dla domów dziecka. Jednak dla osób w trudniejszej sytuacji finansowej przewidujemy rozłożenie na raty lub podział z partnerem."
+          answer: "Nie. Projekt ustawy przewiduje, że rekompensata jest obowiązkowym elementem każdego zabiegu — to właśnie ten mechanizm zapewnia stałe finansowanie etatów opiekunów. Jednak dla osób w trudniejszej sytuacji finansowej przewidujemy rozłożenie na raty lub podział z partnerem."
         },
         {
           id: "q4c",
           question: "Czy mogę rozłożyć wpłatę na raty lub podzielić z partnerem?",
-          answer: "Tak. Projekt przewiduje możliwość rozłożenia wpłaty na 3, 6 lub 12 miesięcznych rat. Dostępna jest również opcja 'Podziel z partnerem 50/50', która pozwala na współdzielenie rekompensaty. To pokazuje, że odpowiedzialność może być wspólna i odciąża finansowo obie strony."
+          answer: "Tak. Projekt przewiduje możliwość rozłożenia wpłaty na 3, 6 lub 12 miesięcznych rat. Dostępna jest również opcja 'Podziel z partnerem 50/50', która pozwala na współdzielenie rekompensaty — odpowiedzialność może być wspólna."
         }
       ]
     },
@@ -78,7 +78,7 @@ export default function FAQ() {
         {
           id: "q5",
           question: "Gdzie będą trafiać środki z Funduszu?",
-          answer: "100% środków (pomniejszone o koszty obsługi) będzie trafiać bezpośrednio do domów dziecka na konkretne cele: terapie psychologiczne, zajęcia edukacyjne, sprzęt, wycieczki. Darczyńcy będą mogli wybrać konkretną placówkę lub cel. Wszystkie przepływy finansowe będą publikowane w raportach."
+          answer: "98% środków trafia na etaty opiekunów w domach dziecka. Fundusz automatycznie alokuje środki tam, gdzie wskaźnik dzieci na opiekuna jest najgorszy. Nikt nie wybiera placówki — algorytm kieruje pieniądze gdzie są najbardziej potrzebne. 2% pokrywa koszty administracji i weryfikacji."
         },
         {
           id: "q6",
@@ -88,7 +88,7 @@ export default function FAQ() {
         {
           id: "q7",
           question: "Jak będzie zapewniona transparentność wydatków?",
-          answer: "Po wejściu w życie ustawy, każdy dom dziecka będzie publikował cele zbiórki (np. 'Terapia dla 12 dzieci', 'Sprzęt sportowy') wraz ze zdjęciami zrealizowanych zakupów. Raporty finansowe będą audytowane przez niezależne firmy i publicznie dostępne."
+          answer: "Publiczny Rejestr Etatów będzie pokazywał ile etatów opiekunów sfinansowano w każdym powiecie, wraz z danymi o wskaźniku dzieci na wychowawcę przed i po. Raporty kwartalne będą publicznie dostępne — każdy będzie mógł sprawdzić, jak środki przekładają się na realne zatrudnienie."
         }
       ]
     },
@@ -112,29 +112,34 @@ export default function FAQ() {
           id: "q10",
           question: "Czy mogę usunąć swoje dane?",
           answer: "Tak, zgodnie z RODO masz prawo do usunięcia swoich danych. Napisz na kontakt@abotax.pl z prośbą o usunięcie, a Twoje dane zostaną trwale usunięte z naszych systemów."
+        },
+        {
+          id: "q10a",
+          question: "Czy pacjentka jest w jakikolwiek sposób identyfikowana?",
+          answer: "Nie. Klinika odprowadza środki zbiorczo — w raporcie widnieje tylko łączna kwota, bez żadnych danych osobowych. Fundusz nie wie kto, kiedy ani gdzie miał zabieg. Pełna anonimowość pacjentki jest fundamentem całego systemu."
         }
       ]
     },
     {
-      icon: Building2,
-      title: "Domy dziecka",
+      icon: Users,
+      title: "Opiekunowie i placówki",
       bgColor: "bg-abotax-secondary/10",
       textColor: "text-abotax-secondary",
       questions: [
         {
           id: "q11",
-          question: "Jakie domy dziecka będą objęte programem?",
-          answer: "Program jest na etapie budowania sieci placówek. Docelowo chcemy objąć wsparciem jak najwięcej domów dziecka w Polsce. Każda placówka przejdzie proces weryfikacji i będzie musiała spełniać standardy transparentności. Jeśli znasz placówkę zainteresowaną pilotażem — napisz do nas."
+          question: "Jakie placówki będą objęte programem?",
+          answer: "Docelowo wszystkie domy dziecka w Polsce. Fundusz automatycznie kieruje środki tam, gdzie wskaźnik dzieci na opiekuna jest najgorszy — nie trzeba się zgłaszać. Każda placówka objęta wsparciem podlega weryfikacji zatrudnienia i raportowaniu w Publicznym Rejestrze Etatów."
         },
         {
           id: "q12",
           question: "Ile dzieci może skorzystać z Funduszu?",
-          answer: "W Polsce w domach dziecka przebywa około 17 100 dzieci. Szacujemy, że Fundusz może generować około 125 mln zł rocznie na terapie, edukację i rozwój tych dzieci. To realna pomoc, która może zmienić ich życie."
+          answer: "W Polsce w domach dziecka przebywa około 17 100 dzieci przy ~2 140 wychowawcach (wskaźnik 1:8). Szacujemy, że Fundusz może generować ponad 200 mln zł rocznie — wystarczająco na ~2 800 nowych etatów opiekunów. To realna zmiana: mniejsze grupy, więcej uwagi, lepszy rozwój."
         },
         {
           id: "q13",
-          question: "Czy jako dom dziecka możemy dołączyć do pilotażu?",
-          answer: "Tak! Jesteśmy na etapie budowania sieci placówek. Skontaktuj się przez formularz kontaktowy lub napisz na kontakt@abotax.pl — odezwiemy się z informacjami o kolejnych krokach i wymaganiach dotyczących transparentności."
+          question: "Dlaczego etaty opiekunów, a nie sprzęt czy remonty?",
+          answer: "Badania naukowe (BEIP, St. Petersburg-USA, Lancet Commission) jednoznacznie wskazują: stały, uważny opiekun w małej grupie to jedyny czynnik, który zmienia trajektorię rozwoju dziecka. Nie sprzęt, nie budynki — ludzie. Dlatego 100% środków idzie na etaty."
         }
       ]
     }

@@ -7,14 +7,15 @@ import {
   Shield,
   ArrowRight,
   FileText,
-  QrCode,
   Landmark,
   Hospital,
   Clock,
   CheckCircle2,
   BarChart3,
   Coins,
-  Scale
+  Scale,
+  Heart,
+  Users
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -36,25 +37,18 @@ export default function About() {
       detail: "Łączny koszt dla pacjentki: koszt zabiegu + AboTax. Możliwe rozłożenie AboTax na raty do 12 miesięcy."
     },
     {
-      icon: QrCode,
-      number: "03",
-      title: "Token solidarnościowy",
-      description: "Do faktury dołączony jest unikalny token - kod QR lub alfanumeryczny. Pacjentka może go użyć anonimowo w ciągu 30 dni.",
-      detail: "Token pozwala wybrać, który dom dziecka otrzyma do 50% jej opłaty solidarnościowej. Wybór jest całkowicie anonimowy."
-    },
-    {
       icon: Landmark,
-      number: "04",
+      number: "03",
       title: "Klinika odprowadza środki",
       description: "Co miesiąc klinika przekazuje zbiorczy raport i całość zebranych opłat solidarnościowych do Funduszu Rekompensaty Społecznej.",
-      detail: "Raport zawiera tylko liczby i anonimowe tokeny - BEZ danych osobowych pacjentek. Fundusz nie wie, kim są płacące osoby."
+      detail: "Raport zawiera tylko łączne kwoty — BEZ danych osobowych pacjentek. Fundusz nie wie, kim są płacące osoby."
     },
     {
-      icon: Building2,
-      number: "05",
-      title: "Wsparcie domów dziecka",
-      description: "Fundusz dystrybuuje środki: 50% na placówkę wybraną przez pacjentkę (via token), 50% według własnych zasad priorytetyzacji.",
-      detail: "Wszystkie środki trafiają na rzecz dzieci w pieczy zastępczej - terapie, edukację, wyposażenie, zajęcia rozwojowe."
+      icon: Heart,
+      number: "04",
+      title: "Automatyczna alokacja na etaty",
+      description: "Fundusz kieruje 100% środków na etaty opiekunów w domach dziecka — w pierwszej kolejności tam, gdzie wskaźnik opieki jest najgorszy.",
+      detail: "Środki trafiają uczciwie i sprawiedliwie. Publiczny Rejestr Etatów pokazuje, ile dodatkowych opiekunów sfinansował AboTax w każdym powiecie."
     }
   ];
 
@@ -62,22 +56,22 @@ export default function About() {
     {
       icon: Shield,
       title: "Pełna anonimowość",
-      description: "Fundusz nigdy nie otrzymuje danych osobowych pacjentek. Klinika przekazuje tylko zbiorcze kwoty i anonimowe tokeny."
+      description: "Fundusz nigdy nie otrzymuje danych osobowych pacjentek. Klinika przekazuje tylko zbiorcze kwoty."
     },
     {
       icon: BarChart3,
       title: "Pełna transparentność",
-      description: "Fundusz publikuje kwartalne zestawienia wpływów i wydatków oraz podlega corocznemu audytowi zewnętrznemu."
+      description: "Publiczny Rejestr Etatów i kwartalne raporty. Każdy widzi, ile nowych opiekunów sfinansował Fundusz."
     },
     {
       icon: Scale,
       title: "Podstawa prawna",
-      description: "System działa w oparciu o ustawę o Funduszu Rekompensaty Społecznej - nie jest to darowizna, lecz opłata publicznoprawna."
+      description: "System działa w oparciu o ustawę o Funduszu Rekompensaty Społecznej — opłata publicznoprawna, nie darowizna."
     },
     {
       icon: Coins,
-      title: "Bez VAT",
-      description: "Opłata solidarnościowa nie podlega opodatkowaniu VAT - 100% kwoty trafia do domów dziecka (minus 3% na obsługę)."
+      title: "98% na etaty",
+      description: "Maksymalnie 2% na administrację systemu. Reszta trafia na wynagrodzenia opiekunów w domach dziecka."
     }
   ];
 
@@ -93,14 +87,14 @@ export default function About() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-official-gold/20 rounded-full text-official-gold text-sm font-medium mb-6 border border-official-gold/30">
               <Clock className="w-4 h-4" />
-              5 prostych kroków
+              4 proste kroki
             </div>
             <h1 className="text-4xl lg:text-5xl font-serif font-bold text-white mb-6">
               Jak działa system <span className="text-official-gold">AboTax</span>?
             </h1>
             <p className="text-white/80 text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto">
-              Od zabiegu w klinice do wsparcia konkretnego domu dziecka -
-              cały proces jest prosty, anonimowy i transparentny.
+              Od zabiegu w klinice do nowego etatu opiekuna w domu dziecka —
+              cały proces jest prosty, anonimowy i automatyczny.
             </p>
           </motion.div>
         </div>
@@ -125,25 +119,25 @@ export default function About() {
                 </div>
                 <h3 className="font-bold text-official-navy mb-2">Klinika</h3>
                 <p className="text-sm text-official-navy/70">
-                  Wykonuje zabieg, wystawia fakturę z AboTax i tokenem
+                  Wykonuje zabieg, wystawia fakturę z opłatą AboTax
                 </p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 rounded-2xl bg-official-gold flex items-center justify-center mx-auto mb-4">
-                  <QrCode className="w-8 h-8 text-white" />
+                  <Landmark className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="font-bold text-official-navy mb-2">Pacjentka</h3>
+                <h3 className="font-bold text-official-navy mb-2">Fundusz</h3>
                 <p className="text-sm text-official-navy/70">
-                  Płaci fakturę i może anonimowo wybrać dom dziecka tokenem
+                  Otrzymuje zbiorcze środki od klinik i alokuje na etaty opiekunów
                 </p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 rounded-2xl bg-abotax-success flex items-center justify-center mx-auto mb-4">
-                  <Building2 className="w-8 h-8 text-white" />
+                  <Users className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="font-bold text-official-navy mb-2">Domy dziecka</h3>
+                <h3 className="font-bold text-official-navy mb-2">Opiekunowie</h3>
                 <p className="text-sm text-official-navy/70">
-                  Otrzymują środki na wsparcie podopiecznych
+                  Nowe etaty tam, gdzie wskaźnik opieki jest najgorszy
                 </p>
               </div>
             </div>
@@ -294,22 +288,22 @@ export default function About() {
                   <div>
                     <h3 className="font-semibold text-official-navy mb-4 flex items-center gap-2">
                       <Building2 className="w-5 h-5 text-abotax-primary" />
-                      Podział opłaty AboTax (2 500 zł)
+                      Gdzie trafia opłata AboTax (2 500 zł)
                     </h3>
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="bg-abotax-primary/10 rounded-xl p-4">
-                        <p className="text-sm text-official-navy/60 mb-1">Wybór pacjentki (via token)</p>
-                        <p className="text-2xl font-bold text-abotax-primary">do 1 250 zł</p>
-                        <p className="text-xs text-official-navy/50 mt-2">50% na wybrany dom dziecka</p>
+                        <p className="text-sm text-official-navy/60 mb-1">Etaty opiekunów</p>
+                        <p className="text-2xl font-bold text-abotax-primary">2 450 zł</p>
+                        <p className="text-xs text-official-navy/50 mt-2">98% — bezpośrednio na wynagrodzenia</p>
                       </div>
                       <div className="bg-abotax-secondary/10 rounded-xl p-4">
-                        <p className="text-sm text-official-navy/60 mb-1">Dystrybucja Funduszu</p>
-                        <p className="text-2xl font-bold text-abotax-secondary">od 1 250 zł</p>
-                        <p className="text-xs text-official-navy/50 mt-2">Wg zasad priorytetyzacji</p>
+                        <p className="text-sm text-official-navy/60 mb-1">Administracja systemu</p>
+                        <p className="text-2xl font-bold text-abotax-secondary">50 zł</p>
+                        <p className="text-xs text-official-navy/50 mt-2">2% — weryfikacja, raporty, przelewy</p>
                       </div>
                     </div>
                     <p className="text-xs text-official-navy/50 mt-4 text-center">
-                      * Jeśli pacjentka nie użyje tokena, całość (2 500 zł) zostanie rozdzielona przez Fundusz
+                      Fundusz automatycznie kieruje środki tam, gdzie wskaźnik opieki jest najgorszy
                     </p>
                   </div>
 
@@ -356,20 +350,20 @@ export default function About() {
               Masz więcej pytań?
             </h2>
             <p className="text-official-navy/70 mb-8 max-w-2xl mx-auto">
-              Sprawdź szczegóły dotyczące anonimowości, przeczytaj projekt ustawy
-              lub zobacz odpowiedzi na najczęściej zadawane pytania.
+              Przeczytaj projekt ustawy, zobacz badania naukowe stojące za AboTax
+              lub znajdź odpowiedzi w FAQ.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to={createPageUrl("Privacy")}>
-                <Button size="lg" variant="outline" className="border-abotax-primary text-abotax-primary rounded-xl">
-                  <Shield className="w-5 h-5 mr-2" />
-                  Anonimowość
-                </Button>
-              </Link>
               <Link to={createPageUrl("ProjektUstawy")}>
                 <Button size="lg" className="bg-abotax-primary hover:bg-abotax-primary-light text-white rounded-xl">
                   <FileText className="w-5 h-5 mr-2" />
                   Projekt ustawy
+                </Button>
+              </Link>
+              <Link to={createPageUrl("WplywNaRozwoj")}>
+                <Button size="lg" variant="outline" className="border-abotax-primary text-abotax-primary rounded-xl">
+                  Wpływ na rozwój dzieci
+                  <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
               <Link to={createPageUrl("FAQ")}>
@@ -392,16 +386,16 @@ export default function About() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl lg:text-4xl font-serif font-bold text-white mb-4">
-              Zobacz szacunkowy wpływ systemu
+              Zobacz wpływ AboTax na rozwój dzieci
             </h2>
             <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-              Ile środków może trafić do domów dziecka? Jak to wpłynie na życie podopiecznych?
-              Zobacz analizę opartą na danych demograficznych.
+              Badania naukowe potwierdzają: indywidualna uwaga opiekuna to najważniejszy czynnik
+              rozwoju dziecka w placówce. Zobacz, jak AboTax może to zmienić.
             </p>
-            <Link to={createPageUrl("Impact")}>
+            <Link to={createPageUrl("WplywNaRozwoj")}>
               <Button size="lg" className="bg-white text-abotax-primary hover:bg-white/90 rounded-xl">
                 <BarChart3 className="w-5 h-5 mr-2" />
-                Analiza wpływu
+                Wpływ na rozwój
               </Button>
             </Link>
           </motion.div>

@@ -1,0 +1,53 @@
+============================================
+  JAK PUSHOWAC NA GITA - SCIAGA
+============================================
+
+1. SPRAWDZ CO SIE ZMIENILO:
+   git status
+
+2. DODAJ PLIKI DO STAGED:
+
+   Wszystko naraz:
+   git add .
+
+   Albo konkretne pliki:
+   git add src/pages/Home.jsx src/pages/About.jsx
+
+3. ZROB COMMIT:
+   git commit -m "opis co zrobiles"
+
+4. PUSH NA GITHUB:
+   git push origin main
+
+--------------------------------------------
+NAJCZESTSZA KOMBINACJA (wszystko naraz):
+
+   git add . && git commit -m "opis zmian" && git push origin main
+
+--------------------------------------------
+PRZYDATNE KOMENDY:
+
+   git status          - co sie zmienilo?
+   git diff            - jakie dokladnie zmiany?
+   git log --oneline   - ostatnie commity
+   git pull origin main - sciagnij zmiany z github (przed pushem)
+
+--------------------------------------------
+JESLI POJAWI SIE BLAD PRZY PUSH:
+
+   1. Najpierw pull:
+      git pull origin main
+
+   2. Jesli sa konflikty, napraw je w plikach,
+      a potem:
+      git add .
+      git commit -m "merge"
+      git push origin main
+
+--------------------------------------------
+DEPLOY EDGE FUNCTIONS (osobno, recznie):
+
+   supabase functions deploy send-petition-email
+   supabase functions deploy send-followup-emails
+
+============================================
