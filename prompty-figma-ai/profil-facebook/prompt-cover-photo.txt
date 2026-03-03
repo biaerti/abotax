@@ -1,0 +1,45 @@
+PROMPT FIGMA AI — Facebook Cover Photo (zdjęcie w tle fanpage)
+=====================================
+
+STYL: oficjalny/rządowy, minimalistyczny. Kolory: navy #1a365d, teal #1A5F5A, złoty #c9a227, cream #faf8f5. Gradient hero: 135deg #1a365d -> #1A5F5A. Fonty: serif bold na nagłówki, sans-serif na body. Ton: merytoryczny, neutralny politycznie. Branding: "AboTax" złoty serif bold, abotax.pl, #AboTax.
+
+FORMAT: Facebook Cover Photo, 1640x624px (2x dla ostrości), proporcje 820x312
+
+WAŻNE — strefa bezpieczna:
+- Środek pionowy (±80px od osi Y) jest widoczny na mobile — umieść tam najważniejszy tekst
+- Lewa krawędź (0–200px) jest częściowo zasłonięta przez awatar profilu na desktop — NIE umieszczaj tam tekstu
+- Prawa krawędź może być przycięta na mobile — margines 60px bezpieczeństwa
+
+=== OPIS GRAFIKI ===
+
+TŁO:
+- Gradient: 135deg, #1a365d (lewy górny) → #1A5F5A (prawy dolny)
+- Delikatna tekstura: rozrzucone cienkie linie w siatce (opacity 6%, kolor #ffffff) — efekt dokumentu/papieru rządowego
+- Prawa część (od 65% szerokości): subtelna złota poświata / radial gradient #c9a227 opacity 8%
+
+LEWA STRONA (pusta — zasłonięta przez awatar):
+- Brak tekstu, lekka dekoracja: pionowa złota linia (2px, #c9a227, opacity 30%) na x=220px
+
+ŚRODEK (x: 220px–950px):
+- Górna linia pomocnicza: "Inicjatywa obywatelska · Projekt ustawy" — biały, sans-serif, 13px, letter-spacing 2px, opacity 60%, uppercase
+- Główny nagłówek (2 linie):
+    Linia 1: "Życie za życie —" — biały, serif, bold, 46px
+    Linia 2: "rekompensata, nie kara" — #c9a227 (złoty), serif, bold, 46px
+- Podtytuł pod nagłówkiem: "Fundusz Rekompensaty Społecznej dla opiekunów w domach dziecka" — biały 75% opacity, sans-serif, 18px, max 520px szerokości
+
+- Trzy mini-tagi w rzędzie (poniżej podtytułu, gap 12px):
+    [waga ⚖] "Trzecia droga"      — teal tło #1A5F5A, biały tekst, border-radius 20px, padding 6px 14px
+    [tarcza 🛡] "Pełna anonimowość" — tło navy ciemniejsze #0f2340, biały tekst
+    [serce 💛] "100% na etaty"     — tło złote #c9a227, ciemny tekst #1a365d
+
+PRAWA STRONA (x: 950px–1580px, wycentrowana pionowo):
+- Duża liczba w kółku (dekoracyjne tło: białe koło opacity 8%, średnica 260px):
+    "125 mln zł" — #c9a227, serif, bold, 58px
+    "rocznie dla dzieci" — biały, sans-serif, 14px, opacity 70%
+- Pod kółkiem: "~1 488 nowych etatów opiekunów" — biały, sans-serif, 13px, opacity 55%
+
+DÓŁ (pasek, pełna szerokość, h: 44px, y od dołu):
+- Tło: #0f2340 (bardzo ciemny navy, opacity 85%)
+- Lewa strona: "abotax.pl" — biały bold 14px | separator "|" | "#AboTax" — złoty 14px
+- Prawa strona: "facebook.com/abotaxx" — biały 60% 13px | "@abotax.pl" (Instagram) — biały 60% 13px
+- Cienka złota linia nad paskiem (1px, #c9a227, opacity 25%)

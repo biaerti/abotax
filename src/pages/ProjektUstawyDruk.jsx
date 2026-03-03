@@ -237,7 +237,7 @@ export default function ProjektUstawyDruk() {
       <div className="document">
 
         <div className="doc-header">
-          <img src="/LOGO_abotax_noBG.png" alt="AboTax" style={{ width: "80px", height: "auto", flexShrink: 0, background: "white", borderRadius: "50%", padding: "4px" }} />
+          <img src="/LOGO_abotax_noBG.png" alt="AboTax" style={{ width: "80px", height: "auto", flexShrink: 0 }} />
           <div>
             <div className="header-initiative">Inicjatywa obywatelska &middot; Projekt ustawy</div>
             <div className="header-title">Ustawa o Funduszu Rekompensaty Spo&#322;ecznej</div>
