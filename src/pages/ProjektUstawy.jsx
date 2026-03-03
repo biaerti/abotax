@@ -13,14 +13,18 @@ import {
   Hospital,
   BarChart3,
   CheckCircle2,
-  Brain
+  Brain,
+  Building2,
+  Home,
+  Calculator,
+  Lock,
+  RefreshCw
 } from "lucide-react";
 import { db } from "@/lib/supabase";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import ImpactCounter from "@/components/ui/ImpactCounter";
 import { createPageUrl } from "@/utils/createPageUrl";
 
 export default function ProjektUstawy() {
@@ -40,12 +44,12 @@ export default function ProjektUstawy() {
         {
           number: "Art. 1",
           title: "Zakres ustawy",
-          content: "Ustawa ustanawia Fundusz Rekompensaty Społecznej oraz określa zasady wnoszenia i rozliczania opłaty solidarnościowej (AboTax) związanej z przerwaniem ciąży na żądanie. Ustawa nie reguluje przesłanek dopuszczalności przerwania ciąży."
+          content: 'Ustawa ustanawia Fundusz Rekompensaty Społecznej, zwany dalej \u201EFunduszem\u201D, oraz określa zasady wnoszenia, rozliczania i przekazywania opłaty solidarnościowej, zwanej \u201EAboTax\u201D, związanej z przerwaniem ciąży na żądanie. Ustawa nie reguluje przesłanek dopuszczalności przerwania ciąży.'
         },
         {
           number: "Art. 2",
           title: "Definicje",
-          content: "Opłata solidarnościowa (AboTax) oznacza opłatę publicznoprawną równą 100% kosztu zabiegu przerwania ciąży. Token solidarnościowy to unikalny kod umożliwiający anonimowe wskazanie placówki pieczy zastępczej."
+          content: "Użyte w ustawie określenia oznaczają: 1) opłata solidarnościowa (AboTax) — opłata publicznoprawna równa 100% kosztu zabiegu przerwania ciąży, odprowadzana przez placówkę medyczną do Funduszu; 2) placówka — podmiot leczniczy wykonujący zabiegi przerwania ciąży na podstawie zezwolenia; 3) etat opiekuna — pełnoetatowe zatrudnienie wychowawcy lub opiekuna w placówce pieczy zastępczej; 4) samorząd — jednostka samorządu terytorialnego (gmina lub powiat) prowadząca lub zamierzająca prowadzić placówkę pieczy zastępczej; 5) wskaźnik kadrowy — stosunek liczby dzieci w placówce do liczby zatrudnionych wychowawców."
         }
       ]
     },
@@ -56,17 +60,22 @@ export default function ProjektUstawy() {
         {
           number: "Art. 3",
           title: "Utworzenie Funduszu",
-          content: "Tworzy się Fundusz Rekompensaty Społecznej jako państwowy fundusz celowy. Dysponentem Funduszu jest minister właściwy do spraw rodziny."
+          content: "Tworzy się Fundusz Rekompensaty Społecznej jako państwowy fundusz celowy w rozumieniu ustawy o finansach publicznych. Dysponentem Funduszu jest minister właściwy do spraw rodziny."
+        },
+        {
+          number: "Art. 4",
+          title: "Przychody Funduszu",
+          content: "Przychodami Funduszu są: 1) opłaty solidarnościowe (AboTax) odprowadzane przez placówki medyczne; 2) dobrowolne darowizny od osób fizycznych i prawnych; 3) odsetki od środków zgromadzonych na rachunku Funduszu."
         },
         {
           number: "Art. 5",
           title: "Wydatki Funduszu",
-          content: "Środki przeznacza się wyłącznie na: wsparcie placówek pieczy zastępczej, terapię psychologiczną, edukację, wyposażenie oraz zajęcia rozwojowe. Koszty administracyjne nie mogą przekroczyć 3% przychodów."
+          content: "Środki Funduszu przeznacza się wyłącznie na finansowanie etatów wychowawców i opiekunów w placówkach pieczy zastępczej prowadzonych przez samorządy. Co najmniej 98% przychodów trafia bezpośrednio na wynagrodzenia — koszty administracyjne Funduszu nie mogą przekroczyć 2% rocznych przychodów. Fundusz nie finansuje remontów, wyposażenia ani programów terapeutycznych."
         },
         {
           number: "Art. 6",
-          title: "Transparentność",
-          content: "Dysponent publikuje co najmniej raz na kwartał zestawienie wpływów i wydatków. Fundusz podlega corocznemu audytowi zewnętrznemu - raporty są publicznie dostępne."
+          title: "Publiczny Rejestr Etatów i transparentność",
+          content: "Dysponent prowadzi i publicznie udostępnia Rejestr Etatów zawierający: liczbę etatów sfinansowanych w każdym powiecie, kwoty przekazane poszczególnym samorządom oraz aktualny wskaźnik kadrowy w dofinansowanych placówkach. Rejestr jest aktualizowany co kwartał. Fundusz podlega corocznemu niezależnemu audytowi zewnętrznemu — raport jest publicznie dostępny."
         }
       ]
     },
@@ -77,28 +86,53 @@ export default function ProjektUstawy() {
         {
           number: "Art. 7",
           title: "Wysokość opłaty",
-          content: "Wysokość opłaty solidarnościowej jest równa 100% kosztu zabiegu. Opłatę uiszcza pacjentka na rzecz podmiotu wykonującego zabieg."
+          content: "Wysokość opłaty solidarnościowej jest równa 100% kosztu zabiegu przerwania ciąży. Opłatę uiszcza pacjentka na rzecz placówki wykonującej zabieg. Opłata stanowi rekompensatę solidarnościową — nie jest karą ani podatkiem, lecz wkładem w poprawę warunków opieki nad dziećmi pozbawionymi opieki rodzicielskiej."
         },
         {
           number: "Art. 8",
-          title: "Faktura i token",
-          content: "Placówka wystawia fakturę z kosztem zabiegu i AboTax jako odrębne pozycje oraz dołącza token solidarnościowy. Opłata solidarnościowa nie podlega VAT."
+          title: "Faktura z dwiema pozycjami",
+          content: "Placówka wystawia pacjentce fakturę zawierającą dwie odrębne pozycje: 1) koszt usługi medycznej (zabiegu); 2) opłata solidarnościowa AboTax. Opłata solidarnościowa nie podlega podatkowi VAT. Na fakturze nie umieszcza się żadnych danych pozwalających na identyfikację pacjentki przez Fundusz."
         },
         {
           number: "Art. 9",
-          title: "Terminy i raty",
-          content: "Pacjentka płaci w terminie 30 dni. Możliwe rozłożenie na raty do 12 miesięcy. Klinika odprowadza środki do Funduszu niezależnie od spłaty rat."
+          title: "Raty i rozliczenie roczne",
+          content: "Pacjentka może opłacić AboTax jednorazowo lub — na podstawie porozumienia z placówką — w ratach rozłożonych na okres do 12 miesięcy od daty zabiegu. Placówka może zaproponować podział opłaty 50/50 między pacjentkę a jej partnera. Placówka odprowadza zebrane środki do Funduszu w terminie do 31 marca roku następującego po roku, w którym wykonano zabiegi. Ryzyko windykacji należności od pacjentek spoczywa wyłącznie na placówce — Fundusz rozlicza się z placówką, nie z pacjentką."
+        },
+        {
+          number: "Art. 10",
+          title: "Raportowanie i anonimowość",
+          content: "Placówka przekazuje Funduszowi wyłącznie dane zagregowane: łączną liczbę wykonanych zabiegów w danym roku oraz łączną kwotę należnej opłaty solidarnościowej. Raport nie zawiera żadnych danych osobowych pacjentek — imion, nazwisk, adresów, numerów PESEL ani żadnych innych informacji pozwalających na identyfikację. Fundusz nie przetwarza danych osobowych pacjentek."
         }
       ]
     },
     {
-      id: "token",
-      title: "Token solidarnościowy",
+      id: "allocation",
+      title: "Alokacja — model samorządowy",
       articles: [
         {
+          number: "Art. 11",
+          title: "Wniosek samorządu",
+          content: "Samorząd ubiegający się o dofinansowanie etatów składa do Funduszu wniosek zawierający: 1) aktualny wskaźnik kadrowy w placówce lub placówkach; 2) liczbę dzieci przebywających w placówce; 3) potwierdzenie posiadania gotowego lokalu (własnego, komunalnego lub uzyskanego od innego podmiotu publicznego) przystosowanego do prowadzenia domu dziecka; 4) planowaną liczbę etatów do sfinansowania. Fundusz rozpatruje wnioski w kolejności według wskaźnika kadrowego — priorytet mają placówki z najgorszym stosunkiem dzieci do opiekunów."
+        },
+        {
           number: "Art. 12",
-          title: "Anonimowy wybór",
-          content: "Token umożliwia pacjentce anonimowe wskazanie placówki pieczy zastępczej. W ciągu 30 dni może przypisać do 50% opłaty na wybraną placówkę. Klinika nie łączy tokenów z danymi osobowymi."
+          title: "Kryteria alokacji i rezerwa",
+          content: "Fundusz kieruje środki tam, gdzie wskaźnik kadrowy jest najgorszy — automatycznie, bez możliwości politycznego wpływu na wybór samorządów. Fundusz utrzymuje rezerwę finansową w wysokości co najmniej 20% rocznych przychodów, aby zapewnić ciągłość finansowania już uruchomionych etatów nawet w przypadku zmienności wpływów."
+        },
+        {
+          number: "Art. 13",
+          title: "Dofinansowanie i uruchomienie placówki",
+          content: "Po pozytywnym rozpatrzeniu wniosku Fundusz zawiera z samorządem umowę wieloletnią o finansowaniu etatów. Samorząd zapewnia lokal i zarządza placówką — Fundusz finansuje wyłącznie wynagrodzenia. Samorząd może przeznaczyć dofinansowanie na: 1) wydzielenie z dużej grupy (do 14 dzieci) mniejszych grup wychowawczych (docelowo 5–7 dzieci) przez zatrudnienie dodatkowych opiekunów; 2) otwarcie nowej placówki i przekierowanie dzieci z przepełnionych domów dziecka."
+        },
+        {
+          number: "Art. 14",
+          title: "Ciągłość finansowania",
+          content: "Raz uruchomione etaty są finansowane przez Fundusz tak długo, jak samorząd spełnia warunki umowy i Fundusz dysponuje środkami. Nowe wnioski samorządów rozpatrywane są dopiero po zabezpieczeniu środków na realizację istniejących umów. Fundusz nie może jednostronnie cofnąć finansowania bez zachowania 12-miesięcznego okresu wypowiedzenia umowy."
+        },
+        {
+          number: "Art. 15",
+          title: "Warunki utrzymania dofinansowania",
+          content: "Samorząd zobowiązany jest do: 1) utrzymania liczby sfinansowanych etatów przez cały okres umowy; 2) składania półrocznych sprawozdań o wskaźniku kadrowym i liczbie dzieci; 3) zapewnienia dostępności lokalu przez cały okres umowy. Naruszenie warunków umowy skutkuje wstrzymaniem wypłat i uruchomieniem postępowania wyjaśniającego."
         }
       ]
     },
@@ -107,14 +141,25 @@ export default function ProjektUstawy() {
       title: "Ochrona danych",
       articles: [
         {
-          number: "Art. 10",
-          title: "Raportowanie",
-          content: "Klinika przekazuje do Funduszu tylko: liczbę zabiegów, łączne kwoty, identyfikatory tokenów. Zestawienie NIE ZAWIERA danych osobowych pacjentek."
+          number: "Art. 16",
+          title: "Pełna anonimowość pacjentek",
+          content: "Fundusz nie gromadzi, nie przetwarza ani nie żąda jakichkolwiek danych osobowych pacjentek. Placówka medyczna jest administratorem danych w zakresie niezbędnym do wykonania umowy z pacjentką — danych tych nie udostępnia Funduszowi. Naruszenie obowiązku anonimizacji przez placówkę podlega karze administracyjnej wymierzanej przez Prezesa Urzędu Ochrony Danych Osobowych."
+        }
+      ]
+    },
+    {
+      id: "final",
+      title: "Przepisy końcowe",
+      articles: [
+        {
+          number: "Art. 17",
+          title: "Warunek stosowania przepisów o opłacie",
+          content: "Przepisy dotyczące opłaty solidarnościowej (AboTax) stosuje się wyłącznie po wejściu w życie odrębnych przepisów ustawowych dopuszczających przerwanie ciąży na żądanie kobiety do ukończenia 12. tygodnia ciąży. Do czasu spełnienia tego warunku Fundusz może przyjmować wyłącznie dobrowolne darowizny i prowadzić działalność organizacyjno-przygotowawczą."
         },
         {
-          number: "Art. 15",
-          title: "Zakaz przetwarzania",
-          content: "Fundusz NIE GROMADZI ani NIE PRZETWARZA danych osobowych pacjentek. Klinika nie przekazuje Funduszowi żadnych danych osobowych."
+          number: "Art. 18",
+          title: "Wejście w życie",
+          content: "Ustawa wchodzi w życie po upływie 3 miesięcy od dnia ogłoszenia, z wyjątkiem art. 7–10, które wchodzą w życie wraz ze spełnieniem warunku określonego w art. 17."
         }
       ]
     }
@@ -122,24 +167,24 @@ export default function ProjektUstawy() {
 
   const keyFeatures = [
     {
-      icon: Hospital,
-      title: "Klinika rozlicza",
-      description: "Placówka medyczna wystawia fakturę i odprowadza środki"
+      icon: Users,
+      title: "100% na etaty",
+      description: "Żadnych remontów ani wyposażenia — wyłącznie wynagrodzenia opiekunów"
     },
     {
-      icon: Brain,
-      title: "Automatyczna alokacja",
-      description: "Fundusz kieruje środki tam, gdzie wskaźnik dzieci/opiekun jest najgorszy"
+      icon: Home,
+      title: "Lokal daje samorząd",
+      description: "Fundusz finansuje kadry, samorząd zapewnia lokal i zarządza placówką"
     },
     {
       icon: Shield,
       title: "Zero danych osobowych",
-      description: "Fundusz nigdy nie otrzymuje informacji o pacjentkach"
+      description: "Fundusz nigdy nie otrzymuje żadnych informacji o pacjentkach"
     },
     {
-      icon: BarChart3,
-      title: "Pełna transparentność",
-      description: "Kwartalne raporty i coroczny audyt zewnętrzny"
+      icon: RefreshCw,
+      title: "Ciągłość finansowania",
+      description: "Raz uruchomione etaty są finansowane tak długo, jak spełniane są warunki umowy"
     }
   ];
 
@@ -179,7 +224,7 @@ export default function ProjektUstawy() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl text-white/80 mb-8"
             >
-              18 artykułów definiujących mechanizm solidarnościowy
+              18 artykułów definiujących mechanizm solidarnościowy — legalizacja z anonimową opłatą na etaty opiekunów
             </motion.p>
 
             <motion.div
@@ -188,7 +233,7 @@ export default function ProjektUstawy() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-wrap justify-center gap-4"
             >
-              <a href="/projekt-ustawy.pdf" download>
+              <a href="/ProjektUstawyDruk" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-white text-official-navy hover:bg-white/90">
                   <Download className="w-5 h-5 mr-2" />
                   Pobierz PDF
@@ -254,8 +299,9 @@ export default function ProjektUstawy() {
                   oraz w celu łagodzenia konfliktu społecznego wokół przerywania ciąży
                   ustanawia się mechanizm solidarnościowy. Umożliwia on legalne przerwanie ciąży
                   na żądanie kobiety w określonych granicach, przy czym wprowadza ekonomiczną
-                  rekompensatę na rzecz społeczeństwa. Mechanizm ten zapewnia anonimowość
-                  pacjentek oraz pełną przejrzystość wydatkowania środków.
+                  rekompensatę na rzecz społeczeństwa — przeznaczoną w całości na etaty opiekunów
+                  w domach dziecka. Mechanizm ten zapewnia pełną anonimowość pacjentek oraz
+                  przejrzystość wydatkowania środków poprzez Publiczny Rejestr Etatów.
                 </p>
               </CardContent>
             </Card>
@@ -316,12 +362,12 @@ export default function ProjektUstawy() {
               <div className="flex items-start gap-4">
                 <AlertTriangle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-semibold text-blue-900 mb-2">Ważna uwaga</h4>
+                  <h4 className="font-semibold text-blue-900 mb-2">Warunek wejścia w życie (Art. 17)</h4>
                   <p className="text-blue-800/80">
-                    Art. 17: Przepisy dotyczące opłaty solidarnościowej stosuje się wyłącznie
-                    po wejściu w życie odrębnych przepisów dopuszczających przerwanie ciąży
-                    na żądanie do 12. tygodnia ciąży. Do tego czasu Fundusz może przyjmować
-                    dobrowolne wpłaty i darowizny.
+                    Przepisy o opłacie solidarnościowej stosuje się wyłącznie po wejściu w życie
+                    odrębnych przepisów dopuszczających przerwanie ciąży na żądanie do 12. tygodnia.
+                    Do tego czasu Fundusz może przyjmować dobrowolne darowizny i prowadzić działalność
+                    organizacyjno-przygotowawczą.
                   </p>
                 </div>
               </div>

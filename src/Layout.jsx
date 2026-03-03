@@ -291,14 +291,12 @@ export default function Layout({ children, currentPageName }) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
               <div className="md:col-span-2">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center p-2">
-                    <img
-                      src="/LOGO_abotax_noBG.png"
-                      alt="AboTax"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
+                <div className="flex flex-col mb-6">
+                  <img
+                    src="/LOGO_abotax_noBG.png"
+                    alt="AboTax"
+                    className="w-28 h-28 object-contain mb-3"
+                  />
                   <div>
                     <span className="font-serif font-bold text-xl">Fundusz Rekompensaty</span>
                     <span className="block text-sm text-white/60">Społecznej</span>

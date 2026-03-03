@@ -105,7 +105,7 @@ export default function Home() {
               </h1>
 
               <p className="text-xl text-official-navy/70 mb-4 leading-relaxed max-w-xl font-light">
-                Obywatelski projekt ustawy: za każdy zabieg — równowartość kosztów trafia do domów dziecka.
+                Obywatelski projekt ustawy: za każdy zabieg przerwania ciąży — równowartość kosztów trafia do domów dziecka.
               </p>
               <p className="text-lg font-serif font-semibold text-official-navy mb-8">
                 Życie za życie — rekompensata, nie kara.
@@ -238,8 +238,8 @@ export default function Home() {
                       <TrendingUp className="w-5 h-5 text-official-gold" />
                     </div>
                     <div>
-                      <p className="text-xs text-official-navy/50">Szacowany wpływ</p>
-                      <p className="font-bold text-official-navy">200+ mln zł/rok</p>
+                      <p className="text-xs text-official-navy/50">pierwszy prawdziwy</p>
+                      <p className="font-bold text-official-navy">kompromis aborcyjny</p>
                     </div>
                   </div>
                 </motion.div>
@@ -293,8 +293,8 @@ export default function Home() {
               Jak działa system?
             </h2>
             <p className="text-lg text-official-navy/60 max-w-2xl mx-auto">
-              Prosty mechanizm zapewniający pełną anonimowość pacjentki przy jednoczesnej
-              transparentności przepływu środków
+              Projekt zakłada legalizację aborcji na żądanie do 12. tygodnia — z jednoczesnym,
+              anonimowo uiszczanym obowiązkowym wkładem solidarnościowym
             </p>
           </motion.div>
 

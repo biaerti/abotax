@@ -104,9 +104,7 @@ export default function Impact() {
                   Szacunki oparto na porównaniu z <strong className="text-official-navy">Czechami</strong> (populacja 10,7 mln,
                   ~15 000 legalnych aborcji rocznie). Przeliczenie proporcjonalne na populację Polski (38 mln) daje
                   około <strong className="text-official-navy">50 000 zabiegów</strong>. Ta wartość mieści się pomiędzy
-                  skrajnymi szacunkami organizacji pro-life (7–14 tys.) a organizacji proaborcyjnych (120–150 tys.).
-                  Badania WHO wskazują, że legalizacja nie zwiększa liczby aborcji — przenosi je jedynie z szarej strefy
-                  do legalnej służby zdrowia.
+                  skrajnymi szacunkami organizacji pro-life (7–14 tys.) a organizacji proaborcyjnych (120–150 tys.) oraz uwzględnia autokorektę: statystycznie większe zapotrzebowanie wynikające z najniższego w Europie dostępu do antykoncepcji jest tu równoważone przez wyższy koszt zabiegu, który dla części osób może stanowić barierę i skłaniać do pozostania w szarej strefie lub turystyce medycznej.
                 </p>
               </div>
             </div>

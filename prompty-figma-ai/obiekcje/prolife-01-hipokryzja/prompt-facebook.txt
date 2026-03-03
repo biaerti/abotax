@@ -1,0 +1,34 @@
+PROMPT FIGMA AI — Facebook Post (obraz)
+Obiekcja pro-life #1: Hipokryzja vs Realna Pomoc
+==================================================
+
+STYL: oficjalny/rzadowy, minimalistyczny. Kolory: navy #1a365d, teal #1A5F5A, zloty #c9a227, cream #faf8f5. Gradient hero: 135deg #1a365d -> #1A5F5A. Fonty: serif bold na naglowki, sans-serif na body. Ton: merytoryczny, neutralny politycznie. Branding: "AboTax" zloty serif bold, @abotax.pl, #AboTax.
+
+FORMAT: Facebook post, 1200x630px, pojedynczy obraz
+
+=== OPIS GRAFIKI ===
+Tlo: cream #faf8f5
+
+Gora: naglowek na srodku:
+"Kazde zycie jest bezcenne?" — navy, serif, bold, 28px
+
+Centrum: dwie kolumny oddzielone zlota pionowa linia
+
+Lewa kolumna:
+- Naglowek: "Ideologia" — navy 40%, serif, 20px
+- Ikona megafonu (szary, 36px)
+- "Marsze" — navy 40%, 14px
+- "Protesty" — navy 40%, 14px
+- "Zero efektu" — navy 40%, 14px, bold
+
+Prawa kolumna:
+- Naglowek: "AboTax" — teal, serif, bold, 20px
+- Ikona domu z sercem (teal, 36px)
+- "125 mln zl/rok" — teal, 14px
+- "1 488 etatow" — teal, 14px
+- "Realna pomoc" — teal, 14px, bold
+
+Dol (pelna szerokosc, ciemniejszy navy):
+- Lewa: "abotax.pl" bialy bold
+- Srodek: "17 100 dzieci czeka. Nie na ideologie — na opiekunow." — bialy 60%, 12px
+- Prawa: "@abotax.pl" bialy 50%

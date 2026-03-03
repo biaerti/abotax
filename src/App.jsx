@@ -25,6 +25,7 @@ import PodpiszPetycje from './pages/PodpiszPetycje'
 import GeneratorIG from './pages/GeneratorIG'
 import Regulamin from './pages/Regulamin'
 import PolitykaPrywatnosci from './pages/PolitykaPrywatnosci'
+import ProjektUstawyDruk from './pages/ProjektUstawyDruk'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -61,6 +62,7 @@ function App() {
           <Route path="/GeneratorIG" element={<PageWrapper pageName="GeneratorIG"><GeneratorIG /></PageWrapper>} />
           <Route path="/Regulamin" element={<PageWrapper pageName="Regulamin"><Regulamin /></PageWrapper>} />
           <Route path="/PolitykaPrywatnosci" element={<PageWrapper pageName="PolitykaPrywatnosci"><PolitykaPrywatnosci /></PageWrapper>} />
+          <Route path="/ProjektUstawyDruk" element={<ProjektUstawyDruk />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

@@ -1,0 +1,30 @@
+PROMPT FIGMA AI — Facebook Post (obraz)
+Obiekcja pro-choice #4: Sprawczosc i Godnosc
+==============================================
+
+STYL: oficjalny/rzadowy, minimalistyczny. Kolory: navy #1a365d, teal #1A5F5A, zloty #c9a227, cream #faf8f5. Gradient hero: 135deg #1a365d -> #1A5F5A. Fonty: serif bold na naglowki, sans-serif na body. Ton: merytoryczny, neutralny politycznie. Branding: "AboTax" zloty serif bold, @abotax.pl, #AboTax.
+
+FORMAT: Facebook post, 1200x630px, pojedynczy obraz
+
+=== OPIS GRAFIKI ===
+Tlo: cream #faf8f5
+
+Lewa polowa (60%):
+- Gora: maly tekst przekreslony szara linia:
+  "egoistka • usuwa problem • nie ma sumienia" — navy 30%, 12px
+- Srodek: duzy tekst:
+  "Sponsorka." — teal, serif, bold, 48px
+- Pod spodem:
+  "Kobieta w systemie AboTax staje sie najwieksza sponsorka pieczy zastepczej w Polsce." — navy, sans-serif, 14px
+
+Prawa polowa (40%) — teal tlo #1A5F5A:
+- Ikona osoby z sercem (bialy, 48px)
+- 3 linie (bialy, 14px):
+  * "Nie przepraszasz"
+  * "za swoja decyzje."
+  * "Ty nia pomagasz."
+
+Dol (pelna szerokosc, ciemniejszy navy):
+- Lewa: "abotax.pl" bialy bold
+- Srodek: "Koniec stygmatyzacji — poczatek sprawczosci" — bialy 60%, 12px
+- Prawa: "@abotax.pl" bialy 50%

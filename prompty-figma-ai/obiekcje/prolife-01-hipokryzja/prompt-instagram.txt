@@ -1,0 +1,60 @@
+PROMPT FIGMA AI — Instagram Karuzela
+Obiekcja pro-life #1: Hipokryzja vs Realna Pomoc
+==================================================
+
+STYL: oficjalny/rzadowy, minimalistyczny. Kolory: navy #1a365d, teal #1A5F5A, zloty #c9a227, cream #faf8f5. Gradient hero: 135deg #1a365d -> #1A5F5A. Fonty: serif bold na naglowki, sans-serif na body. Ton: merytoryczny, neutralny politycznie. Branding: "AboTax" zloty serif bold, @abotax.pl, #AboTax.
+
+FORMAT: Karuzela Instagram, 1080x1080px, 5 slajdow
+
+=== SLAJD 1 (okladka — konfrontacja) ===
+Tlo: cream #faf8f5
+Srodek: tekst w dwoch liniach:
+"Kazde zycie jest bezcenne?" — navy, serif, bold, 32px
+Pod spodem: "To spójrzcie na te liczby." — teal, serif, 28px
+Zlota linia dekoracyjna pod spodem
+Dol: "AboTax" #c9a227, bold + "abotax.pl" navy 50%
+
+=== SLAJD 2 (twarde dane) ===
+Tlo: cream #faf8f5
+Gora: ikona domu w navy kolku (48px)
+Naglowek: "Zycie, ktore juz tu jest:" — navy, serif, bold, 24px
+Duze liczby centrum (navy, serif, bold):
+"17 100" — 56px
+"dzieci w domach dziecka" — 20px, navy 60%
+Pod spodem lista (navy, sans-serif, 16px):
+* "14 dzieci na grupe — przepelnione"
+* "1 opiekun na 8 dzieci — za malo"
+* "40% doswiadcza przemocy rowiesniczej"
+Dol: delikatna szara linia + "Swipe ->" navy 40%
+
+=== SLAJD 3 (pytanie do pro-life) ===
+Tlo: cream #faf8f5
+Gora: ikona znaku zapytania w teal kolku (48px)
+Naglowek: "Pytanie do pro-life:" — teal, serif, bold, 26px
+Cytat w ramce navy (navy, serif, 20px):
+"Twierdzicie, ze walczycie o zycie. Ale co zrobiliscie dla 17 100 dzieci, ktore juz zyja i gniją w przepelnionych grupach?"
+Pod spodem (teal, bold, 18px):
+"Jesli zablokujecie AboTax — to wy osobiscie skazujecie te dzieci na brak uwagi, traumy i gorszy start."
+Dol: delikatna szara linia + "Swipe ->" navy 40%
+
+=== SLAJD 4 (wybor) ===
+Tlo: cream #faf8f5
+Naglowek: "Macie wybor:" — navy, serif, bold, 28px
+Dwie opcje wizualne:
+Opcja A (szara ramka, przekreslona):
+"Walka z ideologia" — navy 40%, 20px
+"Zero efektu dla dzieci" — navy 30%, 14px
+
+Opcja B (teal ramka, podkreslona):
+"AboTax" — teal, bold, 24px
+"125 mln zl/rok na etaty opiekunow" — navy, 14px
+"1 488 nowych etatow" — navy, 14px
+"Wskaznik opieki z 1:8 na 1:5" — navy, 14px
+
+=== SLAJD 5 (CTA) ===
+Tlo: gradient hero (#1a365d -> #1A5F5A)
+Srodek: "Walka o ideologie czy realna pomoc?" — bialy, serif, bold, 28px
+Pod spodem: "Wybieracie walke — czy ratowanie zycia, ktore juz tu jest?" — bialy 70%, 16px
+Separator zlota linia
+CTA: "Podpisz petycje — abotax.pl" — #c9a227, bold, 22px
+Dol: "@abotax.pl • #AboTax" bialy 50%

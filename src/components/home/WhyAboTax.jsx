@@ -71,9 +71,8 @@ export default function WhyAboTax() {
                   które już są na świecie i czekają na wsparcie.
                 </p>
                 <p>
-                  Te dzieci stały się <span className="font-semibold text-official-navy">cichymi ofiarami</span> wieloletniego sporu.
-                  Podczas gdy walczymy o nienarodzonych, oni rosną w przepełnionych domach, bez uwagi i zasobów,
-                  których potrzebują.
+                  Przez lata debata skupiała się na nienarodzonych — i słusznie. Ale jest <span className="font-semibold text-official-navy">17 100 dzieci, które już żyją, już czekają, już potrzebują</span>.
+                  Rosną w przepełnionych placówkach, gdzie jeden opiekun odpowiada za 8 podopiecznych — nie z powodu złej woli, lecz zwyczajnie braku środków.
                 </p>
                 <div className="pt-6 border-t border-official-navy/10">
                   <p className="text-abotax-primary font-medium flex items-center gap-2">
@@ -396,8 +395,8 @@ export default function WhyAboTax() {
                       <span className="font-bold text-official-red">do 14 dzieci</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-official-navy/70">Opiekun na grupę</span>
-                      <span className="font-bold text-official-red">1 osoba</span>
+                      <span className="text-sm text-official-navy/70">Wskaźnik opiekun/dziecko</span>
+                      <span className="font-bold text-official-red">1:8</span>
                     </div>
                     <p className="text-xs text-official-navy/50 mt-3 italic">Tylko dozór — brak czasu na indywidualną uwagę</p>
                   </motion.div>
@@ -429,11 +428,11 @@ export default function WhyAboTax() {
                     </div>
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-sm text-official-navy/70">Grupa w placówce</span>
-                      <span className="font-bold text-abotax-primary">6–8 dzieci</span>
+                      <span className="font-bold text-abotax-primary">ok. 11 dzieci</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-official-navy/70">Opiekunów na grupę</span>
-                      <span className="font-bold text-abotax-primary">2–3 osoby</span>
+                      <span className="text-sm text-official-navy/70">Wskaźnik opiekun/dziecko</span>
+                      <span className="font-bold text-abotax-primary">1:5</span>
                     </div>
                     <p className="text-xs text-official-navy/50 mt-3 italic">Prawdziwa relacja — czas na rozmowę, zabawę, wysłuchanie</p>
                   </motion.div>

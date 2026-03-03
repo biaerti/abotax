@@ -1,0 +1,60 @@
+PROMPT FIGMA AI — Instagram Karuzela
+Obiekcja pro-choice #5: Szybka sciezka
+========================================
+
+STYL: oficjalny/rzadowy, minimalistyczny. Kolory: navy #1a365d, teal #1A5F5A, zloty #c9a227, cream #faf8f5. Gradient hero: 135deg #1a365d -> #1A5F5A. Fonty: serif bold na naglowki, sans-serif na body. Ton: merytoryczny, neutralny politycznie. Branding: "AboTax" zloty serif bold, @abotax.pl, #AboTax.
+
+FORMAT: Karuzela Instagram, 1080x1080px, 5 slajdow
+
+=== SLAJD 1 (okladka — pytanie) ===
+Tlo: cream #faf8f5
+Srodek: tekst:
+"Aborcja w szpitalu publicznym" — navy, serif, 24px
+"vs" — navy 40%, serif, italic, 20px
+"Aborcja w prywatnej klinice" — teal, serif, bold, 28px
+Zlota linia dekoracyjna pod spodem
+Pod spodem: "Co wybierasz?" — navy, serif, bold, 36px
+Dol: "AboTax" #c9a227, bold + "abotax.pl" navy 50%
+
+=== SLAJD 2 (scenariusz szpitalny) ===
+Tlo: cream #faf8f5
+Gora: ikona budynku szpitala w navy kolku (48px)
+Naglowek: "Aborcja na NFZ:" — navy, serif, bold, 24px
+Lista (navy, sans-serif, 18px, ikony X czerwone #dc2626):
+* "Skierowanie od lekarza"
+* "Kolejka — tygodnie czekania"
+* "Niechętni lekarze (klauzula sumienia)"
+* "Zero anonimowosci — Twoje dane w systemie"
+* "Traktowana jak petentka"
+Pod spodem: duzy tekst "Petentka" — navy 30%, serif, 36px, przekreslony
+Dol: delikatna szara linia + "Swipe ->" navy 40%
+
+=== SLAJD 3 (scenariusz AboTax) ===
+Tlo: cream #faf8f5
+Gora: ikona gwiazdy VIP w teal kolku (48px)
+Naglowek: "Aborcja w AboTax:" — teal, serif, bold, 24px
+Lista (navy, sans-serif, 18px, checkmarki teal):
+* "Prywatna klinika — bez skierowania"
+* "Szybki termin — bez kolejek"
+* "Profesjonalny personel (bez klauzuli)"
+* "Pelna anonimowosc"
+* "Traktowana z szacunkiem"
+Pod spodem: duzy tekst "Klientka" — teal, serif, bold, 36px
+Dol: delikatna szara linia + "Swipe ->" navy 40%
+
+=== SLAJD 4 (kluczowa roznica) ===
+Tlo: cream #faf8f5
+Naglowek: "W tak delikatnej sprawie..." — navy, serif, bold, 24px
+Centrum — cytat w tealowej ramce:
+"Chcesz byc traktowana jak klientka VIP, a nie jak petentka w systemie publicznym."
+— teal, serif, 20px
+Pod spodem (navy 60%, 16px):
+"AboTax = prywatnosc + szacunek + standard"
+
+=== SLAJD 5 (CTA) ===
+Tlo: gradient hero (#1a365d -> #1A5F5A)
+Srodek: "Placisz — wiec wymagasz." — bialy, serif, bold, 32px
+Pod spodem: "Szacunku. Anonimowosci. Standardu." — bialy 70%, 18px
+Separator zlota linia
+CTA: "Podpisz petycje — abotax.pl" — #c9a227, bold, 22px
+Dol: "@abotax.pl • #AboTax" bialy 50%

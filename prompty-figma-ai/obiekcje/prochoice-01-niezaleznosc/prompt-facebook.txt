@@ -1,0 +1,32 @@
+PROMPT FIGMA AI — Facebook Post (obraz)
+Obiekcja pro-choice #1: Finansowa Niezaleznosc
+================================================
+
+STYL: oficjalny/rzadowy, minimalistyczny. Kolory: navy #1a365d, teal #1A5F5A, zloty #c9a227, cream #faf8f5. Gradient hero: 135deg #1a365d -> #1A5F5A. Fonty: serif bold na naglowki, sans-serif na body. Ton: merytoryczny, neutralny politycznie. Branding: "AboTax" zloty serif bold, @abotax.pl, #AboTax.
+
+FORMAT: Facebook post, 1200x630px, pojedynczy obraz
+
+=== OPIS GRAFIKI ===
+Tlo: podzielone na dwie polowy pionowo
+
+Lewa polowa — navy tlo #1a365d:
+- Gora: ikona lancucha (bialy, 36px)
+- Naglowek: "NFZ" — bialy, serif, bold, 28px
+- Pod spodem: 3 linie (bialy 70%, sans-serif, 14px):
+  * "Zmiana rzadu = blokada"
+  * "Klauzula sumienia"
+  * "Kolejki i biurokracja"
+- Na dole ikona X (czerwony #dc2626, 24px)
+
+Prawa polowa — teal tlo #1A5F5A:
+- Gora: ikona tarczy (zloty #c9a227, 36px)
+- Naglowek: "AboTax" — #c9a227, serif, bold, 28px
+- Pod spodem: 3 linie (bialy 70%, sans-serif, 14px):
+  * "Niezaleznosc od politykow"
+  * "System sam sie finansuje"
+  * "Prywatnosc i jakosc"
+- Na dole ikona checkmark (zloty #c9a227, 24px)
+
+Dol (pelna szerokosc, ciemniejszy navy):
+- Srodek: "Aborcja na NFZ to pulapka. AboTax to bezpiecznik." — bialy, 14px
+- Prawa: "@abotax.pl" bialy 50%

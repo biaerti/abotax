@@ -1,0 +1,59 @@
+PROMPT FIGMA AI — Instagram Karuzela
+Obiekcja pro-choice #1: Finansowa Niezaleznosc
+================================================
+
+STYL: oficjalny/rzadowy, minimalistyczny. Kolory: navy #1a365d, teal #1A5F5A, zloty #c9a227, cream #faf8f5. Gradient hero: 135deg #1a365d -> #1A5F5A. Fonty: serif bold na naglowki, sans-serif na body. Ton: merytoryczny, neutralny politycznie. Branding: "AboTax" zloty serif bold, @abotax.pl, #AboTax.
+
+FORMAT: Karuzela Instagram, 1080x1080px, 5 slajdow
+
+=== SLAJD 1 (okladka — prowokacyjne pytanie) ===
+Tlo: cream #faf8f5
+Gora: mala ikona tarczy w teal kolku (40px)
+Srodek: tekst w dwoch liniach:
+"Aborcja na NFZ?" — navy, serif, bold, 36px
+"To pulapka." — teal #1A5F5A, serif, bold, 44px
+Zlota linia dekoracyjna pod spodem
+Dol: "AboTax" #c9a227, bold + "abotax.pl" navy 50%
+
+=== SLAJD 2 (scenariusz NFZ) ===
+Tlo: cream #faf8f5
+Gora: ikona szpitala w navy kolku (48px)
+Naglowek: "Aborcja na NFZ oznacza:" — navy, serif, bold, 24px
+Lista (navy, sans-serif, 18px, ikony X czerwone #dc2626):
+* "Zmiana rzadu = blokada procedury"
+* "Klauzula sumienia calych szpitali"
+* "Obnizona wycena — szpitalom sie nie oplaca"
+* "Politycy kontroluja Twoj dostep"
+Dol: delikatna szara linia + "Swipe ->" navy 40%
+
+=== SLAJD 3 (scenariusz AboTax) ===
+Tlo: cream #faf8f5
+Gora: ikona tarczy z checkmarkiem w teal kolku (48px)
+Naglowek: "AboTax oznacza:" — teal, serif, bold, 24px
+Lista (navy, sans-serif, 18px, checkmarki teal):
+* "Prywatna klinika — niezalezna od rzadu"
+* "Finansuje sie sam — politycy nie moga go zaglodzic"
+* "Placisz = wymagasz jakosci i anonimowosci"
+* "Stabilnosc niezalezna od wyborow"
+Dol: delikatna szara linia + "Swipe ->" navy 40%
+
+=== SLAJD 4 (porownanie wizualne) ===
+Tlo: cream #faf8f5
+Dwie kolumny oddzielone zlota linia:
+Lewa kolumna:
+- Naglowek: "NFZ" navy, serif, bold, 22px
+- "Zaleznosc od politykow" — navy 60%, 16px
+- Ikona lancucha (szara)
+Prawa kolumna:
+- Naglowek: "AboTax" teal, serif, bold, 22px
+- "Niezaleznosc systemowa" — navy 60%, 16px
+- Ikona tarczy (teal)
+Dol: "Ktory system chroni Twoje prawa?" — navy, sans-serif, italic, 16px
+
+=== SLAJD 5 (CTA) ===
+Tlo: gradient hero (#1a365d -> #1A5F5A)
+Srodek: "System, ktorego politycy nie moga zablokowac." — bialy, serif, bold, 28px
+Pod spodem: "AboTax to prywatyzacja odpowiedzialnosci." — bialy 70%, 16px
+Separator zlota linia
+CTA: "Podpisz petycje — abotax.pl" — #c9a227, bold, 22px
+Dol: "@abotax.pl • #AboTax" bialy 50%

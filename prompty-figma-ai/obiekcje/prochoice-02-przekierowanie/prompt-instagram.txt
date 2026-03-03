@@ -1,0 +1,60 @@
+PROMPT FIGMA AI — Instagram Karuzela
+Obiekcja pro-choice #2: Przekierowanie strumienia
+===================================================
+
+STYL: oficjalny/rzadowy, minimalistyczny. Kolory: navy #1a365d, teal #1A5F5A, zloty #c9a227, cream #faf8f5. Gradient hero: 135deg #1a365d -> #1A5F5A. Fonty: serif bold na naglowki, sans-serif na body. Ton: merytoryczny, neutralny politycznie. Branding: "AboTax" zloty serif bold, @abotax.pl, #AboTax.
+
+FORMAT: Karuzela Instagram, 1080x1080px, 5 slajdow
+
+=== SLAJD 1 (okladka — szokujacy fakt) ===
+Tlo: cream #faf8f5
+Gora: ikona portfela z strzalka w teal kolku (40px)
+Srodek: tekst:
+"I tak placisz." — navy, serif, bold, 44px
+Pod spodem: "Pytanie — komu." — teal, serif, 28px
+Zlota linia dekoracyjna pod spodem
+Dol: "AboTax" #c9a227, bold + "abotax.pl" navy 50%
+
+=== SLAJD 2 (obecna sytuacja) ===
+Tlo: cream #faf8f5
+Gora: ikona mapy z strzalka w navy kolku (48px)
+Naglowek: "Dzis Twoje pieniadze trafiaja do:" — navy, serif, bold, 22px
+Lista (navy, sans-serif, 18px, strzalki navy):
+* "Handlarzy pigulkami w internecie"
+* "Klinik w Czechach i Holandii"
+* "Szarej strefy medycznej"
+* "Za granice — bez zadnego zysku dla Polski"
+Duzy tekst na dole: "2 000 - 4 000 zl" — navy, serif, bold, 36px
+Pod spodem: "sredni koszt dzis" — navy 50%, 14px
+Dol: delikatna szara linia + "Swipe ->" navy 40%
+
+=== SLAJD 3 (z AboTax) ===
+Tlo: cream #faf8f5
+Gora: ikona domu z sercem w teal kolku (48px)
+Naglowek: "Z AboTax Twoje pieniadze:" — teal, serif, bold, 22px
+Lista (navy, sans-serif, 18px, checkmarki teal):
+* "Zostaja w Polsce"
+* "Finansuja etaty opiekunow"
+* "Poprawiaja zycie 17 100 dzieci"
+* "Tworza lepsza opieke — nie szara strefe"
+Duzy tekst na dole: "125 mln zl / rok" — teal, serif, bold, 36px
+Pod spodem: "do Funduszu Rekompensaty" — navy 50%, 14px
+Dol: delikatna szara linia + "Swipe ->" navy 40%
+
+=== SLAJD 4 (porownanie wizualne — strzalki) ===
+Tlo: cream #faf8f5
+Naglowek: "Ta sama kwota. Inny efekt." — navy, serif, bold, 24px
+Dwie sciezki wizualne:
+Gorna sciezka (szara, przekreslona):
+"2 500 zl" -> strzalka -> "Klinika w Czechach" -> strzalka -> "Zero efektu w PL"
+Dolna sciezka (teal, podkreslona):
+"2 500 zl" -> strzalka -> "Legalna klinika w PL" -> strzalka -> "Etat opiekuna"
+Dol: delikatna szara linia
+
+=== SLAJD 5 (CTA) ===
+Tlo: gradient hero (#1a365d -> #1A5F5A)
+Srodek: "Nie nakladamy nowej oplaty." — bialy, serif, bold, 28px
+Pod spodem: "Przekierowujemy pieniadze, ktore i tak wydajesz." — bialy 70%, 16px
+Separator zlota linia
+CTA: "Podpisz petycje — abotax.pl" — #c9a227, bold, 22px
+Dol: "@abotax.pl • #AboTax" bialy 50%
