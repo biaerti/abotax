@@ -134,7 +134,7 @@ export default function FAQ() {
         {
           id: "q12",
           question: "Ile dzieci może skorzystać z Funduszu?",
-          answer: "W Polsce w domach dziecka przebywa około 17 100 dzieci przy ~2 140 wychowawcach (wskaźnik 1:8). Szacujemy, że Fundusz może generować ponad 200 mln zł rocznie — wystarczająco na ~2 800 nowych etatów opiekunów. To realna zmiana: mniejsze grupy, więcej uwagi, lepszy rozwój."
+          answer: "W Polsce w domach dziecka przebywa około 17 100 dzieci przy ~2 140 wychowawcach (wskaźnik 1:8). W scenariuszu bazowym Fundusz generuje ~125 mln zł rocznie — wystarczająco na ~1 488 nowych etatów opiekunów. To realna zmiana: mniejsze grupy, więcej uwagi, lepszy rozwój."
         },
         {
           id: "q13",

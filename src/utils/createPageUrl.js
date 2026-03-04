@@ -3,7 +3,7 @@
 
 export function createPageUrl(pageName, params = {}) {
   // Implementacja z Base44
-  let url = `/${pageName.toLowerCase()}`
+  let url = `/${pageName}`
 
   const queryParams = new URLSearchParams(params).toString()
   if (queryParams) {

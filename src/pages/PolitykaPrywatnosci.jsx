@@ -329,10 +329,10 @@ export default function PolitykaPrywatnosci() {
                 Regulamin serwisu
               </Button>
             </Link>
-            <Link to={createPageUrl("Privacy")}>
+            <Link to={createPageUrl("About")}>
               <Button variant="outline" className="border-official-navy/30 text-official-navy hover:bg-official-navy/5">
                 <Shield className="w-4 h-4 mr-2" />
-                Twoja anonimowość (system AboTax)
+                Jak działa anonimowość
               </Button>
             </Link>
             <Link to={createPageUrl("PodpiszPetycje")}>
